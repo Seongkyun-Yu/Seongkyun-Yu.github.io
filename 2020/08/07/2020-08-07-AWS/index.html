@@ -136,7 +136,7 @@
   <link rel="canonical" href="http://yoursite.com/2020/08/07/2020-08-07-AWS/">
   <title>
     
-    2020-08-07-AWS - 개발개발 블로그
+    AWS - S3, CloudFront, Route53을 이용한 정적 호스팅 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -271,7 +271,7 @@
   <style type="text/css">
     header.intro-header {
        /*post*/
-        background-image: url('');
+        background-image: url('/img/header_img/lml_bg.jpg');
       
     }
 
@@ -292,9 +292,11 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#AWS, S3, CloudFront, Route53" title="AWS, S3, CloudFront, Route53">AWS, S3, CloudFront, Route53</a>
+              
             </div>
-            <h1>2020-08-07-AWS</h1>
-            <h2 class="subheading"></h2>
+            <h1>AWS - S3, CloudFront, Route53을 이용한 정적 호스팅</h1>
+            <h2 class="subheading">S3, CloudFront, Route53</h2>
             <span class="meta">
               Posted by Seongkyun Yu on
               2020-08-07
@@ -309,7 +311,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">0</span> In Total
+              Words <span class="post-count">301</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -369,7 +371,88 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        
+        <!-- ## 도메인 만들기
+
+우선 무료로 도메인을 만들어 보겠습니다.
+<br>
+
+![](https://user-images.githubusercontent.com/15887982/89670695-90ceb900-d91c-11ea-9703-4e7cb29de015.png)
+
+https://www.freenom.com/ 에 접속합니다.<br>
+
+회원가입 후 로그인을 한 후 Servieces 탭의 Register a New Domain을 선택합니다.
+
+<br>
+
+![](https://user-images.githubusercontent.com/15887982/89671092-57e31400-d91d-11ea-903c-4535f7cc17dd.png)
+
+원하는 도메인을 선택 후 checkout을 눌러 구매합니다. -->
+
+<h2 id="S3에-프로젝트-업로드-하기"><a href="#S3에-프로젝트-업로드-하기" class="headerlink" title="S3에 프로젝트 업로드 하기"></a>S3에 프로젝트 업로드 하기</h2><p><img src="https://user-images.githubusercontent.com/15887982/89671513-16069d80-d91e-11ea-834d-09443e1fcf6a.png" alt=""></p>
+<p><a href="https://s3.console.aws.amazon.com/" target="_blank" rel="noopener">AWS S3 서비스</a>에 접속해서 버킷 만들기를 누릅니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89672686-0f792580-d920-11ea-9ac8-a702cb181ae1.png" alt=""></p>
+<p>버킷 이름을 작성하고 다음으로 넘어갑니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89673072-b65dc180-d920-11ea-9d7a-4063f1d7192e.png" alt=""></p>
+<p>기본 암호화에 체크한 후 다음으로 넘어갑니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89673250-fd4bb700-d920-11ea-876b-95d7a1a62427.png" alt=""></p>
+<p>모든 퍼블릭 액세스 차단의 체크를 풀고 다음으로 넘어가서 버킷 만들기를 마무리합니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89673706-c9bd5c80-d921-11ea-8f2a-60cdff36103b.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/15887982/89677242-0c823300-d928-11ea-9309-cb0eb4439a44.png" alt=""></p>
+<p>버킷 속성에서 정적 웹사이트 호스팅을 누르고 인덱스 문서와 오류 문서에 index.html을 작성 후 저장합니다.</p>
+<p>여기서 생성된 엔드포인트 주소로도 업로드할 프로젝트에 접근할 수 있게 됩니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89674768-a7c4d980-d923-11ea-9569-cd0ac3207406.png" alt=""></p>
+<p>앞서 버킷을 퍼블릭으로 설정은 했지만 아직 어떠한 기능을 공개할지 정하지 않았기 때문에 그에 필요한 정책을 만들어야 합니다.</p>
+<p>권한 탭을 누르고 버킷 정책에서 정책 생성기를 클릭합니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89675753-6fbe9600-d925-11ea-9c39-eb6b00eea995.png" alt=""></p>
+<p>Select Type of Policy에서 S3 Bucket Policy를 선택합니다.</p>
+<p>Principal에는 적당히 규칙명을 적어주고 Actions에서 Get Object를 선택합니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89675755-70efc300-d925-11ea-8410-390ccb01e36c.png" alt=""></p>
+<p>Amazon Resource Name (ARN)에는 <code>arn:aws:s3:::&lt;bucket_name&gt;/&lt;key_name&gt;</code> 형식의 문자열을 만듭니다.<br>저의 경우 <code>arn:aws:s3:::studyfe.ml/*</code>으로 작성 했습니다.<br>그 후 Add Statement와 Generate Policy를 눌러 정책을 만듭니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89676039-e52a6680-d925-11ea-9b32-00def120e9d5.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/15887982/89676167-26227b00-d926-11ea-929d-4ce348b767bb.png" alt=""></p>
+<p>생성된 정책을 버킷에 붙여넣고 저장합니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89676516-c082be80-d926-11ea-83c0-2499dcee4277.png" alt=""></p>
+<p>개요 탭을 누르고 업로드를 클릭하여 프로젝트를 업로드 합니다.</p>
+<br>
+
+<h2 id="CloudFront"><a href="#CloudFront" class="headerlink" title="CloudFront"></a>CloudFront</h2><p>S3에서 제공해주는 엔드포인트로도 앱을 배포할 수 있지만 CloudFront를 사용하는 이유는 다음과 같습니다.</p>
+<ul>
+<li>HTTPS 배포</li>
+<li>전세계 엣지 로케이션을 이용한 더 빠른 속도</li>
+<li>S3 직접 공유보다 저렴한 비용</li>
+</ul>
+<p>S3에서 제공하는 주소는 HTTP로 보안에 취약합니다. CloudFront는 이를 쉽게 HTTPS로 배포할 수 있게 도와줍니다.</p>
+<p>S3를 이용해 직접 배포할 경우 S3 버킷을 설정한 지역의 저장소로 전세계 사용자가 요청을 보냅니다. 따라서 먼 지역의 유저일 수록 속도가 느려질 것입니다. 하지만 CloudFront를 사용한다면 전세계 엣지 로케이션에서 캐싱을 해두고 유저가 가까운 엣지에 요청을 보내도록 합니다. 따라서 S3보다 속도가 더 빠릅니다.</p>
+<p>또한 CloudFront의 요금이 S3 요금보다 저렴하기 때문에 비용절감 효과가 있습니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89678839-db573200-d92a-11ea-9ed1-f5f289d71713.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89678844-dbefc880-d92a-11ea-837b-efaf9ba61e73.png" alt=""></p>
+<p><a href="https://console.aws.amazon.com/cloudfront" target="_blank" rel="noopener">CloudFront</a> 서비스로 들어가 Create Distribution을 선택한 후 Get Started를 누릅니다.</p>
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/15887982/89679777-bd8acc80-d92c-11ea-9e67-96a8be566c72.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89679779-be236300-d92c-11ea-9a05-4b3dc588fa1b.png" alt=""></p>
+<p>Origin Domain Name에 방금 만든 버킷을 선택합니다.</p>
+<p>Viewer Protocol Policy은 <code>Redirect HTTP to HTTPS</code>로 설정하고</p>
+<p>Default Root Object에는 index.html을 작성한 후 Create Distribution을 누릅니다</p>
+
 
         <hr>
         <!-- Pager -->
@@ -377,7 +460,7 @@
           
           
           <li class="next">
-            <a href="/2020/08/07/2020-06-22-product/" data-toggle="tooltip" data-placement="top" title="AWS - S3, CloudFront, Route53을 이용한 정적 호스팅">Next Post &rarr;</a>
+            <a href="/2020/06/22/2020-06-22-product/" data-toggle="tooltip" data-placement="top" title="기획">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -420,7 +503,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=2020-08-07-AWS&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/08/07/2020-08-07-AWS/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=AWS - S3, CloudFront, Route53을 이용한 정적 호스팅&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/08/07/2020-08-07-AWS/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -455,6 +538,17 @@
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#S3에-프로젝트-업로드-하기"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">S3에 프로젝트 업로드 하기</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CloudFront"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">CloudFront</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
 
       <!-- Sidebar Container -->
       <div class="
@@ -470,6 +564,8 @@
             <a href="/tags/">FEATURED TAGS</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#AWS, S3, CloudFront, Route53" title="AWS, S3, CloudFront, Route53">AWS, S3, CloudFront, Route53</a>
             
           </div>
         </section>
