@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -331,22 +327,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -363,14 +343,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <h1 id="1-스프레드-문법이란"><a href="#1-스프레드-문법이란" class="headerlink" title="1. 스프레드 문법이란"></a>1. 스프레드 문법이란</h1><p>하나로 뭉쳐 있는 여러 값들의 집합을 펼쳐서 개별적인 값들의 목록으로 만드는 것.<br></p>
 <p>값을 만드는게 아니기 때문에 변수에 할당할 수 없다.<br></p>
 <p>따라서 단독으로 사용될 수 없고 다음과 같이 사용될 수 있다.<br></p>
@@ -412,17 +394,28 @@
 <p><br><br></p>
 <h2 id="4-객체-리터럴-내부에서-사용하는-경우"><a href="#4-객체-리터럴-내부에서-사용하는-경우" class="headerlink" title="4. 객체 리터럴 내부에서 사용하는 경우"></a>4. 객체 리터럴 내부에서 사용하는 경우</h2><figure class="highlight javascript"><figcaption><span>Object.assign & spread</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> merged = <span class="built_in">Object</span>.assign(&#123;&#125;, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">y</span>: <span class="number">10</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(merged); <span class="comment">// &#123; x: 1, y: 10, z: 3 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 스프레드 문법</span></span><br><span class="line"><span class="keyword">const</span> merged2 = &#123; ...&#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;, ...&#123; <span class="attr">y</span>: <span class="number">10</span>, <span class="attr">z</span>: <span class="number">3</span> &#125; &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(merged2); <span class="comment">// &#123; x: 1, y: 10, z: 3 &#125;</span></span><br></pre></td></tr></table></figure>
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/03/22/2020-03-22_destructuring/" data-toggle="tooltip" data-placement="top" title="디스트럭처링 할당 (Destructuring assignment)">&larr; Previous Post</a>
+            <a
+              href="/2020/03/22/2020-03-22_destructuring/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="디스트럭처링 할당 (Destructuring assignment)"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/03/19/2020-03-19_array/" data-toggle="tooltip" data-placement="top" title="배열 (Array)">Next Post &rarr;</a>
+            <a
+              href="/2020/03/19/2020-03-19_array/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="배열 (Array)"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -435,9 +428,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -478,7 +469,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -493,8 +484,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -502,11 +492,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -516,11 +504,26 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+            <a
+              class="tag"
+              href="/tags/#javascript"
+              title="javascript"
+              >javascript</a
+            >
             
-            <a class="tag" href="/tags/#ES6" title="ES6">ES6</a>
+            <a
+              class="tag"
+              href="/tags/#ES6"
+              title="ES6"
+              >ES6</a
+            >
             
-            <a class="tag" href="/tags/#Spread" title="Spread">Spread</a>
+            <a
+              class="tag"
+              href="/tags/#Spread"
+              title="Spread"
+              >Spread</a
+            >
             
           </div>
         </section>
@@ -528,10 +531,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -539,7 +541,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->

@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -327,22 +323,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -359,14 +339,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <h1 id="1-Set과-Map이란"><a href="#1-Set과-Map이란" class="headerlink" title="1. Set과 Map이란"></a>1. Set과 Map이란</h1><ul>
 <li><p>Set 객체: 중복되지 않는 유일한 값들의 집합</p>
 </li>
@@ -445,17 +427,28 @@
 <h1 id="3-4-부분-집합과-상위-집합"><a href="#3-4-부분-집합과-상위-집합" class="headerlink" title="3.4 부분 집합과 상위 집합"></a>3.4 부분 집합과 상위 집합</h1><p>집합 A가 집합 B에 포함되는 경우(A⊆B), 집합 A는 집합 B의 부분 집합이며 집합 B는 집합 A의 상위 집합이다.</p>
 <figure class="highlight javascript"><figcaption><span>isSuperset.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set 객체 받아 상위집합 여부 구하기</span></span><br><span class="line"><span class="keyword">const</span> getIsSuperset = <span class="function"><span class="keyword">function</span>(<span class="params">set1, set2</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> set2) &#123;</span><br><span class="line">    <span class="keyword">if</span>( !set1.has(value) ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열과 Set 객체 받아 상위집합 여부 구하기</span></span><br><span class="line"><span class="keyword">const</span> getAllIsSuperset = <span class="function"><span class="keyword">function</span>(<span class="params">iter1, iter2</span>) </span>&#123;</span><br><span class="line">  iter1 = <span class="keyword">new</span> <span class="built_in">Set</span>([...iter1]);</span><br><span class="line">  iter2 = <span class="keyword">new</span> <span class="built_in">Set</span>([...iter2]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> iter2) &#123;</span><br><span class="line">    <span class="keyword">if</span>( !iter1.has(value) ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getIsSuperset(set1, set2)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(getAllIsSuperset(set1, set2)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/03/24/2020-03-24_rendering/" data-toggle="tooltip" data-placement="top" title="브라우저의 렌더링 과정 (Rendering)">&larr; Previous Post</a>
+            <a
+              href="/2020/03/24/2020-03-24_rendering/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="브라우저의 렌더링 과정 (Rendering)"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/03/24/2020-03-24_Exercise3/" data-toggle="tooltip" data-placement="top" title="자료구조와 알고리즘2 (Data Structure & Algorithm)">Next Post &rarr;</a>
+            <a
+              href="/2020/03/24/2020-03-24_Exercise3/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="자료구조와 알고리즘2 (Data Structure & Algorithm)"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -468,9 +461,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -511,7 +502,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -526,8 +517,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -535,11 +525,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -549,7 +537,12 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+            <a
+              class="tag"
+              href="/tags/#javascript"
+              title="javascript"
+              >javascript</a
+            >
             
           </div>
         </section>
@@ -557,10 +550,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -568,7 +560,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->

@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -329,22 +325,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -361,14 +341,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <p>클로저란 외부 함수가 소멸했음에도 내부함수가 외부함수의 지역변수(자유변수)에 접근할 수 있는 메커니즘을 말한다.<br></p>
 <p>캡슐화를 통해 외부함수의 지역변수(자유변수)의 오염을 막을 수 있기 때문에 다음과 같이 사용하곤 했다.<br></p>
 <figure class="highlight javascript"><figcaption><span>MusicPlayer.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> playControler = <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> playingIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> setPlayStatus = <span class="function">(<span class="params">boolean</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (boolean) &#123;</span><br><span class="line">      $playBtn.classList.remove(<span class="string">'playing'</span>);</span><br><span class="line">      $musicPlayer.pause();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $playBtn.classList.add(<span class="string">'playing'</span>);</span><br><span class="line">      $musicPlayer.play();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> playNext = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    playingIndex++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (playingIndex &gt; musics.length - <span class="number">1</span>) playingIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    paintSelectedList(playingIndex);</span><br><span class="line">    setMusic(musics[playingIndex]);</span><br><span class="line">    setPlayStatus(PLAY_ON);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> playPrev = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    playingIndex--;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (playingIndex &lt; <span class="number">0</span>) playingIndex = musics.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    paintSelectedList(playingIndex);</span><br><span class="line">    setMusic(musics[playingIndex]);</span><br><span class="line">    setPlayStatus(PLAY_ON);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    setPlayStatus, playSelectedList, playNext, playPrev</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
@@ -387,17 +369,28 @@
 <p>이처럼 클로저는 변수의 오염을 막는 용도뿐만 아니라 매개변수의 위치를 바꾸고 유사기능을 묶는 용도로도 사용할 수 있다. </p>
 
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/04/15/2020-04-16_module/" data-toggle="tooltip" data-placement="top" title="모듈 (Module)">&larr; Previous Post</a>
+            <a
+              href="/2020/04/15/2020-04-16_module/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="모듈 (Module)"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/04/12/2020-04-12_how-do-I-ask-a-good-question/" data-toggle="tooltip" data-placement="top" title="좋은 질문을 하는 방법">Next Post &rarr;</a>
+            <a
+              href="/2020/04/12/2020-04-12_how-do-I-ask-a-good-question/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="좋은 질문을 하는 방법"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -410,9 +403,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -453,7 +444,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -468,8 +459,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -477,11 +467,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -491,9 +479,19 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+            <a
+              class="tag"
+              href="/tags/#javascript"
+              title="javascript"
+              >javascript</a
+            >
             
-            <a class="tag" href="/tags/#closure" title="closure">closure</a>
+            <a
+              class="tag"
+              href="/tags/#closure"
+              title="closure"
+              >closure</a
+            >
             
           </div>
         </section>
@@ -501,10 +499,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -512,7 +509,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->

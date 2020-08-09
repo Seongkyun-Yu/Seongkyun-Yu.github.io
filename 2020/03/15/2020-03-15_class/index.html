@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -329,22 +325,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -361,14 +341,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <h1 id="클래스란"><a href="#클래스란" class="headerlink" title="클래스란?"></a>클래스란?</h1><p>객체지향 언어의 class를 자바스크립트에서 사용하게 해주는 문법적 설탕이라고 할 수 있다.</p>
 <p>하지만 클래스가 생성자 함수와 완전히 같지는 않다.</p>
 <br>
@@ -499,17 +481,28 @@
 <figure class="highlight javascript"><figcaption><span>staticSuper.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> sayProfile() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`super의 정적 메소드`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> sayProf() &#123;</span><br><span class="line">    <span class="keyword">super</span>.sayProfile();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Man.sayProf(); <span class="comment">// super의 정적 메소드</span></span><br></pre></td></tr></table></figure>
 
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/03/18/2020-03-18_ES6/" data-toggle="tooltip" data-placement="top" title="ES6의 함수">&larr; Previous Post</a>
+            <a
+              href="/2020/03/18/2020-03-18_ES6/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="ES6의 함수"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/03/12/2020-03-12_Exercise2/" data-toggle="tooltip" data-placement="top" title="자료구조와 알고리즘1 (Data Structure & Algorithm)">Next Post &rarr;</a>
+            <a
+              href="/2020/03/12/2020-03-12_Exercise2/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="자료구조와 알고리즘1 (Data Structure & Algorithm)"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -522,9 +515,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -565,7 +556,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -580,8 +571,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -589,11 +579,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -603,9 +591,19 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+            <a
+              class="tag"
+              href="/tags/#javascript"
+              title="javascript"
+              >javascript</a
+            >
             
-            <a class="tag" href="/tags/#class" title="class">class</a>
+            <a
+              class="tag"
+              href="/tags/#class"
+              title="class"
+              >class</a
+            >
             
           </div>
         </section>
@@ -613,10 +611,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -624,7 +621,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->

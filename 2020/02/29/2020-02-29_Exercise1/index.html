@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -329,22 +325,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -361,14 +341,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <h1 id="연습문제"><a href="#연습문제" class="headerlink" title="연습문제"></a>연습문제</h1><h3 id="1-변수-x가-10보다-크고-20보다-작을-때-변수-X를-출력하는-조건식을-완성하라"><a href="#1-변수-x가-10보다-크고-20보다-작을-때-변수-X를-출력하는-조건식을-완성하라" class="headerlink" title="1. 변수 x가 10보다 크고 20보다 작을 때 변수 X를 출력하는 조건식을 완성하라"></a>1. 변수 x가 10보다 크고 20보다 작을 때 변수 X를 출력하는 조건식을 완성하라</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">15</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span> &amp;&amp; x &lt; <span class="number">20</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <h3 id="2-for문을-사용하여-0부터-10미만의-정수-중에서-짝수만을-작은-수부터-출력하시오"><a href="#2-for문을-사용하여-0부터-10미만의-정수-중에서-짝수만을-작은-수부터-출력하시오" class="headerlink" title="2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오."></a>2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i % <span class="number">2</span> === <span class="number">0</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -406,17 +388,28 @@
 <h3 id="16-정삼각형-출력하기"><a href="#16-정삼각형-출력하기" class="headerlink" title="16. 정삼각형 출력하기"></a>16. 정삼각형 출력하기</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'// 16. 정삼각형 출력하기 (역방향) v1 \n'</span>;</span><br><span class="line"><span class="keyword">let</span> addstr = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  addstr += i ? <span class="string">' '</span> : <span class="string">''</span>;</span><br><span class="line">  str += addstr16v1;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">9</span> - <span class="number">2</span> * i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">    str += <span class="string">'*'</span>;</span><br><span class="line"></span><br><span class="line">  str += <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'// 16. 정삼각형 출력하기 (역방향) v2 \n'</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">    str += <span class="string">' '</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">9</span> - <span class="number">2</span> * i; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">    str += <span class="string">'*'</span>;</span><br><span class="line"></span><br><span class="line">  str += <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/03/01/2020-03-01_property-attribute/" data-toggle="tooltip" data-placement="top" title="프로퍼티 어트리뷰트 (Property atrribute)">&larr; Previous Post</a>
+            <a
+              href="/2020/03/01/2020-03-01_property-attribute/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="프로퍼티 어트리뷰트 (Property atrribute)"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/02/27/2020-02-27_var/" data-toggle="tooltip" data-placement="top" title="전역 변수의 문제점">Next Post &rarr;</a>
+            <a
+              href="/2020/02/27/2020-02-27_var/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="전역 변수의 문제점"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -429,9 +422,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -472,7 +463,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -487,8 +478,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -496,11 +486,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -510,9 +498,19 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+            <a
+              class="tag"
+              href="/tags/#javascript"
+              title="javascript"
+              >javascript</a
+            >
             
-            <a class="tag" href="/tags/#별찍기" title="별찍기">별찍기</a>
+            <a
+              class="tag"
+              href="/tags/#별찍기"
+              title="별찍기"
+              >별찍기</a
+            >
             
           </div>
         </section>
@@ -520,10 +518,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -531,7 +528,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->

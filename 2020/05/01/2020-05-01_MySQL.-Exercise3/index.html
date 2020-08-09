@@ -80,10 +80,6 @@
 
 
   
-  <!-- wave start -->
-  <link rel="stylesheet" href="/css/wave.css" />
-  <!-- wave end -->
-  
 
   
   <!-- top start (article top hot config) -->
@@ -327,22 +323,6 @@
   </div>
 
   
-  <!-- waveoverlay start -->
-  <div class="preview-overlay">
-    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="preview-parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
-        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
-      </g>
-    </svg>
-  </div>
-  <!-- waveoverlay end -->
-  
 
 </header>
 
@@ -359,14 +339,16 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
 <!-- Post Content -->
 <article>
   <div class="container">
     <div class="row">
       <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
         <h2 id="Data-set"><a href="#Data-set" class="headerlink" title="Data set"></a>Data set</h2><blockquote>
 <p><a href="https://dev.mysql.com/doc/index-other.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/index-other.html</a><br>위 링크에서 world, sakila, employee 데이터를 받아서 푼다.</p>
 </blockquote>
@@ -400,17 +382,28 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> world;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> under_3lang <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> countrycode, <span class="keyword">count</span>(<span class="keyword">language</span>) <span class="keyword">as</span> language_count, <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">LANGUAGE</span>) <span class="keyword">as</span> languages</span><br><span class="line"><span class="keyword">FROM</span> countrylanguage</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> countrycode</span><br><span class="line"><span class="keyword">HAVING</span> language_count &lt;= <span class="number">3</span>;</span><br><span class="line"><span class="keyword">select</span> city.countrycode, city.name <span class="keyword">as</span> city_name, city.population, country.name, under_3lang.language_count, under_3lang.languages</span><br><span class="line"><span class="keyword">FROM</span> city, under_3lang, country</span><br><span class="line"><span class="keyword">WHERE</span> city.countrycode = under_3lang.countrycode <span class="keyword">AND</span> country.code = city.countrycode <span class="keyword">AND</span> city.population &gt;= <span class="number">3000000</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> city.population <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
 
-        <hr>
+        <hr />
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/05/06/2020-05-06_react-setting/" data-toggle="tooltip" data-placement="top" title="React 초기 설정">&larr; Previous Post</a>
+            <a
+              href="/2020/05/06/2020-05-06_react-setting/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="React 초기 설정"
+              >&larr; Previous Post</a
+            >
           </li>
-          
-          
+           
           <li class="next">
-            <a href="/2020/04/30/2020-04-30_MySQL.-Exercise2/" data-toggle="tooltip" data-placement="top" title="MySQL 연습문제2">Next Post &rarr;</a>
+            <a
+              href="/2020/04/30/2020-04-30_MySQL.-Exercise2/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="MySQL 연습문제2"
+              >Next Post &rarr;</a
+            >
           </li>
           
         </ul>
@@ -423,9 +416,7 @@
           </p>
         </div>
         <!-- tip end -->
-        
-
-        
+         
         <!-- Sharing Srtart -->
         <!-- Social Social Share Post -->
 <!-- Docs:https://github.com/overtrue/share.js -->
@@ -466,7 +457,7 @@
 
         <!-- Sharing End -->
         
-        <hr>
+        <hr />
 
         <!-- comments start -->
         <!-- 1. gitalk comment -->
@@ -481,8 +472,7 @@
 
 
         <!-- comments end -->
-        <hr>
-
+        <hr />
       </div>
 
       <!-- Catalog: Tabe of Content -->
@@ -490,11 +480,9 @@
 
 
       <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
         
         <section>
@@ -504,7 +492,12 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#MySQL" title="MySQL">MySQL</a>
+            <a
+              class="tag"
+              href="/tags/#MySQL"
+              title="MySQL"
+              >MySQL</a
+            >
             
           </div>
         </section>
@@ -512,10 +505,9 @@
 
         <!-- Friends Blog -->
         
-        <hr>
+        <hr />
         <h5>FRIENDS</h5>
         <ul class="list-inline">
-
           
         </ul>
         
@@ -523,7 +515,6 @@
     </div>
   </div>
 </article>
-
 
 
 <!-- anchorjs start -->
