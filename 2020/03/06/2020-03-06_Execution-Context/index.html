@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">617</span> In Total
+              Words <span class="post-count">620</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -392,20 +392,15 @@
 
 <ol>
 <li><p>전역 코드 평가</p>
-<p> 변수 선언문, 함수 선언문 실행 후 실행 컨텍스트에 등록</p>
+<p>변수 선언문, 함수 선언문 실행 후 실행 컨텍스트에 등록</p>
 </li>
 </ol>
-<ol start="2">
-<li><p>전역 코드 실행  </p>
-<p> 전역 코드 실행. 이때 전역 변수에 값 할당, 함수 호출됨</p>
-</li>
-<li><p>함수 코드 평가</p>
-<p> 함수 실행 전 함수 코드 평가, 지역 스코프 생성 및 지역 변수 등록</p>
-</li>
-<li><p>함수 코드 실행</p>
-<p> 함수 코드 실행. 매개 변수와 지역 변수에 값 할당 및 console.log 호출</p>
-</li>
-</ol>
+<p>2) 전역 코드 실행</p>
+<p>   전역 코드 실행. 이때 전역 변수에 값 할당, 함수 호출됨</p>
+<p>3) 함수 코드 평가</p>
+<p>   함수 실행 전 함수 코드 평가, 지역 스코프 생성 및 지역 변수 등록</p>
+<p>4) 함수 코드 실행</p>
+<p>   함수 코드 실행. 매개 변수와 지역 변수에 값 할당 및 console.log 호출</p>
 <br>
 
 <h1 id="실행-컨텍스트-스택과-렉시컬-환경"><a href="#실행-컨텍스트-스택과-렉시컬-환경" class="headerlink" title="실행 컨텍스트 스택과 렉시컬 환경"></a>실행 컨텍스트 스택과 렉시컬 환경</h1><ul>
@@ -425,28 +420,35 @@
 </ul>
 <br>
 
-<h1 id="실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="실행 컨텍스트의 생성과 식별자 검색 과정"></a>실행 컨텍스트의 생성과 식별자 검색 과정</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span> (<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b + x + y + z);</span><br><span class="line">&#125;</span><br><span class="line">  bar(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">20</span>); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<h1 id="실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="실행 컨텍스트의 생성과 식별자 검색 과정"></a>실행 컨텍스트의 생성과 식별자 검색 과정</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b + x + y + z);</span><br><span class="line">  &#125;</span><br><span class="line">  bar(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">20</span>); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>전역 객체 생성</p>
 </li>
 <li><p>전역 코드 평가</p>
-<p> <img src="https://user-images.githubusercontent.com/15887982/76093909-1adcc380-6005-11ea-8ac7-d279f4d6f006.png" alt="전역 실행 컨텍스트와 렉시컬 환경"></p>
+<p><img src="https://user-images.githubusercontent.com/15887982/76093909-1adcc380-6005-11ea-8ac7-d279f4d6f006.png" alt="전역 실행 컨텍스트와 렉시컬 환경"></p>
 <ol>
-<li><p>전역 실행 컨텍스트 생성</p>
+<li>전역 실행 컨텍스트 생성</li>
+</ol>
 <br>
-</li>
+
+<ol start="2">
 <li><p>전역 렉시컬 환경 생성</p>
-<p> 2.1. 전역 환경 레코드 생성</p>
+<p>2.1. 전역 환경 레코드 생성</p>
 <ul>
 <li><p>2.1.1. 객체 환경 레코드 생성</p>
 <p>전역 객체와 연결</p>
 <p>전역 변수와 전역 함수는 전역 객체의 프로퍼티와 메소드가 된다</p>
-<br>
 </li>
+</ul>
+<br>
+
+<ul>
 <li><p>2.1.2. 선언적 환경 레코드 생성</p>
 <p><code>let</code>, <code>const</code>로 선언한 전역변수를 등록</p>
 <p>선언만 되고 초기화는 되지 않기에 일시적 사각지대가 생김</p>
+</li>
+</ul>
 <br>
 
 <p>2.2. 외부 렉시컬 환경에 대한 참조 할당</p>
@@ -457,8 +459,6 @@
 <p>전역 환경 레코드의 <code>[[GlobalThisValue]]</code> 내부 슬롯에 this가 바인딩</p>
 <p>전역 코드에서 일반적으로 this는 전역 객체를 가리킨다</p>
 </li>
-</ul>
-</li>
 </ol>
 </li>
 </ol>
@@ -466,23 +466,23 @@
 
 <ol start="3">
 <li><p>전역 코드 실행</p>
-<p> 전역 변수 x, y에 값이 할당되고 foo가 호출 됨</p>
-<p> 어떤 식별자를 사용할지 결정하는 것을 <code>식별자 결정</code>이라고 함</p>
-<p> 식별자 결정을 위해 실행 중인 컨텍스트에서 식별자 검색 시작</p>
+<p>전역 변수 x, y에 값이 할당되고 foo가 호출 됨</p>
+<p>어떤 식별자를 사용할지 결정하는 것을 <code>식별자 결정</code>이라고 함</p>
+<p>식별자 결정을 위해 실행 중인 컨텍스트에서 식별자 검색 시작</p>
 </li>
 </ol>
 <br>
 
 <ol start="4">
 <li><p>foo 함수 코드 평가</p>
-<p> <img src="https://user-images.githubusercontent.com/15887982/76095554-d0107b00-6007-11ea-95b4-32e6cc096876.png" alt="foo함수 코드 평가"></p>
+<p><img src="https://user-images.githubusercontent.com/15887982/76095554-d0107b00-6007-11ea-95b4-32e6cc096876.png" alt="foo함수 코드 평가"></p>
 <ol>
 <li><p>함수 실행 컨텍스트 생성</p>
 </li>
 <li><p>함수 렉시컬 환경 생성</p>
-<p> 2.1. 함수 환경 레코드 생성</p>
-<p> 2.2. 외부 렉시컬 환경에 대한 참조 할당</p>
-<p> 2.3. this 바인딩</p>
+<p>2.1. 함수 환경 레코드 생성</p>
+<p>2.2. 외부 렉시컬 환경에 대한 참조 할당</p>
+<p>2.3. this 바인딩</p>
 </li>
 </ol>
 </li>
@@ -491,24 +491,24 @@
 
 <ol start="5">
 <li><p>foo 함수 코드 실행</p>
-<p> 지역변수 x, y에 값이 할당 됨</p>
-<p> 매개 변수에 인수가 할당 됨</p>
-<p> 함수 bar가 호출 됨</p>
+<p>지역변수 x, y에 값이 할당 됨</p>
+<p>매개 변수에 인수가 할당 됨</p>
+<p>함수 bar가 호출 됨</p>
 </li>
 </ol>
 <br>
 
 <ol start="6">
 <li><p>bar 함수 평가</p>
-<p> <img src="https://user-images.githubusercontent.com/15887982/76095968-8ffdc800-6008-11ea-94a1-8d2744a5f47e.png" alt="bar 함수 실행 컨텍스트와 렉시컬 환경"></p>
+<p><img src="https://user-images.githubusercontent.com/15887982/76095968-8ffdc800-6008-11ea-94a1-8d2744a5f47e.png" alt="bar 함수 실행 컨텍스트와 렉시컬 환경"></p>
 </li>
 </ol>
 <br>
 
 <ol start="7">
 <li><p>bar 함수 코드 실행</p>
-<p> 매개 변수에 인수가 할당 됨</p>
-<p> 지역 변수 z에 값이 할당 됨</p>
+<p>매개 변수에 인수가 할당 됨</p>
+<p>지역 변수 z에 값이 할당 됨</p>
 </li>
 </ol>
 <br>
@@ -517,13 +517,13 @@
 <li><p>console.log 실행</p>
 <ol>
 <li><p>식별자 console 검색</p>
-<p> bar -&gt; foo -&gt; 전역 순으로 이동하며 스코프 체인을 검색한다</p>
+<p>bar -&gt; foo -&gt; 전역 순으로 이동하며 스코프 체인을 검색한다</p>
 </li>
 <li><p>log 메소드 검색</p>
-<p> console 객체에서 log 메소드 검색 (프로토 타입 체인 이용)</p>
+<p>console 객체에서 log 메소드 검색 (프로토 타입 체인 이용)</p>
 </li>
 <li><p>표현식 a + b + x + y + z 평가</p>
-<p> 표현식 평가 위해 식별자들(a,b,x,y,z)을 검색 (스코프 체인)</p>
+<p>표현식 평가 위해 식별자들(a,b,x,y,z)을 검색 (스코프 체인)</p>
 </li>
 <li><p>console.log 메소드 호출</p>
 </li>
@@ -534,8 +534,8 @@
 
 <ol start="9">
 <li><p>bar 함수 코드 실행 종료</p>
-<p> 실행 컨텍스트 스택에서 bar 함수 실행 컨텍스트를 Pop하여 제거</p>
-<p> 누군가에게 bar 렉시컬 환경이 참조 되지 않으면 가비지 컬렉터에 의해 해제 됨</p>
+<p>실행 컨텍스트 스택에서 bar 함수 실행 컨텍스트를 Pop하여 제거</p>
+<p>누군가에게 bar 렉시컬 환경이 참조 되지 않으면 가비지 컬렉터에 의해 해제 됨</p>
 </li>
 </ol>
 <br>

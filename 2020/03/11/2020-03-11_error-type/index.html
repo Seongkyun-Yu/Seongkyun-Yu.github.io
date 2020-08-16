@@ -357,7 +357,7 @@
 <h1 id="TypeError"><a href="#TypeError" class="headerlink" title="TypeError"></a>TypeError</h1><blockquote>
 <p>TypeError 객체는 보통 값이 기대하던 자료형이 아니라서 연산을 할 수 없을 때 발생하는 오류입니다.<br><em>(MDN: <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/TypeError" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/TypeError</a>)</em></p>
 </blockquote>
-<p>변수 타입과 상관 없는 명령을 실행할 때 나오는 에러. </p>
+<p>변수 타입과 상관 없는 명령을 실행할 때 나오는 에러.</p>
 <p>함수가 아닌데 함수처럼 호출한다던가 const로 선언된 변수에 재할당을 시도할때 발생한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">x(); <span class="comment">// TypeError: x is not a function</span></span><br><span class="line"></span><br><span class="line">x += <span class="number">1</span>; <span class="comment">// TypeError: Assignment to constant variable.</span></span><br><span class="line"></span><br><span class="line">x++; <span class="comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
 
@@ -373,6 +373,7 @@
 </blockquote>
 <p>선언하지 않은 변수를 참조할때 주로 발생한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(y); <span class="comment">// ReferenceError: y is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i); <span class="comment">// ReferenceError: i is not defined</span></span><br></pre></td></tr></table></figure>
+
 <p>스코프를 잘못 생각하거나 변수를 선언했다고 착각할 때 발생할 수 있는 오류이다.</p>
 <br>
 
@@ -380,7 +381,8 @@
 <p>SyntaxError 객체는 문법적으로 유효하지 않은 코드를 해석하려고 시도할 때 발생하는 오류를 표현합니다.<br><em>(MDN: <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError</a>)</em></p>
 </blockquote>
 <p>자바스크립트 문법에 맞지 않게 작성된 코드에서 나오는 오류이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="string">'에러가 뜰까?'</span>); <span class="comment">// SyntaxError: Unexpected identifier</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="string">"에러가 뜰까?"</span>); <span class="comment">// SyntaxError: Unexpected identifier</span></span><br></pre></td></tr></table></figure>
+
 
         <hr />
         <!-- Pager -->

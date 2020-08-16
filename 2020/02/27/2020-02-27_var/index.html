@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">259</span> In Total
+              Words <span class="post-count">258</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -354,25 +354,23 @@
         <h1 id="변수의-생명-주기"><a href="#변수의-생명-주기" class="headerlink" title="변수의 생명 주기"></a>변수의 생명 주기</h1><ul>
 <li><p>지역 변수의 생명 주기</p>
 <p>지역 변수의 생명 주기는 함수의 생명 주기와 일치한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'전역변수'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">local_test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">'지역변수'</span>;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"전역변수"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">local_test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"지역변수"</span>;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>위 코드에서 console.log(a)는 undefined를 출력하는데 함수 내부의 var a가<br>호이스팅으로 먼저 선언되고 undefined가 된 상태에서 출력했기 때문이다.</p>
 </li>
 </ul>
 <br>
 
-
-<h1 id="전역-변수의-생명-주기"><a href="#전역-변수의-생명-주기" class="headerlink" title="전역 변수의 생명 주기"></a>전역 변수의 생명 주기</h1><p>  전역 변수의 생명 주기는 전역 객체의 생명 주기와 일치한다.</p>
-<pre><code>전역 객체:   
+<h1 id="전역-변수의-생명-주기"><a href="#전역-변수의-생명-주기" class="headerlink" title="전역 변수의 생명 주기"></a>전역 변수의 생명 주기</h1><p>전역 변수의 생명 주기는 전역 객체의 생명 주기와 일치한다.</p>
+<pre><code>전역 객체:
 런타임 이전에 자바스크립트 엔진에 의해 생기는 특수한 객체.
 전역 객체에는 표준 빌트인 객체, 환경 호스트 객체들이 들어간다.</code></pre><br>
 <a id="more"></a>
 
 <h1 id="전역-변수의-문제점"><a href="#전역-변수의-문제점" class="headerlink" title="전역 변수의 문제점"></a>전역 변수의 문제점</h1><br>
 
-
 <ul>
-<li><p>암묵적 결합 </p>
+<li><p>암묵적 결합</p>
 <p>모든 코드가 전역 변수를 참고하고 변경할 수 있다.</p>
 </li>
 </ul>
@@ -406,9 +404,7 @@
 <ul>
 <li><p>모듈 패턴</p>
 <p>변수와 즉시 실행 함수를 활용하여 하나의 모듈을 만든다. 전역 변수를 억제하고 캡슐화까지 구현할 수 있다.(Java의 public, private, protected)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> calc = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// private 변수</span></span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 외부로 공개할 데이터나 메소드</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sum( x, y )&#123;</span><br><span class="line">      <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;,</span><br><span class="line">    minus( x, y )&#123;</span><br><span class="line">      <span class="keyword">return</span> x - y;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(calc.sum(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">/// 5</span></span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> calc = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// private 변수</span></span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 외부로 공개할 데이터나 메소드</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    sum(x, y) &#123;</span><br><span class="line">      <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;,</span><br><span class="line">    minus(x, y) &#123;</span><br><span class="line">      <span class="keyword">return</span> x - y;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(calc.sum(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">/// 5</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>

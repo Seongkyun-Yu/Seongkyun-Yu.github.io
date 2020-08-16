@@ -357,13 +357,14 @@
 </li>
 <li><p>암묵적 타입 변환</p>
 <p>개발자의 의도와 상관 없이 자바스크립트 엔진이 타입을 바꾸는 것.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = x + <span class="string">''</span>; <span class="comment">// str 값은 '10'이 된다.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = x + <span class="string">""</span>; <span class="comment">// str 값은 '10'이 된다.</span></span><br></pre></td></tr></table></figure>
+
 <p>위 예제에서 암묵적 타입 변환의 경우 ‘10’이 메모리에 새로 할당 되고(x)<br>‘10’+’’이 평가된다. 이후 새로 할당 되었던 ‘10’(x)은 가비지 컬렉터가 정리한다.</p>
 </li>
 </ul>
 <p><br><br></p>
 <h1 id="암묵적-타입-변환"><a href="#암묵적-타입-변환" class="headerlink" title="암묵적 타입 변환"></a>암묵적 타입 변환</h1><p>자바스크립트 엔진은 문맥에 맞게 암묵적 타입 변환을 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'20'</span> + <span class="number">4</span> <span class="comment">// '204'</span></span><br><span class="line"><span class="number">5</span> * <span class="string">'50'</span> <span class="comment">// 250</span></span><br><span class="line">!<span class="number">0</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"20"</span> + <span class="number">4</span>; <span class="comment">// '204'</span></span><br><span class="line"><span class="number">5</span> * <span class="string">"50"</span>; <span class="comment">// 250</span></span><br><span class="line">!<span class="number">0</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <br>
 <a id="more"></a>
@@ -375,9 +376,7 @@
 <br>
 
 <h3 id="2-숫자-타입으로-변환"><a href="#2-숫자-타입으로-변환" class="headerlink" title="2. 숫자 타입으로 변환"></a>2. 숫자 타입으로 변환</h3><p>산술 연산자를 쓸 때는 문맥상 피연산자가 모두 숫자여야 하므로,<br>문자열 타입인 숫자형태의 문자인 경우 숫자로 변환하여 연산한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> * <span class="string">'10'</span> <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> * <span class="string">"10"</span>; <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="3-불리언-타입으로-변환"><a href="#3-불리언-타입으로-변환" class="headerlink" title="3. 불리언 타입으로 변환"></a>3. 불리언 타입으로 변환</h3><p>자바스크립트 엔진은 Truthy한 값을 true로, Falsy한 값을 false로 암묵적 변환 한다.</p>
 <ul>
@@ -388,21 +387,22 @@
 </ul>
 <p><br><br></p>
 <h1 id="명시적-타입-변환"><a href="#명시적-타입-변환" class="headerlink" title="명시적 타입 변환"></a>명시적 타입 변환</h1><h3 id="1-문자열-타입으로-변환-1"><a href="#1-문자열-타입으로-변환-1" class="headerlink" title="1. 문자열 타입으로 변환"></a>1. 문자열 타입으로 변환</h3><p>방법은 String(), .toString(), 문자열 연결 연산자를 이용하는 방법이 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="number">1</span>) <span class="comment">// '1'</span></span><br><span class="line">(<span class="number">1</span>).toString()  <span class="comment">// '1'</span></span><br><span class="line"><span class="number">1</span> + <span class="string">'1'</span> <span class="comment">// '11'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="number">1</span>)(</span><br><span class="line">  <span class="comment">// '1'</span></span><br><span class="line">  <span class="number">1</span></span><br><span class="line">).toString(); <span class="comment">// '1'</span></span><br><span class="line"><span class="number">1</span> + <span class="string">"1"</span>; <span class="comment">// '11'</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
 <h3 id="2-숫자-타입으로-변환-1"><a href="#2-숫자-타입으로-변환-1" class="headerlink" title="2. 숫자 타입으로 변환"></a>2. 숫자 타입으로 변환</h3><p>방법은 Number(), parseInt, parseFloat, + 단항 산술 연산자, * 산술 연산자를 이용하는 방법이 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="string">'0'</span>) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'0'</span>) <span class="comment">// 0</span></span><br><span class="line">+<span class="string">'0'</span>  <span class="comment">// 0</span></span><br><span class="line">+<span class="literal">true</span> <span class="comment">// 1</span></span><br><span class="line"><span class="string">'0'</span> * <span class="number">1</span> <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="string">"0"</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0"</span>) + <span class="comment">// 0</span></span><br><span class="line"><span class="string">"0"</span> + <span class="comment">// 0</span></span><br><span class="line">  <span class="literal">true</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="string">"0"</span> * <span class="number">1</span>; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
 <h3 id="3-불리언-타입으로-변환-1"><a href="#3-불리언-타입으로-변환-1" class="headerlink" title="3. 불리언 타입으로 변환"></a>3. 불리언 타입으로 변환</h3><p>방법은 Boolean(), !!을 사용하는 방법이 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="string">'X'</span>)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>)  <span class="comment">// false</span></span><br><span class="line">!!<span class="string">'x'</span> <span class="comment">// true</span></span><br><span class="line">!!Nan <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="string">"X"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line">!!<span class="string">"x"</span>; <span class="comment">// true</span></span><br><span class="line">!!Nan; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
 <p><br><br></p>
 <h1 id="단축-평가"><a href="#단축-평가" class="headerlink" title="단축 평가"></a>단축 평가</h1><p>||, &amp;&amp; 연산자를 이용하여 단축 평가를 이용할 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Cat'</span> &amp;&amp; <span class="string">'Dog'</span> <span class="comment">// 'Dog'</span></span><br><span class="line"><span class="string">'Cat'</span> || <span class="string">'Dog'</span> <span class="comment">// 'Cat'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Cat"</span> &amp;&amp; <span class="string">"Dog"</span>; <span class="comment">// 'Dog'</span></span><br><span class="line"><span class="string">"Cat"</span> || <span class="string">"Dog"</span>; <span class="comment">// 'Cat'</span></span><br></pre></td></tr></table></figure>
+
 <p>위 예제에서 &amp;&amp; 연산자는 피연산자 양쪽 모두가 True가 나오는지 평가해야 하므로</p>
 <p>‘Cat’이 true더라도 Dog을 평가하여 ‘Dog’을 그대로 반환한다.</p>
 <p>|| 연산자는 한쪽만 참이어도 True 이므로 ‘Cat’이 True인 시점에서 연산을 멈추가 ‘Cat’을 반환한다.</p>

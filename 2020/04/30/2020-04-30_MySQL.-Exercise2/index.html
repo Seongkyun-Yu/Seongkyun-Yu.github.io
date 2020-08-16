@@ -386,6 +386,7 @@
 
 <h2 id="Q8-대륙별-전체-표면적크기를-구하고-표면적-크기-순으로-내림차순하세요"><a href="#Q8-대륙별-전체-표면적크기를-구하고-표면적-크기-순으로-내림차순하세요" class="headerlink" title="Q8. 대륙별 전체 표면적크기를 구하고 표면적 크기 순으로 내림차순하세요."></a>Q8. 대륙별 전체 표면적크기를 구하고 표면적 크기 순으로 내림차순하세요.</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> world;</span><br><span class="line"><span class="keyword">select</span> Continent, <span class="keyword">ROUND</span>(<span class="keyword">SUM</span>(SurfaceArea)) <span class="keyword">as</span> SurfaceArea</span><br><span class="line"><span class="keyword">from</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> SurfaceArea <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
+
         <hr />
         <!-- Pager -->
         <ul class="pager">

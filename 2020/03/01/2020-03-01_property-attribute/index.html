@@ -367,9 +367,9 @@
 </li>
 <li><p>Get 메소드가 호출될 때:<br>프로퍼티 키 유효성 확인 -&gt; 프로토타입 체인에서 프로퍼티 검색 -&gt;<br>프로퍼티 종류 확인 -&gt; getter 함수를 호출하여 그 결과 반환</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//</span> <span class="string">일반</span> <span class="string">객체의</span> <span class="string">__proto__는</span> <span class="string">접근자</span> <span class="string">프로퍼티이다.</span></span><br><span class="line"><span class="string">Object.getOwnPropertyDescriptor(Object.prototype,</span> <span class="string">'__proto__'</span><span class="string">);</span></span><br><span class="line"><span class="string">//</span> <span class="string">&#123;get:</span> <span class="string">ƒ,</span> <span class="attr">set:</span> <span class="string">ƒ,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">//</span> <span class="string">함수</span> <span class="string">객체의</span> <span class="string">prototype은</span> <span class="string">데이터</span> <span class="string">프로퍼티이다.</span></span><br><span class="line"><span class="string">Object.getOwnPropertyDescriptor(function()</span> <span class="string">&#123;&#125;,</span> <span class="string">'prototype'</span><span class="string">);</span></span><br><span class="line"><span class="string">&#123;value:</span> <span class="string">&#123;…&#125;,</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">false</span><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p><br><br></p>
 <a id="more"></a>
-
 
 </li>
 </ul>
@@ -378,8 +378,6 @@
 </li>
 <li><p>Object.defineProperty로 프로퍼티의 어트리뷰트를 정의할 수 있다.</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//</span> <span class="string">데이터</span> <span class="string">프로퍼티</span> <span class="string">정의</span></span><br><span class="line"><span class="string">const</span> <span class="string">person</span> <span class="string">=</span> <span class="string">&#123;&#125;;</span></span><br><span class="line"><span class="string">Object.defineProperty(person,</span> <span class="string">'firstName'</span><span class="string">,</span> <span class="string">&#123;</span></span><br><span class="line">  <span class="attr">value:</span> <span class="string">'Ungmo'</span><span class="string">,</span></span><br><span class="line">  <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line">  <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line">  <span class="attr">configurable:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
-
-
 </li>
 </ul>
 <ul>
@@ -422,12 +420,8 @@
 <td align="left">[[Configurable]]</td>
 <td>false</td>
 </tr>
-<tr>
-<td align="left"><br><br></td>
-<td align="left"></td>
-<td></td>
-</tr>
 </tbody></table>
+<p><br><br></p>
 </li>
 </ul>
 <h1 id="객체-변경-방지"><a href="#객체-변경-방지" class="headerlink" title="객체 변경 방지"></a>객체 변경 방지</h1><ul>
@@ -475,7 +469,8 @@
 </li>
 <li><p>깊은 변경 방지 방법</p>
 <p>재귀 함수를 이용하여 중첩 객체까지 동결해야 한다.</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> deepFreeze(target) &#123;</span><br><span class="line">  // 객체가 아니거나 동결된 객체는 무시하고 객체이고 동결되지 않은 객체만 동결한다.</span><br><span class="line">  <span class="keyword">if</span> (target &amp;&amp; typeof target === <span class="string">'object'</span> &amp;&amp; !<span class="keyword">Object</span>.isFrozen(target)) &#123;</span><br><span class="line">    <span class="keyword">Object</span>.<span class="keyword">freeze</span>(target);</span><br><span class="line">    <span class="keyword">Object</span>.keys(target).<span class="keyword">forEach</span>(key =&gt; deepFreeze(target[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> deepFreeze(target) &#123;</span><br><span class="line">  // 객체가 아니거나 동결된 객체는 무시하고 객체이고 동결되지 않은 객체만 동결한다.</span><br><span class="line">  <span class="keyword">if</span> (target &amp;&amp; typeof target === <span class="string">'object'</span> &amp;&amp; !<span class="keyword">Object</span>.isFrozen(target)) &#123;</span><br><span class="line">    <span class="keyword">Object</span>.<span class="keyword">freeze</span>(target);</span><br><span class="line">    <span class="keyword">Object</span>.keys(target).<span class="keyword">forEach</span>(key =&gt; deepFreeze(target[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
 

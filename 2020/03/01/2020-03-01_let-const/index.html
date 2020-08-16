@@ -365,6 +365,7 @@
 </li>
 <li><p>변수 호이스팅이 발생하지 않는 것처럼 동작한다.<br>(선언과 동시에 undefined가 초기화 되지 않음)</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">1</span>; <span class="comment">// 전역 변수</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(foo); <span class="comment">// ReferenceError: foo is not defined</span></span><br><span class="line">  <span class="keyword">let</span> foo = <span class="number">2</span>; <span class="comment">// 지역 변수</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>위 예제에서 호이스팅이 발생하지 않는다면 1이 출력돼야 하지만 에러가 뜬다.</p>
 </li>
 <li><p>전역 객체(window)에 할당 되지 않는다.<br><br><br></p>
