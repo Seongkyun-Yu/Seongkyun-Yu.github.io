@@ -305,11 +305,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">5</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">768</span> In Total
+              Words <span class="post-count">872</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -355,7 +355,16 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <h2 id="도메인-만들기"><a href="#도메인-만들기" class="headerlink" title="도메인 만들기"></a>도메인 만들기</h2><p>우선 무료로 도메인을 만들어 보겠습니다.<br><br></p>
+        <p>내가 만든 웹을 다른 사람들이 볼 수 있도록 하려면 배포과정이 필요합니다.<br></p>
+<p>AWS는 S3라는 저장소를 제공하는데 저렴한 비용으로 정적 호스팅을 할 수 있다는 장점이 있습니다.<br></p>
+<p>하지만 S3에서 기본적으로 제공하는 URL은 HTTPS와 도메인 설정이 불가능합니다.<br></p>
+<p>따라서 CloudeFront와 Route53을 이용해 해당 문제를 해결해야 합니다.<br><br></p>
+<p>CloudFront는 S3에서 제공하지 않는 HTTPS 배포를 가능하게 만들어 줍니다.<br></p>
+<p>뿐만 아니라 전 세계에 있는 엣지 포인트를 이용해 캐싱처리를 하여 사용자가 가장 가까운 지역의 엣지 포인트로 접속하게 하여 <br></p>
+<p>더 빠른 속도를 제공하고 S3보다 저렴한 비용을 지불하도록 도와줍니다.<br><br></p>
+<p>Route53은 사용자가 소유한 도메인을 연결해주는 DNS서비스 역할을 합니다.<br></p>
+<p>이제 이러한 서비스를 활용하여 배포하는 법을 알아보겠습니다.<br><br></p>
+<h2 id="도메인-만들기"><a href="#도메인-만들기" class="headerlink" title="도메인 만들기"></a>도메인 만들기</h2><p>우선 무료로 도메인을 만들어 보겠습니다.<br><br></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89670695-90ceb900-d91c-11ea-9703-4e7cb29de015.png" alt=""></p>
 <p><a href="https://www.freenom.com/" target="_blank" rel="noopener">https://www.freenom.com/</a> 에 접속합니다.<br></p>
 <p>회원가입 후 로그인을 한 후 Servieces 탭의 Register a New Domain을 선택합니다.</p>
