@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../css/highlight.css">
-<link rel="stylesheet" href="../css/widget.css">
-<link rel="stylesheet" href="../css/rocket.css">
-<link rel="stylesheet" href="../css/signature.css">
-<link rel="stylesheet" href="../css/catalog.css">
-<link rel="stylesheet" href="../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2020/09/28/0052-react-batch-update/">
   <title>
     
-    About - 개발개발 블로그
+    React의 setState가 비동기 처리되는 이유 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -262,8 +262,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/scenery/about_bg.jpg');
+       /*post*/
+        background-image: url('/img/header_img/lml_bg.jpg');
       
     }
 
@@ -281,10 +281,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>About</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">This is Dev Blog</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#React" title="React">React</a>
+              
+              <a class="tag" href="/tags/#Batch Update" title="Batch Update">Batch Update</a>
+              
+            </div>
+            <h1>React의 setState가 비동기 처리되는 이유</h1>
+            <h2 class="subheading">React, Batch Update</h2>
+            <span class="meta">
+              Posted by Seongkyun Yu on
+              2020-09-28
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">2</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">434</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
           </div>
           
         </div>
@@ -309,463 +341,235 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	
+<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
+        <p>React를 공부할 때 중요하게 배우는 개념 중 하나는 상태관리 입니다. <br></p>
+<p>React는 상태를 바탕으로 View를 그리기 때문에 일반 변수로 사용하지 않고 <code>setState</code>로 상태를 할당한다는 것을 배우죠.<br></p>
+<p>하지만 JavaScript를 공부할 때 처럼 <code>console.log</code>로 상태 변화를 확인하려 하면 이상한 점을 느끼게 됩니다.<br></p>
+<p>그 이상함(<code>console.log</code>의 결과값이 이전 상태를 나타냄)은 setState가 비동기적으로 처리되기 때문인데 어째서 React는 상태 변화를 비동기적으로 관리하는지 정리해보겠습니다.</p>
+<p><br><br></p>
+<h2 id="흔히-하는-실수"><a href="#흔히-하는-실수" class="headerlink" title="흔히 하는 실수"></a>흔히 하는 실수</h2><p>많이들 하는 실수인데, 상태를 처음 접하면 많이들 아래와 같은 코드로 변경된 상태를 확인하려 합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state, setState] = useState(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> upState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setState(state + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(state);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;button onClick=&#123;upState&#125;&gt;상태값 UP&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;상태값은 &#123;state&#125;&lt;/</span>p&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+<p>버튼을 누르면 변경한 상태값이 정확히 랜더링 됩니다.<br></p>
+<p>하지만 이상하게도 <code>console.log(state)</code>값은 이전 상태값을 출력하죠.<br></p>
+<p>이러한 문제 떄문에 <code>setState</code> 이후 바로 상태값을 참조하여 다른 작업을 할 때 문제가 생기게 됩니다.<br></p>
+<p>그리고 그 문제를 해결하기 위해서 <code>react-thunk</code>, <code>react-saga</code>등을 사용해 동기화 처리를 해줍니다.<br></p>
+<p>그렇다면 왜 React는 상태값을 비동기적으로 처리하게 만들었을까요?</p>
+<p><br><br></p>
+<h2 id="React-batch-update"><a href="#React-batch-update" class="headerlink" title="React batch update"></a>React batch update</h2><p>리액트는 batch update를 16ms 단위로 진행합니다.<br></p>
+<p>16ms 동안 변경된 상태 값들을 모아서 단 한번 리랜더링을 진행합니다.<br></p>
+<p>이러한 행동은 웹 페이지 랜더링 횟수를 줄여 좀 더 빠른 속도로 동작하게끔 도와줍니다.<br></p>
+<p>아래의 코드로 랜더링 횟수를 확인해 볼 수 있습니다.<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect, useState &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [state1, setState1] = useState(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">const</span> [state2, setState2] = useState(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">const</span> [state3, setState3] = useState(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">const</span> [renderCount, setRenderCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> upState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setState1(state1 + <span class="number">1</span>);</span><br><span class="line">    setState2(state2 + <span class="number">1</span>);</span><br><span class="line">    setState3(state3 + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setRenderCount(renderCount + <span class="number">1</span>);</span><br><span class="line">  &#125;, [state1, state2, state3]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">      &lt;button onClick=&#123;upState&#125;&gt;상태값 UP&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;상태값1 &#123;state1&#125;&lt;/</span>p&gt;</span><br><span class="line">      &lt;p&gt;상태값<span class="number">2</span> &#123;state3&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;상태값3 &#123;state3&#125;&lt;/</span>p&gt;</span><br><span class="line">      &lt;p&gt;랜더링 횟수 &#123;renderCount&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
 
-      <!--
-## Talk To Me
+<p>코드를 실행하여 상태값 UP 버튼을 누르면 각각의 상태들을 1씩 올려줍니다.<br></p>
+<p>상태값을 바꿀 때 마다 리랜더링을 한다면 랜더링 횟수는 늘어나야 하는데 버튼 한 번당 동일하게 1씩 올라갑니다.<br></p>
+<p>따라서 React는 일정 시간동안 변화한 상태값들을 모아 한 번에 처리하는 것을 알 수 있습니다.</p>
+<p><br><br></p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>React의 setState 등이 비동기적으로 작동하는 이유는 일정시간동안 변화하는 상태를 모아 한 번에 랜더링 하기 위해서입니다.</p>
+<br>
+<br>
 
-> I always say to myself :
->
-> if my life is peaceful and plain sailing all the time ,
->
-> it means to die in the electrocardiogram …
-
-
-
-## Just Me
-
-<img src="../img/scenery/about_bg2.jpg" width="350" alt="about_bg2"></img>
-
-> 有一种状态 叫一个人 它总是挑战语言的贫乏 只能在某首歌中找寻灵感；
->
-> 有一种氨基酸 叫多巴胺 你不知道它何时会在你体内产生；
->
-> 有一种上瘾 叫抽烟 其实你抽的只是心情 又或是寂寞；
->
-> 有一种态度 叫纹身 其实我们只是想与众不同；
->
-> 有一种经历 叫旅行 年轻只有一次 不出去走走 或许以为眼前的就是世界；
->
-> 有一种人生 叫心电图 如果你总是一帆风顺 那么你就挂了；
->
-> 有一种悠闲 叫 " 老板给我杯Cappuccino " 香香甜甜 浓郁中带着苦涩 醇和而隽永 …
+<p>참고자료: <a href="https://medium.com/swlh/react-state-batch-update-b1b61bd28cd2" target="_blank" rel="noopener">https://medium.com/swlh/react-state-batch-update-b1b61bd28cd2</a></p>
 
 
-
-## The Longest Way ...
-
-<img src="../img/scenery/about_bg4.jpg" width="350" alt="about_bg4"></img>
-
->  活在当下 然后忘记 继续往前走 ...
->
->  即便是一个人 ...
->
->  On the way to meet myself …
-
-
-## Follow With Interest Blogs
-
-> Neo Peng：https://zhile.io
->
-> 李卫民：https://www.funtl.com/zh/guide
->
-> duanxz：https://www.cnblogs.com/duanxz/tag
->
-> Java1234_小锋：http://blog.java1234.com/index.html
->
-> Deserts：https://deserts.io
->
-> Super Snail：https://www.dusign.net
->
-> KIERAN'S BLOG：https://go.kieran.top
->
-> Mr.Seven：https://itimetraveler.github.io
-
-## Contact me
-
-> Email：601521821@qq.com
-
-## Treat me to coffee
->  If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee...
-
-<img src="../img/scenery/treat_me_to_coffee.png" width="350" alt="treat_me_to_coffee.png"></img> -->
-
-
-      <!-- 如果开启评论功能 -->
-      
-      <hr>
-
-      
-
-      
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        
-<!-- <h5>VISITORS</h5> -->
-<h5><a href="/">VISITORS</a></h5>
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img
-      id="avatar_pic"
-      src="/img/avatar/dev-profile.png"
-      alt="avatar_pic"
-    />
-     
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://github.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://twitter.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
+        <hr />
+        <!-- Pager -->
+        <ul class="pager">
+           
+          <li class="next">
+            <a
+              href="/2020/09/14/0051-whynotResponsive/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="프로젝트를 반응형으로 개발하지 않은 이유"
+              >Next Post &rarr;</a
+            >
+          </li>
           
-    </ul>
-  </div>
-</section>
+        </ul>
 
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../2020/09/28/0052-react-batch-update/">
-      <li>React의 setState가 비동기 처리되는 이유</li>
-    </a>
-    
-    <a href="../2020/09/14/0051-whynotResponsive/">
-      <li>프로젝트를 반응형으로 개발하지 않은 이유</li>
-    </a>
-    
-    <a href="../2020/08/30/0050-SEO/">
-      <li>Google 크롤링 요청하기</li>
-    </a>
-    
-    <a href="../2020/08/07/0049-AWS/">
-      <li>AWS - S3, CloudFront, Route53을 이용한 정적 호스팅</li>
-    </a>
-    
-    <a href="../2020/06/22/0048-product/">
-      <li>기획</li>
-    </a>
-    
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+         
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=React의 setState가 비동기 처리되는 이유&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/09/28/0052-react-batch-update/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <hr>
-    
-        <!-- Categories -->
+        <!-- Sharing End -->
+        
+        <hr />
 
-<!-- <h5>categories</h5> -->
-<h5><a href="/categories/">CATEGORIES</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#ETC">
-      <li>ETC</li>
-    </a>
-    
-    <a href="/categories/#JavaScript">
-      <li>JavaScript</li>
-    </a>
-    
-    <a href="/categories/#Algorithm">
-      <li>Algorithm</li>
-    </a>
-    
-    <a href="/categories/#Productivity">
-      <li>Productivity</li>
-    </a>
-    
-    <a href="/categories/#HTML5">
-      <li>HTML5</li>
-    </a>
-    
-    <a href="/categories/#Database">
-      <li>Database</li>
-    </a>
-    
-    <a href="/categories/#React">
-      <li>React</li>
-    </a>
-    
-    <a href="/categories/#CS">
-      <li>CS</li>
-    </a>
-    
-  </ul>
-</div>
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
 
 
-        <hr>
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr />
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#흔히-하는-실수"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">흔히 하는 실수</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#React-batch-update"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">React batch update</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#결론"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">결론</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#javascript" title="javascript" rel="39">javascript</a>
-    
-    
-    
-    <a href="/tags/#function" title="function" rel="2">function</a>
-    
-    
-    
-    <a href="/tags/#Object-literal" title="Object-literal" rel="1">Object-literal</a>
-    
-    
-    
-    <a href="/tags/#scope" title="scope" rel="1">scope</a>
-    
-    
-    
-    <a href="/tags/#별찍기" title="별찍기" rel="1">별찍기</a>
-    
-    
-    
-    <a href="/tags/#var" title="var" rel="1">var</a>
-    
-    
-    
-    <a href="/tags/#constructor" title="constructor" rel="1">constructor</a>
-    
-    
-    
-    <a href="/tags/#let" title="let" rel="1">let</a>
-    
-    
-    
-    <a href="/tags/#const" title="const" rel="1">const</a>
-    
-    
-    
-    <a href="/tags/#property" title="property" rel="1">property</a>
-    
-    
-    
-    <a href="/tags/#atrribute" title="atrribute" rel="1">atrribute</a>
-    
-    
-    
-    <a href="/tags/#Firstclass-Object" title="Firstclass-Object" rel="1">Firstclass-Object</a>
-    
-    
-    
-    <a href="/tags/#prototype" title="prototype" rel="1">prototype</a>
-    
-    
-    
-    <a href="/tags/#strict-mode" title="strict-mode" rel="1">strict-mode</a>
-    
-    
-    
-    <a href="/tags/#Built-in-Object" title="Built-in-Object" rel="1">Built-in-Object</a>
-    
-    
-    
-    <a href="/tags/#context" title="context" rel="1">context</a>
-    
-    
-    
-    <a href="/tags/#closure" title="closure" rel="3">closure</a>
-    
-    
-    
-    <a href="/tags/#error" title="error" rel="3">error</a>
-    
-    
-    
-    <a href="/tags/#this" title="this" rel="1">this</a>
-    
-    
-    
-    <a href="/tags/#ES6" title="ES6" rel="4">ES6</a>
-    
-    
-    
-    <a href="/tags/#class" title="class" rel="1">class</a>
-    
-    
-    
-    <a href="/tags/#Destructuring" title="Destructuring" rel="1">Destructuring</a>
-    
-    
-    
-    <a href="/tags/#Spread" title="Spread" rel="1">Spread</a>
-    
-    
-    
-    <a href="/tags/#Array" title="Array" rel="1">Array</a>
-    
-    
-    
-    <a href="/tags/#array" title="array" rel="1">array</a>
-    
-    
-    
-    <a href="/tags/#promise" title="promise" rel="1">promise</a>
-    
-    
-    
-    <a href="/tags/#html5" title="html5" rel="1">html5</a>
-    
-    
-    
-    <a href="/tags/#accessibility" title="accessibility" rel="1">accessibility</a>
-    
-    
-    
-    <a href="/tags/#productivity" title="productivity" rel="1">productivity</a>
-    
-    
-    
-    <a href="/tags/#MySQL" title="MySQL" rel="3">MySQL</a>
-    
-    
-    
-    <a href="/tags/#React" title="React" rel="2">React</a>
-    
-    
-    
-    <a href="/tags/#JSX" title="JSX" rel="1">JSX</a>
-    
-    
-    
-    <a href="/tags/#OS" title="OS" rel="1">OS</a>
-    
-    
-    
-    <a href="/tags/#AWS" title="AWS" rel="1">AWS</a>
-    
-    
-    
-    <a href="/tags/#S3" title="S3" rel="1">S3</a>
-    
-    
-    
-    <a href="/tags/#CloudFront" title="CloudFront" rel="1">CloudFront</a>
-    
-    
-    
-    <a href="/tags/#Route53" title="Route53" rel="1">Route53</a>
-    
-    
-    
-    <a href="/tags/#Planning" title="Planning" rel="1">Planning</a>
-    
-    
-    
-    <a href="/tags/#SEO" title="SEO" rel="1">SEO</a>
-    
-    
-    
-    <a href="/tags/#responsive" title="responsive" rel="1">responsive</a>
-    
-    
-    
-    <a href="/tags/#Batch Update" title="Batch Update" rel="1">Batch Update</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<!-- <h5>FRIENDS</h5> -->
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-</ul>
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a
+              class="tag"
+              href="/tags/#React"
+              title="React"
+              >React</a
+            >
+            
+            <a
+              class="tag"
+              href="/tags/#Batch Update"
+              title="Batch Update"
+              >Batch Update</a
+            >
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr />
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+          
+        </ul>
+        
+      </div>
     </div>
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
