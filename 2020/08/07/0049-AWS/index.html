@@ -309,7 +309,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">872</span> In Total
+              Words <span class="post-count">869</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -355,102 +355,102 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <p>내가 만든 웹을 다른 사람들이 볼 수 있도록 하려면 배포과정이 필요합니다.<br></p>
-<p>AWS는 S3라는 저장소를 제공하는데 저렴한 비용으로 정적 호스팅을 할 수 있다는 장점이 있습니다.<br></p>
-<p>하지만 S3에서 기본적으로 제공하는 URL은 HTTPS와 도메인 설정이 불가능합니다.<br></p>
-<p>따라서 CloudeFront와 Route53을 이용해 해당 문제를 해결해야 합니다.<br><br></p>
-<p>CloudFront는 S3에서 제공하지 않는 HTTPS 배포를 가능하게 만들어 줍니다.<br></p>
+        <p><img src="https://images.velog.io/images/seongkyun/post/4cee7b98-2c8d-4454-8999-4932075566f9/Lf6iXvNq4dLRhNj7oVixnS.png" alt=""></p>
+<p>내가 만든 웹을 다른 사람들이 볼 수 있도록 하려면 배포과정이 필요하다.<br></p>
+<p>AWS는 S3라는 저장소를 제공하는데 저렴한 비용으로 정적 호스팅을 할 수 있다는 장점이 있다.<br></p>
+<p>하지만 S3에서 기본적으로 제공하는 URL은 HTTPS와 도메인 설정이 불가능하다.<br></p>
+<p>따라서 CloudeFront와 Route53을 이용해 해당 문제를 해결해야 한다.<br><br></p>
+<p>CloudFront는 S3에서 제공하지 않는 HTTPS 배포를 가능하게 만들어 준다.<br></p>
 <p>뿐만 아니라 전 세계에 있는 엣지 포인트를 이용해 캐싱처리를 하여 사용자가 가장 가까운 지역의 엣지 포인트로 접속하게 하여 <br></p>
-<p>더 빠른 속도를 제공하고 S3보다 저렴한 비용을 지불하도록 도와줍니다.<br><br></p>
-<p>Route53은 사용자가 소유한 도메인을 연결해주는 DNS서비스 역할을 합니다.<br></p>
-<p>이제 이러한 서비스를 활용하여 배포하는 법을 알아보겠습니다.<br><br></p>
-<h2 id="도메인-만들기"><a href="#도메인-만들기" class="headerlink" title="도메인 만들기"></a>도메인 만들기</h2><p>우선 무료로 도메인을 만들어 보겠습니다.<br><br></p>
+<p>더 빠른 속도를 제공하고 S3보다 저렴한 비용을 지불하도록 도와준다.<br><br></p>
+<p>Route53은 사용자가 소유한 도메인을 연결해주는 DNS서비스 역할을 한다.<br><br></p>
+<h2 id="도메인-만들기"><a href="#도메인-만들기" class="headerlink" title="도메인 만들기"></a>도메인 만들기</h2><p>우선 무료로 도메인을 만들어 보자.<br><br></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89670695-90ceb900-d91c-11ea-9703-4e7cb29de015.png" alt=""></p>
-<p><a href="https://www.freenom.com/" target="_blank" rel="noopener">https://www.freenom.com/</a> 에 접속합니다.<br></p>
-<p>회원가입 후 로그인을 한 후 Servieces 탭의 Register a New Domain을 선택합니다.</p>
+<p><a href="https://www.freenom.com/" target="_blank" rel="noopener">https://www.freenom.com/</a> 에 접속한다.<br></p>
+<p>회원가입 후 로그인을 한 후 Servieces 탭의 Register a New Domain을 선택한다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89671092-57e31400-d91d-11ea-903c-4535f7cc17dd.png" alt=""></p>
-<p>원하는 도메인을 선택 후 checkout을 눌러 구매합니다.</p>
+<p>원하는 도메인을 선택 후 checkout을 눌러 구매 후</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89747550-3428f500-dafa-11ea-9537-5cfdd6705a93.png" alt=""></p>
-<p>active 상태가되면 사용이 가능합니다.</p>
+<p>active 상태가되면 사용이 가능해진다.</p>
 <br>
 
 <h2 id="S3에-프로젝트-업로드-하기"><a href="#S3에-프로젝트-업로드-하기" class="headerlink" title="S3에 프로젝트 업로드 하기"></a>S3에 프로젝트 업로드 하기</h2><p><img src="https://user-images.githubusercontent.com/15887982/89671513-16069d80-d91e-11ea-834d-09443e1fcf6a.png" alt=""></p>
-<p><a href="https://s3.console.aws.amazon.com/" target="_blank" rel="noopener">AWS S3 서비스</a>에 접속해서 버킷 만들기를 누릅니다.</p>
+<p><a href="https://s3.console.aws.amazon.com/" target="_blank" rel="noopener">AWS S3 서비스</a>에 접속해서 버킷 만들기 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89672686-0f792580-d920-11ea-9ac8-a702cb181ae1.png" alt=""></p>
-<p>버킷 이름을 작성하고 다음으로 넘어갑니다.</p>
+<p>버킷 이름을 작성하고 다음</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89673072-b65dc180-d920-11ea-9d7a-4063f1d7192e.png" alt=""></p>
-<p>기본 암호화에 체크한 후 다음으로 넘어갑니다.</p>
+<p>기본 암호화에 체크한 후 다음</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89673250-fd4bb700-d920-11ea-876b-95d7a1a62427.png" alt=""></p>
-<p>모든 퍼블릭 액세스 차단의 체크를 풀고 다음으로 넘어가서 버킷 만들기를 마무리합니다.</p>
+<p>모든 퍼블릭 액세스 차단의 체크를 풀고 다음으로 넘어가서 버킷 만들기를 마무리한다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89673706-c9bd5c80-d921-11ea-8f2a-60cdff36103b.png" alt=""></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89677242-0c823300-d928-11ea-9309-cb0eb4439a44.png" alt=""></p>
-<p>버킷 속성에서 정적 웹사이트 호스팅을 누르고 인덱스 문서와 오류 문서에 index.html을 작성 후 저장합니다.</p>
-<p>여기서 생성된 엔드포인트 주소로도 업로드할 프로젝트에 접근할 수 있게 됩니다.</p>
+<p>버킷 속성에서 정적 웹사이트 호스팅을 누르고 인덱스 문서와 오류 문서에 index.html을 작성 후 저장한다.</p>
+<p>여기서 생성된 엔드포인트 주소로도 업로드할 프로젝트에 접근할 수 있게 된다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89674768-a7c4d980-d923-11ea-9569-cd0ac3207406.png" alt=""></p>
-<p>앞서 버킷을 퍼블릭으로 설정은 했지만 아직 어떠한 기능을 공개할지 정하지 않았기 때문에 그에 필요한 정책을 만들어야 합니다.</p>
-<p>권한 탭을 누르고 버킷 정책에서 정책 생성기를 클릭합니다.</p>
+<p>앞서 버킷을 퍼블릭으로 설정은 했지만 아직 어떠한 기능을 공개할지 정하지 않았기 때문에 그에 필요한 정책을 만들어야 한다.</p>
+<p>권한 탭을 누르고 버킷 정책에서 정책 생성기를 클릭</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89675753-6fbe9600-d925-11ea-9c39-eb6b00eea995.png" alt=""></p>
-<p>Select Type of Policy에서 S3 Bucket Policy를 선택합니다.</p>
-<p>Principal에는 적당히 규칙명을 적어주고 Actions에서 Get Object를 선택합니다.</p>
+<p>Select Type of Policy에서 S3 Bucket Policy를 선택</p>
+<p>Principal에는 적당히 규칙명을 적어주고 Actions에서 Get Object를 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89675755-70efc300-d925-11ea-8410-390ccb01e36c.png" alt=""></p>
-<p>Amazon Resource Name (ARN)에는 <code>arn:aws:s3:::&lt;bucket_name&gt;/&lt;key_name&gt;</code> 형식의 문자열을 만듭니다.<br>저의 경우 <code>arn:aws:s3:::studyfe.ml/*</code>으로 작성 했습니다.<br>그 후 Add Statement와 Generate Policy를 눌러 정책을 만듭니다.</p>
+<p>Amazon Resource Name (ARN)에는 <code>arn:aws:s3:::&lt;bucket_name&gt;/&lt;key_name&gt;</code> 형식의 문자열을 만든다.<br>이 글에선 <code>arn:aws:s3:::studyfe.ml/*</code>으로 작성 했다.<br>그 후 Add Statement와 Generate Policy를 눌러 정책을 만든다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89676039-e52a6680-d925-11ea-9b32-00def120e9d5.png" alt=""></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89676167-26227b00-d926-11ea-929d-4ce348b767bb.png" alt=""></p>
-<p>생성된 정책을 버킷에 붙여넣고 저장합니다.</p>
+<p>생성된 정책을 버킷에 붙여넣고 저장</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89676516-c082be80-d926-11ea-83c0-2499dcee4277.png" alt=""></p>
-<p>개요 탭을 누르고 업로드를 클릭하여 프로젝트를 업로드 합니다.</p>
+<p>개요 탭을 누르고 업로드를 클릭하여 프로젝트를 업로드 한다.</p>
 <br>
 
-<h2 id="CloudFront-설정"><a href="#CloudFront-설정" class="headerlink" title="CloudFront 설정"></a>CloudFront 설정</h2><p>S3에서 제공해주는 엔드포인트로도 앱을 배포할 수 있지만 CloudFront를 사용하는 이유는 다음과 같습니다.</p>
+<h2 id="CloudFront-설정"><a href="#CloudFront-설정" class="headerlink" title="CloudFront 설정"></a>CloudFront 설정</h2><p>S3에서 제공해주는 엔드포인트로도 앱을 배포할 수 있지만 CloudFront를 사용하는 이유는 다음과 같다.</p>
 <ul>
 <li>HTTPS 배포</li>
 <li>전세계 엣지 로케이션을 이용한 더 빠른 속도</li>
 <li>S3 직접 공유보다 저렴한 비용</li>
 </ul>
-<p>S3에서 제공하는 주소는 HTTP로 보안에 취약합니다. CloudFront는 이를 쉽게 HTTPS로 배포할 수 있게 도와줍니다.</p>
-<p>S3를 이용해 직접 배포할 경우 S3 버킷을 설정한 지역의 저장소로 전세계 사용자가 요청을 보냅니다. 따라서 먼 지역의 유저일 수록 속도가 느려질 것입니다. 하지만 CloudFront를 사용한다면 전세계 엣지 로케이션에서 캐싱을 해두고 유저가 가까운 엣지에 요청을 보내도록 합니다. 따라서 S3보다 속도가 더 빠릅니다.</p>
-<p>또한 CloudFront의 요금이 S3 요금보다 저렴하기 때문에 비용절감 효과가 있습니다.</p>
+<p>S3에서 제공하는 주소는 HTTP로 보안에 취약하다. CloudFront는 이를 쉽게 HTTPS로 배포할 수 있게 도와준다.</p>
+<p>S3를 이용해 직접 배포할 경우 S3 버킷을 설정한 지역의 저장소로 전세계 사용자가 요청을 보낸다. 따라서 먼 지역의 유저일 수록 속도가 느려질 것이다. 하지만 CloudFront를 사용한다면 전세계 엣지 로케이션에서 캐싱을 해두고 유저가 가까운 엣지에 요청을 보내도록 한다. 따라서 S3보다 속도가 더 빠르다.</p>
+<p>또한 CloudFront의 요금이 S3 요금보다 저렴하기 때문에 비용절감 효과가 있다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89678839-db573200-d92a-11ea-9ed1-f5f289d71713.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89678844-dbefc880-d92a-11ea-837b-efaf9ba61e73.png" alt=""></p>
-<p><a href="https://console.aws.amazon.com/cloudfront" target="_blank" rel="noopener">CloudFront</a> 서비스로 들어가 Create Distribution을 선택한 후 Get Started를 누릅니다.</p>
+<p><a href="https://console.aws.amazon.com/cloudfront" target="_blank" rel="noopener">CloudFront</a> 서비스로 들어가 Create Distribution을 선택한 후 Get Started를 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89679777-bd8acc80-d92c-11ea-9e67-96a8be566c72.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89679779-be236300-d92c-11ea-9a05-4b3dc588fa1b.png" alt=""></p>
-<p>Origin Domain Name에 방금 만든 버킷을 선택합니다.</p>
+<p>Origin Domain Name에 방금 만든 버킷의 정적 웹사이트 호스팅 주소를 적는다.</p>
 <p>Viewer Protocol Policy은 <code>Redirect HTTP to HTTPS</code>로 설정하고</p>
-<p>Default Root Object에는 index.html을 작성한 후 Create Distribution을 누릅니다.</p>
+<p>Default Root Object에는 index.html을 작성한 후 Create Distribution을 누른다.</p>
 <br>
 
-<p><strong>—-REACT 프로젝트일 경우 react-router-dom을 사용한다면 다음과 같은 설정이 필요합니다—-</strong></p>
+<p><strong>—-REACT 프로젝트일 경우 react-router-dom을 사용한다면 다음과 같은 설정이 필요하다—-</strong></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89732132-bcba7d80-da87-11ea-9a0b-1ccb050dca90.png" alt=""></p>
-<p>방금 생성한 Distribution을 선택 후 <code>Distribution Settings</code>를 누릅니다.</p>
+<p>방금 생성한 Distribution을 선택 후 <code>Distribution Settings</code>를 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732135-bdebaa80-da87-11ea-9128-005d05b61fd2.png" alt=""></p>
-<p><code>Error Pages</code>에서 <code>Create Custom Response</code>를 선택합니다.</p>
+<p><code>Error Pages</code>에서 <code>Create Custom Response</code>를 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732228-53873a00-da88-11ea-9c27-00e0ee77cd85.png" alt=""></p>
@@ -458,108 +458,108 @@
 <p>Error Caching Minimum TTL을 <code>5</code>로</p>
 <p>Customize Error Response를 <code>Yes</code>로</p>
 <p>Response Page Path를 <code>/index.html</code>으로</p>
-<p>HTTP Response Code를 <code>200 OK</code>로 설정하고 Create를 눌러줍니다.</p>
-<p>같은 일을 <strong>403 Error Code로도 반복</strong>합니다.</p>
+<p>HTTP Response Code를 <code>200 OK</code>로 설정하고 Create를 누른다.</p>
+<p>같은 일을 <strong>403 Error Code로도 반복</strong>한다.</p>
 <br>
 
-<h2 id="Route53-설정"><a href="#Route53-설정" class="headerlink" title="Route53 설정"></a>Route53 설정</h2><p>Route53은 AWS에서 제공하는 DNS 서비스입니다.</p>
+<h2 id="Route53-설정"><a href="#Route53-설정" class="headerlink" title="Route53 설정"></a>Route53 설정</h2><p>Route53은 AWS에서 제공하는 DNS 서비스다.</p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89732423-e7a5d100-da89-11ea-9839-886d2d539bdb.png" alt=""></p>
-<p><a href="https://console.aws.amazon.com/route53" target="_blank" rel="noopener">Route53</a>에 접속 후 호스팅 영역 생성을 눌러줍니다.</p>
+<p><a href="https://console.aws.amazon.com/route53" target="_blank" rel="noopener">Route53</a>에 접속 후 호스팅 영역 생성을 눌러준다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732526-71559e80-da8a-11ea-937b-9fd60b7c8f5d.png" alt=""></p>
-<p>설정한 도메인 주소를 입력 후 퍼블릭 호스팅을 선택하고 생성해줍니다.</p>
+<p>설정한 도메인 주소를 입력 후 퍼블릭 호스팅을 선택하고 생성한다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732846-68fe6300-da8c-11ea-9d7c-15457a3cb18f.png" alt=""></p>
-<p>이제 여기서 생성된 네임 서버 리스트를 도메인에 등록시키겠습니다.</p>
+<p>이제 여기서 생성된 네임 서버 리스트를 도메인에 등록하자.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732614-e1fcbb00-da8a-11ea-95cd-f75d5ffa7560.png" alt=""></p>
 <p>도메인을 발급한 <a href="https://freenom.com/" target="_blank" rel="noopener">freenom</a>에 접속하여</p>
-<p>Services -&gt; My Domains를 선택 후 Manage Domain을 눌러줍니다.</p>
+<p>Services -&gt; My Domains를 선택 후 Manage Domain을 눌러준다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732860-803d5080-da8c-11ea-93fd-516c1c315a1a.png" alt=""></p>
-<p>Management Tools -&gt; Nameservers를 누릅니다.</p>
+<p>Management Tools -&gt; Nameservers를 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732939-02c61000-da8d-11ea-8090-673ec007bd9c.png" alt=""></p>
-<p>Use custom nameservers를 누르고 위에서 발급받은 Nameserver를 적은 후 Change Nameservers를 눌러줍니다.</p>
+<p>Use custom nameservers를 누르고 위에서 발급받은 Nameserver를 적은 후 Change Nameservers를 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733007-8849c000-da8d-11ea-9fb2-e4a936775a43.png" alt=""></p>
-<p>다시 Route53으로 돌아와서 레코드 생성을 누릅니다.</p>
+<p>다시 Route53으로 돌아와서 레코드 생성을 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733042-bc24e580-da8d-11ea-9f27-0de78aa741ad.png" alt=""></p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89733160-816f7d00-da8e-11ea-92f3-81b022e89f47.png" alt=""></p>
-<p>단순 라우팅을 선택 후 단순 레코드 정의를 누릅니다.</p>
+<p>단순 라우팅을 선택 후 단순 레코드 정의를 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89734363-a4059400-da96-11ea-869c-3348925b11a8.png" alt=""></p>
-<p>레코드 정의를 작성합니다.</p>
-<p>.studyfe.ml로 돼있는 앞 부분에 작성하면 해당 주소로 접속할 수 있습니다.</p>
-<p>예를들어 www를 작성한다면 <a href="http://www.studyfe.ml로" target="_blank" rel="noopener">www.studyfe.ml로</a> 접속할 수 있습니다.</p>
+<p>레코드 정의를 작성한다.</p>
+<p>.studyfe.ml로 돼있는 앞 부분에 작성하면 해당 주소로 접속할 수 있다.</p>
+<p>예를들어 www를 작성한다면 <a href="http://www.studyfe.ml로" target="_blank" rel="noopener">www.studyfe.ml로</a> 접속할 수 있다.</p>
 <p>후에 밑에 설정은</p>
 <p><code>CloudFront 배포에 대한 별칭</code></p>
 <p><code>버킷을 설정한 리즌</code></p>
-<p><code>CloudFront의 해당 주소</code>로 설정 후 단순 레코드 정의를 눌러 생성합니다.</p>
-<p>(CloudFront의 도메인 주소는 CloudFront 서비스로 접속해서 확인할 수 있습니다)</p>
-<p>저는 www가 붙은 주소와 그렇지 않은 주소 모두 사용할 수 있도록 레코드 정의를 두 번 하겠습니다.</p>
-<p><strong>CloudFront의 해당 주소를 선택할 수 있을 때까지 시간이 걸릴 수 있습니다.</strong></p>
+<p><code>CloudFront의 해당 주소</code>로 설정 후 단순 레코드 정의를 눌러 생성한다.</p>
+<p>(CloudFront의 도메인 주소는 CloudFront 서비스로 접속해서 확인할 수 있다)</p>
+<p>여기서는 www가 붙은 주소와 그렇지 않은 주소 모두 사용할 수 있도록 레코드 정의를 두 번 해보겠다.</p>
+<p><strong>CloudFront의 해당 주소를 선택할 수 있을 때까지 시간이 걸릴 수 있다.</strong></p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733357-f099a100-da8f-11ea-9914-c197523f9dc2.png" alt=""></p>
-<p>작업이 완료되면 다음과 같은 상태가 됩니다.</p>
-<p>레코드 생성을 누릅니다.</p>
+<p>작업이 완료되면 다음과 같은 상태가 된다.</p>
+<p>레코드 생성을 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89734147-3d33ab00-da95-11ea-9d7a-1631b535dcc8.png" alt=""></p>
-<p>여기까지 완료했다면 해당 도메인으로 접속이 가능합니다.</p>
-<p>다만 SSL인증서 발급이 끝나지 않았기 때문에 HTTPS로 정상 작동하지는 않습니다.</p>
+<p>여기까지 완료했다면 해당 도메인으로 접속이 가능하다.</p>
+<p>다만 SSL인증서 발급이 끝나지 않았기 때문에 HTTPS로 정상 작동하지는 않는다.</p>
 <br>
 
-<h2 id="AWS-Certification"><a href="#AWS-Certification" class="headerlink" title="AWS Certification"></a>AWS Certification</h2><p>HTTPS에는 SSL이라는 인증서가 필요합니다. 이는 AWS에서 무료로 제공해주고 있습니다.</p>
-<p><a href="https://console.aws.amazon.com/acm" target="_blank" rel="noopener">AWS Certification</a>에 접속합니다.</p>
+<h2 id="AWS-Certification"><a href="#AWS-Certification" class="headerlink" title="AWS Certification"></a>AWS Certification</h2><p>HTTPS에는 SSL이라는 인증서가 필요하다. 이는 AWS에서 무료로 제공하고 있다.</p>
+<p><a href="https://console.aws.amazon.com/acm" target="_blank" rel="noopener">AWS Certification</a>에 접속 후</p>
 <p><img src="https://user-images.githubusercontent.com/15887982/89733474-b7156580-da90-11ea-9cfe-40fbdec50e66.png" alt=""></p>
-<p><strong>인증서 발급은 반드시 미국 동부지역을 선택해야 합니다.</strong></p>
-<p>리즌 선택을 완료한 후 인증서 요청을 누릅니다.</p>
+<p><strong>(인증서 발급은 반드시 미국 동부지역을 선택해야 한다!)</strong></p>
+<p>리즌 선택을 완료한 후 인증서 요청을 누른다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733558-2c813600-da91-11ea-95bc-49a237d4427d.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89733555-27bc8200-da91-11ea-98ef-3406a3ccfff3.png" alt=""></p>
-<p>공인 인증서 요청을 선택 후 인증서 요청을 누르고 도메인 이름을 적어줍니다.</p>
-<p>도메인 이름이 여러개인 경우 <code>이 인증서에 다른 이름 추가</code>를 눌러 추가할 수 있습니다.</p>
+<p>공인 인증서 요청을 선택 후 인증서 요청을 누르고 도메인 이름을 적어준다.</p>
+<p>도메인 이름이 여러개인 경우 <code>이 인증서에 다른 이름 추가</code>를 눌러 추가할 수 있다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733609-8aae1900-da91-11ea-8b86-e4822bfdf9b8.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89733617-9b5e8f00-da91-11ea-8b51-2d7e6cf163d1.png" alt=""><br><img src="https://user-images.githubusercontent.com/15887982/89733643-c6e17980-da91-11ea-89fc-3352b4e3b8b4.png" alt=""></p>
-<p>DNS 검증을 선택후 계속 다음으로 진행합니다.</p>
+<p>DNS 검증을 선택후 계속 다음으로 진행</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733674-11fb8c80-da92-11ea-8b09-ed8f4b186796.png" alt=""></p>
-<p>요청을 한 후 도메인 주소를 눌러 <code>Route 53에서 레코드 생성</code>을 눌러줍니다.</p>
-<p>이 작업은 신청한 도메인마다 진행해줘야 합니다.</p>
-<p>계속 버튼을 눌러 심사가 완료될 때까지 기다려야 합니다.</p>
+<p>요청을 한 후 도메인 주소를 눌러 <code>Route 53에서 레코드 생성</code>을 누른다.</p>
+<p>이 작업은 신청한 도메인마다 진행해줘야 한다.</p>
+<p>계속 버튼을 눌러 심사가 완료될 때까지 기다려야 한다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733723-7a4a6e00-da92-11ea-83b6-8cab626e9e04.png" alt=""></p>
-<p>검증시간은 주소마다 다를 수 있습니다.</p>
-<p>발급이 완료되면 다음 단계를 진행합니다.</p>
+<p>검증시간은 주소마다 다를 수 있다.</p>
+<p>발급이 완료되면 다음 단계를 진행해보자.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89732132-bcba7d80-da87-11ea-9a0b-1ccb050dca90.png" alt=""></p>
 <p><a href="https://console.aws.amazon.com/cloudfront/" target="_blank" rel="noopener">CloudFront</a>로 돌아가</p>
-<p>Distribution Settings를 눌러줍니다.</p>
+<p>Distribution Settings를 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733793-ea58f400-da92-11ea-9da3-75dbd0f9d4f7.png" alt=""></p>
-<p>Edit 버튼을 눌러줍니다.</p>
+<p>Edit 버튼을 선택</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89733863-60f5f180-da93-11ea-84ac-103821c08d16.png" alt=""></p>
-<p>Alternate Domain Names에 인증서 발급시 등록한 도메인 주소들을 써줍니다.</p>
-<p>그 후 Custom SSl Certificate를 선택합니다.<br>(인증서 발급이 끝난 후 여기서 선택할 수 있게 되는데 시간이 걸릴 수 있습니다)</p>
-<p>제일 아래로 내려가 <code>Yes Edit</code>을 누르고 기다리면 홈페이지에 정상적으로 인증서가 적용된 모습을 볼 수 있습니다.</p>
+<p>Alternate Domain Names에 인증서 발급시 등록한 도메인 주소들을 써준다.</p>
+<p>그 후 Custom SSl Certificate를 선택한다.<br>(인증서 발급이 끝난 후 여기서 선택할 수 있게 되는데 시간이 걸릴 수 있다)</p>
+<p>제일 아래로 내려가 <code>Yes Edit</code>을 누르고 기다리면 홈페이지에 정상적으로 인증서가 적용된 모습을 볼 수 있다.</p>
 <br>
 
 <p><img src="https://user-images.githubusercontent.com/15887982/89734470-373ec980-da97-11ea-9b97-b66833b2658c.png" alt=""></p>
