@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/2020/12/15/0056-well-use-useSelector/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/25/0057-Algorithm-icebeverage/">
   <title>
     
-    useSelector 제대로 사용하기 - 개발개발 블로그
+    알고리즘 - 음료수 얼려 먹기 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -284,16 +284,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#react" title="react">react</a>
-              
-              <a class="tag" href="/tags/#redux" title="redux">redux</a>
+              <a class="tag" href="/tags/#Algorithm" title="Algorithm">Algorithm</a>
               
             </div>
-            <h1>useSelector 제대로 사용하기</h1>
-            <h2 class="subheading">react, redux</h2>
+            <h1>알고리즘 - 음료수 얼려 먹기</h1>
+            <h2 class="subheading">Algorithm</h2>
             <span class="meta">
               Posted by Seongkyun Yu on
-              2020-12-15
+              2020-12-25
             </span>
 
 
@@ -305,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">259</span> In Total
+              Words <span class="post-count">131</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -351,44 +349,23 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <p><img src="https://images.velog.io/images/seongkyun/post/453077b2-b2b0-4e42-be7d-ace5f4dc8da6/maxresdefault.jpg" alt=""></p>
-<p>만약 아래 두 코드의 차이점을 답 할 수 있다면 제대로 useSelector를 사용하고 있는 것이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector &#125; <span class="keyword">from</span> <span class="string">"react-redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> state = useSelector(<span class="function">(<span class="params">state</span>) =&gt;</span> state);</span><br><span class="line">  <span class="keyword">const</span> name = state.User.name;</span><br><span class="line">  <span class="keyword">const</span> age = state.User.age;</span><br><span class="line">  <span class="keyword">const</span> address = state.User.address;</span><br><span class="line">  <span class="comment">// const number = state.User.number // User안에 number 값도 있음</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;<span class="string">`회원인 <span class="subst">$&#123;name&#125;</span>씨의 나이는 <span class="subst">$&#123;age&#125;</span>세이고, <span class="subst">$&#123;address&#125;</span>에 거주한다.`</span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
-
-<p>코드1</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector &#125; <span class="keyword">from</span> <span class="string">"react-redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> name = useSelector(<span class="function">(<span class="params">state</span>) =&gt;</span> state.User.name);</span><br><span class="line">  <span class="keyword">const</span> age = useSelector(<span class="function">(<span class="params">state</span>) =&gt;</span> state.User.age);</span><br><span class="line">  <span class="keyword">const</span> address = useSelector(<span class="function">(<span class="params">state</span>) =&gt;</span> state.User.address);</span><br><span class="line">  <span class="comment">// const number = useSelector((state)=&gt; state.User.number); User안에 number 값도 있음</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;<span class="string">`회원인 <span class="subst">$&#123;name&#125;</span>씨의 나이는 <span class="subst">$&#123;age&#125;</span>세이고, <span class="subst">$&#123;address&#125;</span>에 거주한다.`</span>&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
-
-<p>코드2</p>
-<p>코드 1과 2의 차이는 useSelector를 한 번 사용했지 여러번 사용했는지의 차이가 있다.</p>
-<p>위 코드를 실행시키면 결과는 똑같이 출력된다.</p>
-<p>그럼 어떠한 차이가 있을까?</p>
-<p>최적화가 잘 된 코드는 코드2이다.</p>
-<p>코드1의 경우 User라는 State에 number가 있다고 가정할 때, number가 바뀌어도 리랜더링 처리된다.</p>
-<p>이유는 useSelector의 리턴값이 다를 경우 자동으로 리랜더링 처리를 한다.</p>
-<p>만약 값이 같을 경우 리랜더링 처리를 하지 않는다.</p>
-<p>따라서 useSelector의 리턴 값은 최대한 구체적인 값(이왕이면 원시값)을 리턴하도록 만드는 것이 리랜더링을 줄이는 방법이 된다.</p>
+        <h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p><img src="https://images.velog.io/images/seongkyun/post/f5af1ad3-3544-43c6-8c4f-1e4f8b7240b7/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C4.png" alt=""><br><img src="https://images.velog.io/images/seongkyun/post/8fda356b-b001-4169-9de3-70820a527945/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C5.png" alt=""></p>
+<h2 id="접근-방법"><a href="#접근-방법" class="headerlink" title="접근 방법"></a>접근 방법</h2><p>모든 블럭을 체크하여 0인 경우 상하좌우 네 방향으로 재귀 함수를 돌려 1 값으로 만든다.</p>
+<p>이렇게 처리한 후 결과 값을 하나씩 올린다.</p>
+<p>단 없는 좌표일 경우와 이미 1인 경우 바로 리턴한다.</p>
+<h2 id="풀이-코드"><a href="#풀이-코드" class="headerlink" title="풀이 코드"></a>풀이 코드</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">input_data = list(map(int, input().split()))</span><br><span class="line"></span><br><span class="line">row = input_data[<span class="number">0</span>]</span><br><span class="line">column = input_data[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">graph = []</span><br><span class="line">result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(row):</span><br><span class="line">  graph.append(list(map(int, input())))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(x, y)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt; row - <span class="number">1</span>  <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> y &gt; column - <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> graph[x][y] == <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">  graph[x][y] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  dfs(x + <span class="number">1</span>, y)</span><br><span class="line">  dfs(x - <span class="number">1</span>, y)</span><br><span class="line">  dfs(x, y + <span class="number">1</span>)</span><br><span class="line">  dfs(x, y - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(row):</span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> range(column):</span><br><span class="line">    <span class="keyword">if</span> dfs(i, j) == <span class="literal">True</span>:</span><br><span class="line">      result += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
 
 
         <hr />
         <!-- Pager -->
         <ul class="pager">
-          
-          <li class="previous">
-            <a
-              href="/2020/12/25/0057-Algorithm-icebeverage/"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="알고리즘 - 음료수 얼려 먹기"
-              >&larr; Previous Post</a
-            >
-          </li>
            
           <li class="next">
             <a
-              href="/2020/12/07/0055-SEO-TAG/"
+              href="/2020/12/15/0056-well-use-useSelector/"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="Semantic Tag는 SEO에 영향을 미칠까?"
+              title="useSelector 제대로 사용하기"
               >Next Post &rarr;</a
             >
           </li>
@@ -431,7 +408,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=useSelector 제대로 사용하기&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/12/15/0056-well-use-useSelector/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=알고리즘 - 음료수 얼려 먹기&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/12/25/0057-Algorithm-icebeverage/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -470,7 +447,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#문제"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">문제</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#접근-방법"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">접근 방법</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#풀이-코드"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">풀이 코드</span></a></li></ol>
         
         </div>
       </aside>
@@ -492,16 +469,9 @@
             
             <a
               class="tag"
-              href="/tags/#react"
-              title="react"
-              >react</a
-            >
-            
-            <a
-              class="tag"
-              href="/tags/#redux"
-              title="redux"
-              >redux</a
+              href="/tags/#Algorithm"
+              title="Algorithm"
+              >Algorithm</a
             >
             
           </div>
