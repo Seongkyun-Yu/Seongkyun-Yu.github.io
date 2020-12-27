@@ -336,6 +336,52 @@
   
 
 
+  <a href="/2020/03/06/0018-Execution-Context/">
+    <h2 class="post-title">
+      실행 컨텍스트 (Execution Context)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      실행 컨텍스트
+소스 코드를 실행하기 위해 필요한 환경 및 실행 결과를 관리하는 영역
+
+소스 코드의 타입별 생성 과정 및 관리 내용
+
+전역 코드 : 전역 스코프 생성 및 전역 변수 관리 (함수, 클래스 등 내부 코드 미포함)
+
+함수 코드 : 지역 스코프 생성 및 지역 변수 관리 (중첩 함수, 클래스 등 내부 코드 미포함)
+
+eval 코드 : 엄격 모드에......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-06
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#context" title="context">context</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/03/06/0019-this/">
     <h2 class="post-title">
       this
@@ -733,48 +779,6 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/27/0009-var/">
-    <h2 class="post-title">
-      전역 변수의 문제점
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      변수의 생명 주기
-지역 변수의 생명 주기
-지역 변수의 생명 주기는 함수의 생명 주기와 일치한다.
-1234567var a = "전역변수";function local_test() &#123;  console.log(a);  var a = "지역변수";  return a;&#125;
-
-위 코드에서 console.log(a)는 undefined를 출력하는데 ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-27
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#var" title="var">var</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -868,6 +872,10 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
 <div class="widget">
   <ul>
     
+    <a href="../../2020/12/27/0059-why-bootpay/">
+      <li>Bootpay로 결제기능을 만든 이유</li>
+    </a>
+    
     <a href="../../2020/12/26/0058-why-aws/">
       <li>AWS를 선택한 이유</li>
     </a>
@@ -882,10 +890,6 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     
     <a href="../../2020/12/07/0055-SEO-TAG/">
       <li>Semantic Tag는 SEO에 영향을 미칠까?</li>
-    </a>
-    
-    <a href="../../2020/11/21/0054-throttle/">
-      <li>React 최적화 - 반응형과 throttle</li>
     </a>
     
   </ul>
@@ -1150,6 +1154,10 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     <a href="/tags/#Algorithm" title="Algorithm" rel="1">Algorithm</a>
     
     
+    
+    <a href="/tags/#bootpay" title="bootpay" rel="1">bootpay</a>
+    
+    
   </div>
 </section>
 
@@ -1171,7 +1179,7 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
 
 
