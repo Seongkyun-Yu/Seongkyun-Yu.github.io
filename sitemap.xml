@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/12/28/0060-why-small-commit/</loc>
+    
+    <lastmod>2020-12-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/12/27/0059-why-bootpay/</loc>
     
     <lastmod>2020-12-27</lastmod>
@@ -452,7 +459,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -460,343 +467,350 @@
   
   <url>
     <loc>http://yoursite.com/tags/javascript/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/function/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Object-literal/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/scope/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/%EB%B3%84%EC%B0%8D%EA%B8%B0/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/var/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/constructor/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/let/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/const/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/property/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/atrribute/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Firstclass-Object/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/prototype/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/strict-mode/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Built-in-Object/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/context/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/closure/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/error/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/this/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/ES6/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/class/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Destructuring/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Spread/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Array/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/array/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/promise/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/html5/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/accessibility/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/productivity/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/MySQL/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/React/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/JSX/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/OS/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/AWS/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/S3/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/CloudFront/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Route53/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Planning/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/SEO/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/responsive/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Batch-Update/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/WebSocket/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Redux-Saga/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/buffers/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Semantic/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/react/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/redux/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Algorithm/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/bootpay/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/commit/</loc>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -805,77 +819,77 @@
   
   <url>
     <loc>http://yoursite.com/categories/ETC/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/JavaScript/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Algorithm/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Productivity/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/HTML5/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Database/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/React/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/CS/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/SEO/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/react/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/DevOps/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
