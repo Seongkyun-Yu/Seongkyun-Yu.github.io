@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../../../css/highlight.css">
-<link rel="stylesheet" href="../../../../css/widget.css">
-<link rel="stylesheet" href="../../../../css/rocket.css">
-<link rel="stylesheet" href="../../../../css/signature.css">
-<link rel="stylesheet" href="../../../../css/catalog.css">
-<link rel="stylesheet" href="../../../../css/livemylife.css">
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
 
 
   
@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/2020/12/27/0059-why-bootpay/">
+  <link rel="canonical" href="http://yoursite.com/archives/7/">
   <title>
     
-    Bootpay로 결제기능을 만든 이유 - 개발개발 블로그
+    개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -262,8 +262,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*post*/
-        background-image: url('/img/header_img/lml_bg.jpg');
+       /*config*/
+        background-image: url('/img/header_img/home-bg-o.png');
       
     }
 
@@ -281,40 +281,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#bootpay" title="bootpay">bootpay</a>
-              
-            </div>
-            <h1>Bootpay로 결제기능을 만든 이유</h1>
-            <h2 class="subheading">bootpay</h2>
-            <span class="meta">
-              Posted by Seongkyun Yu on
-              2020-12-27
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">136</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- 不蒜子统计 start -->
-            <span class="meta">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            <!-- WordCount end -->
-            
-
-
+          <div class="site-heading">
+            <h1>개발개발 블로그</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">This is Dev Blog</span>
           </div>
           
         </div>
@@ -339,226 +309,477 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	
-<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div
-        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
-      >
-        <h2 id="1-읽기-쉬운-문서"><a href="#1-읽기-쉬운-문서" class="headerlink" title="1. 읽기 쉬운 문서"></a>1. 읽기 쉬운 문서</h2><p>결제 기능을 구현할 때, 나는 사업자가 아니기 때문에 PG사에 신청하여 결제 테스트 모듈을 쓸 수 없었다.</p>
-<p>따라서 부트페이나 아임포트같은 서비스를 이용해야 했다.</p>
-<p>두 서비스 모두 문서화가 잘 돼있었다.</p>
-<p>다만 결제기능은 <a href="https://github.com/Seongkyun-Yu/baam-player" target="_blank" rel="noopener">BammPlayer</a>를 만들 당시 예정되어있던 기능이 아니었다.</p>
-<p>굉장히 빠르게 개발해야 했기 때문에 좀 더 읽기 쉬운 문서를 제공해 주는 업체를 찾아야 했고 내 눈에는 부트페이의 문서가 더 잘 읽혔다.</p>
-<br>
+	<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-<h2 id="2-복수-PG사-무료"><a href="#2-복수-PG사-무료" class="headerlink" title="2. 복수 PG사 무료"></a>2. 복수 PG사 무료</h2><p>나는 카카오페이와 카드결제를 동시에 구현하고 싶었다.</p>
-<p>아임포트의 경우 10만원의 비용이 발생하지만, 부트페이는 무료로 제공한다.</p>
-<br>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
-<h2 id="3-데이터-분석-무료"><a href="#3-데이터-분석-무료" class="headerlink" title="3. 데이터 분석 무료"></a>3. 데이터 분석 무료</h2><p>실제로 결제가 일어나는것은 아니지만, 없는 것보다 있는게 낫다고 생각했다.</p>
-<p>간단하지만 어드민 페이지 구성을 볼 수 있고, Admin 페이지의 UI/UX를 체험해 볼 수 있겠다 싶었다.</p>
-<br>
-
-<h2 id="3-기본-제공-모듈의-색상"><a href="#3-기본-제공-모듈의-색상" class="headerlink" title="3. 기본 제공 모듈의 색상"></a>3. 기본 제공 모듈의 색상</h2><p>의외로 색상이 선택 이유 중 하나였다. 부트페이의 경우 기본 색상이 보라색이다.</p>
-<p><a href="https://github.com/Seongkyun-Yu/baam-player" target="_blank" rel="noopener">BammPlayer</a>와 <a href="https://github.com/Seongkyun-Yu/baam-player" target="_blank" rel="noopener">Omegabox</a>의 포인트 컬러도 보라색이어서 잘 어울린다고 생각했다.</p>
+      <!-- Main Content -->
 
 
-        <hr />
-        <!-- Pager -->
-        <ul class="pager">
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/02/20/0001-data-type/">
+    <h2 class="post-title">
+      데이터 타입 (Data-Type)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      원시타입숫자, 문자열, 불리언, undefined, null, symbol
+1. 숫자 타입숫자 타입의 값은 배정밀도 64비트 부동소수점 형식을 따른다.
+즉, 모든 수를 실수로 처리하며 정수만을 표현하기 위한 특별한 데이터 타입은 없다.
+정수로 표시되더라도 실수이다.
+숫자타입 중 특별한 값으론 Infinity, -Infinity, NaN이 있다.
+
+
+2......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-02-20
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+
+  <!-- Pager -->
+  <ul class="pager">
+    
+    <li class="previous">
+      <a href="/archives/6/">&larr; Newer Posts</a>
+    </li>
+    
+    
+  </ul>
+
+
+      <!-- 如果开启评论功能 -->
+      
+    </div>
+
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+    
+    <img
+      id="avatar_pic"
+      src="/img/avatar/dev-profile.png"
+      alt="avatar_pic"
+    />
+     
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+       
+      <li>
+        <a
+          target="_blank"
+          href="https://github.com/Seongkyun-Yu"
+        >
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+       
+      <li>
+        <a
+          target="_blank"
+          href="https://twitter.com/Seongkyun-Yu"
+        >
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+       
+      <li>
+        <a
+          target="_blank"
+          href="https://www.instagram.com/Seongkyun-Yu"
+        >
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
           
-          <li class="previous">
-            <a
-              href="/2020/12/28/0060-why-small-commit/"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="왜 커밋 단위를 작게 나누기로 했나"
-              >&larr; Previous Post</a
-            >
-          </li>
-           
-          <li class="next">
-            <a
-              href="/2020/12/27/0061-why-react/"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="왜 리액트를 선택했나"
-              >Next Post &rarr;</a
-            >
-          </li>
-          
-        </ul>
+    </ul>
+  </div>
+</section>
 
+        <hr>
+    
         
-        <!-- tip start -->
-        <div class="tip">
-          <p>
-            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
-          </p>
-        </div>
-        <!-- tip end -->
-         
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
-
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Bootpay로 결제기능을 만든 이유&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/12/27/0059-why-bootpay/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+<!-- <h5>RECENT POSTS</h5> -->
+<h5><a href="/">RECENT POSTS</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../2020/12/28/0060-why-small-commit/">
+      <li>왜 커밋 단위를 작게 나누기로 했나</li>
+    </a>
+    
+    <a href="../../2020/12/27/0059-why-bootpay/">
+      <li>Bootpay로 결제기능을 만든 이유</li>
+    </a>
+    
+    <a href="../../2020/12/27/0061-why-react/">
+      <li>왜 리액트를 선택했나</li>
+    </a>
+    
+    <a href="../../2020/12/26/0058-why-aws/">
+      <li>AWS를 선택한 이유</li>
+    </a>
+    
+    <a href="../../2020/12/25/0057-Algorithm-icebeverage/">
+      <li>알고리즘 - 음료수 얼려 먹기</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
-        <hr />
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-
-
-<!-- 2. gitment comment -->
-
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr />
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
+        <hr>
     
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-읽기-쉬운-문서"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. 읽기 쉬운 문서</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-복수-PG사-무료"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. 복수 PG사 무료</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-데이터-분석-무료"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. 데이터 분석 무료</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-기본-제공-모듈의-색상"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">3. 기본 제공 모듈의 색상</span></a></li></ol>
-        
-        </div>
-      </aside>
+        <!-- Categories -->
+
+<!-- <h5>categories</h5> -->
+<h5><a href="/categories/">CATEGORIES</a></h5>
+<div class="widget">
+  <ul>
     
+    <a href="/categories/#ETC">
+      <li>ETC</li>
+    </a>
+    
+    <a href="/categories/#JavaScript">
+      <li>JavaScript</li>
+    </a>
+    
+    <a href="/categories/#Algorithm">
+      <li>Algorithm</li>
+    </a>
+    
+    <a href="/categories/#Productivity">
+      <li>Productivity</li>
+    </a>
+    
+    <a href="/categories/#HTML5">
+      <li>HTML5</li>
+    </a>
+    
+    <a href="/categories/#Database">
+      <li>Database</li>
+    </a>
+    
+    <a href="/categories/#React">
+      <li>React</li>
+    </a>
+    
+    <a href="/categories/#CS">
+      <li>CS</li>
+    </a>
+    
+    <a href="/categories/#SEO">
+      <li>SEO</li>
+    </a>
+    
+    <a href="/categories/#react">
+      <li>react</li>
+    </a>
+    
+    <a href="/categories/#DevOps">
+      <li>DevOps</li>
+    </a>
+    
+  </ul>
+</div>
 
 
-      <!-- Sidebar Container -->
-      <div
-        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
-      >
+        <hr>
+    
         <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a
-              class="tag"
-              href="/tags/#bootpay"
-              title="bootpay"
-              >bootpay</a
-            >
-            
-          </div>
-        </section>
-        
 
-        <!-- Friends Blog -->
-        
-        <hr />
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-          
-        </ul>
-        
-      </div>
-    </div>
+<section>
+  <!-- no hr -->
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#javascript" title="javascript" rel="39">javascript</a>
+    
+    
+    
+    <a href="/tags/#function" title="function" rel="2">function</a>
+    
+    
+    
+    <a href="/tags/#Object-literal" title="Object-literal" rel="1">Object-literal</a>
+    
+    
+    
+    <a href="/tags/#scope" title="scope" rel="1">scope</a>
+    
+    
+    
+    <a href="/tags/#별찍기" title="별찍기" rel="1">별찍기</a>
+    
+    
+    
+    <a href="/tags/#var" title="var" rel="1">var</a>
+    
+    
+    
+    <a href="/tags/#constructor" title="constructor" rel="1">constructor</a>
+    
+    
+    
+    <a href="/tags/#let" title="let" rel="1">let</a>
+    
+    
+    
+    <a href="/tags/#const" title="const" rel="1">const</a>
+    
+    
+    
+    <a href="/tags/#property" title="property" rel="1">property</a>
+    
+    
+    
+    <a href="/tags/#atrribute" title="atrribute" rel="1">atrribute</a>
+    
+    
+    
+    <a href="/tags/#Firstclass-Object" title="Firstclass-Object" rel="1">Firstclass-Object</a>
+    
+    
+    
+    <a href="/tags/#prototype" title="prototype" rel="1">prototype</a>
+    
+    
+    
+    <a href="/tags/#strict-mode" title="strict-mode" rel="1">strict-mode</a>
+    
+    
+    
+    <a href="/tags/#Built-in-Object" title="Built-in-Object" rel="1">Built-in-Object</a>
+    
+    
+    
+    <a href="/tags/#context" title="context" rel="1">context</a>
+    
+    
+    
+    <a href="/tags/#closure" title="closure" rel="3">closure</a>
+    
+    
+    
+    <a href="/tags/#error" title="error" rel="3">error</a>
+    
+    
+    
+    <a href="/tags/#this" title="this" rel="1">this</a>
+    
+    
+    
+    <a href="/tags/#ES6" title="ES6" rel="4">ES6</a>
+    
+    
+    
+    <a href="/tags/#class" title="class" rel="1">class</a>
+    
+    
+    
+    <a href="/tags/#Destructuring" title="Destructuring" rel="1">Destructuring</a>
+    
+    
+    
+    <a href="/tags/#Spread" title="Spread" rel="1">Spread</a>
+    
+    
+    
+    <a href="/tags/#Array" title="Array" rel="1">Array</a>
+    
+    
+    
+    <a href="/tags/#array" title="array" rel="1">array</a>
+    
+    
+    
+    <a href="/tags/#promise" title="promise" rel="1">promise</a>
+    
+    
+    
+    <a href="/tags/#html5" title="html5" rel="1">html5</a>
+    
+    
+    
+    <a href="/tags/#accessibility" title="accessibility" rel="1">accessibility</a>
+    
+    
+    
+    <a href="/tags/#productivity" title="productivity" rel="1">productivity</a>
+    
+    
+    
+    <a href="/tags/#MySQL" title="MySQL" rel="3">MySQL</a>
+    
+    
+    
+    <a href="/tags/#React" title="React" rel="4">React</a>
+    
+    
+    
+    <a href="/tags/#JSX" title="JSX" rel="1">JSX</a>
+    
+    
+    
+    <a href="/tags/#OS" title="OS" rel="1">OS</a>
+    
+    
+    
+    <a href="/tags/#AWS" title="AWS" rel="2">AWS</a>
+    
+    
+    
+    <a href="/tags/#S3" title="S3" rel="1">S3</a>
+    
+    
+    
+    <a href="/tags/#CloudFront" title="CloudFront" rel="1">CloudFront</a>
+    
+    
+    
+    <a href="/tags/#Route53" title="Route53" rel="1">Route53</a>
+    
+    
+    
+    <a href="/tags/#Planning" title="Planning" rel="1">Planning</a>
+    
+    
+    
+    <a href="/tags/#SEO" title="SEO" rel="2">SEO</a>
+    
+    
+    
+    <a href="/tags/#responsive" title="responsive" rel="1">responsive</a>
+    
+    
+    
+    <a href="/tags/#Batch Update" title="Batch Update" rel="1">Batch Update</a>
+    
+    
+    
+    <a href="/tags/#WebSocket" title="WebSocket" rel="2">WebSocket</a>
+    
+    
+    
+    <a href="/tags/#Redux-Saga" title="Redux-Saga" rel="2">Redux-Saga</a>
+    
+    
+    
+    <a href="/tags/#buffers" title="buffers" rel="2">buffers</a>
+    
+    
+    
+    <a href="/tags/#Semantic" title="Semantic" rel="1">Semantic</a>
+    
+    
+    
+    <a href="/tags/#react" title="react" rel="2">react</a>
+    
+    
+    
+    <a href="/tags/#redux" title="redux" rel="1">redux</a>
+    
+    
+    
+    <a href="/tags/#Algorithm" title="Algorithm" rel="1">Algorithm</a>
+    
+    
+    
+    <a href="/tags/#bootpay" title="bootpay" rel="1">bootpay</a>
+    
+    
+    
+    <a href="/tags/#commit" title="commit" rel="1">commit</a>
+    
+    
   </div>
-</article>
+</section>
 
 
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
+        <hr>
+    
+        <!-- Friends Blog -->
 
-<!-- anchorjs end -->
+<!-- <h5>FRIENDS</h5> -->
+<h5><a href="/">FRIENDS</a></h5>
+<ul class="list-inline">
+  
+</ul>
 
+
+        <hr>
+    
+        
+    <!-- <h5>ARCHIVES</h5> -->
+    <h5><a href="/archives/">ARCHIVES</a></h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+
+
+        <hr>
+    
+</div>
+
+    
+  </div>
+</div>
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
