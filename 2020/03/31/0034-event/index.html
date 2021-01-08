@@ -303,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">476</span> In Total
+              Words <span class="post-count">479</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -387,7 +387,6 @@
 
 <h2 id="3-3-addEventListener-메소드"><a href="#3-3-addEventListener-메소드" class="headerlink" title="3.3 addEventListener 메소드"></a>3.3 addEventListener 메소드</h2><figure class="highlight javascript"><figcaption><span>eventAddEventListener</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$button.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"button click"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://user-images.githubusercontent.com/15887982/77979331-54bc9380-733f-11ea-9bba-0ee016e2846c.png" alt="addEventListener"></p>
 <p>여러개의 이벤트 처리 함수를 등록할 수 있다.<br></p>
 <p>등록한 순서대로 동작한다.(중복시 하나만 등록)</p>
 <br>
@@ -398,8 +397,7 @@
 <p>삭제할 함수는 등록된 함수와 동일한 참조를 가져야 하므로 무명 함수는 삭제가 불가하다. <br></p>
 <p>프로퍼티 방식의 경우 null을 할당해 제거한다.</p>
 <p><br><br></p>
-<h1 id="5-이벤트-전파"><a href="#5-이벤트-전파" class="headerlink" title="5. 이벤트 전파"></a>5. 이벤트 전파</h1><p><img src="https://user-images.githubusercontent.com/15887982/77980116-7454bb80-7341-11ea-868a-81b56e970520.png" alt="이벤트 전파"></p>
-<ul>
+<h1 id="5-이벤트-전파"><a href="#5-이벤트-전파" class="headerlink" title="5. 이벤트 전파"></a>5. 이벤트 전파</h1><ul>
 <li><p>캡처링 단계: 이벤트가 상위 요소에서 하위 요소 방향으로 전파</p>
 </li>
 <li><p>타깃 단계: 이벤트가 이벤트 타깃에 도달</p>
@@ -442,6 +440,11 @@
 <figure class="highlight javascript"><figcaption><span>customEvent Dispatch</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn"</span>&gt;Click me&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;script&gt;</span></span><br><span class="line"><span class="regexp">    const $button = document.querySelector('.btn');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ click 커스텀 이벤트 핸들러 등록</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 커스텀 이벤트를 디스패치하기 이전에 이벤트 핸들러를 등록해야 한다.</span></span><br><span class="line"><span class="regexp">    $button.addEventListener('click', e =&gt; &#123;</span></span><br><span class="line"><span class="regexp">      console.log(e);</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ MouseEvent &#123;isTrusted: false, screenX: 0, screenY: 0, clientX: 0, ...&#125;</span></span><br><span class="line"><span class="regexp">      e.target.textContent = 'Clicked!';</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 커스텀 이벤트 생성</span></span><br><span class="line"><span class="regexp">    const customEvent = new MouseEvent('click');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 커스텀 이벤트 디스패치(동기적)</span></span><br><span class="line"><span class="regexp">    $button.dispatchEvent(customEvent);</span></span><br><span class="line"><span class="regexp">  &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
 
 <p>새로운 이벤트 타입의 경우 이벤트 핸들러 등록은 반드시 addEventListener 방식을 사용해야 한다.</p>
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

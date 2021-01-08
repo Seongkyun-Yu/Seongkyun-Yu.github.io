@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">467</span> In Total
+              Words <span class="post-count">470</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -386,8 +386,14 @@
 
 <p>ES6 이전에는 스코프 세이프 생성자 패턴을 이용해야 한다.</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Scope-Safe Constructor Pattern</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Discount</span><span class="params">(price)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 생성자 함수가 new 연산자와 함께 호출되면 함수의 선두에서 빈 객체를 생성하고</span></span><br><span class="line">  <span class="comment">// this에 바인딩한다. 이때 this와 Discount는 프로토타입에 의해 연결된다.</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 이 함수가 new 연산자와 함께 호출되지 않았다면 이 시점의 this는 전역 객체 window를 가리킨다.</span></span><br><span class="line">  <span class="comment">// 즉, this와 Discount는 프로토타입에 의해 연결되지 않는다.</span></span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Discount)) &#123;</span><br><span class="line">    <span class="comment">// new 연산자와 함께 호출하여 생성된 인스턴스를 반환한다.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Discount(radius);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.price = price;</span><br><span class="line">  <span class="keyword">this</span>.getDiscountPrice = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.9</span> * <span class="keyword">this</span>.price;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dprice = Discount(<span class="number">5000</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+
 </li>
 </ul>
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

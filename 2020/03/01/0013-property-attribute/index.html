@@ -307,7 +307,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">302</span> In Total
+              Words <span class="post-count">305</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -470,8 +470,14 @@
 <li><p>깊은 변경 방지 방법</p>
 <p>재귀 함수를 이용하여 중첩 객체까지 동결해야 한다.</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> deepFreeze(target) &#123;</span><br><span class="line">  // 객체가 아니거나 동결된 객체는 무시하고 객체이고 동결되지 않은 객체만 동결한다.</span><br><span class="line">  <span class="keyword">if</span> (target &amp;&amp; typeof target === <span class="string">'object'</span> &amp;&amp; !<span class="keyword">Object</span>.isFrozen(target)) &#123;</span><br><span class="line">    <span class="keyword">Object</span>.<span class="keyword">freeze</span>(target);</span><br><span class="line">    <span class="keyword">Object</span>.keys(target).<span class="keyword">forEach</span>(key =&gt; deepFreeze(target[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
 </li>
 </ul>
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

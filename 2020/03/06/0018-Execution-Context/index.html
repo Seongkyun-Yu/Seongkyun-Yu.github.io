@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">620</span> In Total
+              Words <span class="post-count">626</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -351,7 +351,9 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <h1 id="실행-컨텍스트"><a href="#실행-컨텍스트" class="headerlink" title="실행 컨텍스트"></a>실행 컨텍스트</h1><ul>
+        <br>
+
+<h2 id="1-실행-컨텍스트"><a href="#1-실행-컨텍스트" class="headerlink" title="1. 실행 컨텍스트"></a>1. 실행 컨텍스트</h2><ul>
 <li><p>소스 코드를 실행하기 위해 필요한 환경 및 실행 결과를 관리하는 영역</p>
 </li>
 <li><p>소스 코드의 타입별 생성 과정 및 관리 내용</p>
@@ -369,7 +371,7 @@
 </ul>
 <br>
 
-<h1 id="소스-코드-평가와-실행"><a href="#소스-코드-평가와-실행" class="headerlink" title="소스 코드 평가와 실행"></a>소스 코드 평가와 실행</h1><ul>
+<h2 id="2-소스-코드-평가와-실행"><a href="#2-소스-코드-평가와-실행" class="headerlink" title="2. 소스 코드 평가와 실행"></a>2. 소스 코드 평가와 실행</h2><ul>
 <li>순서</li>
 </ul>
 <ol>
@@ -388,25 +390,27 @@
 
 <a id="more"></a>
 
-<h1 id="실행-컨텍스트-동작-예"><a href="#실행-컨텍스트-동작-예" class="headerlink" title="실행 컨텍스트 동작 예"></a>실행 컨텍스트 동작 예</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 전역 변수 선언</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 지역 변수 선언</span></span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 메소드 호출</span></span><br><span class="line">  <span class="built_in">console</span>.log(a + x + y); <span class="comment">// 130</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 호출</span></span><br><span class="line">foo(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 메소드 호출</span></span><br><span class="line"><span class="built_in">console</span>.log(x + y); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-실행-컨텍스트-동작-예"><a href="#3-실행-컨텍스트-동작-예" class="headerlink" title="3. 실행 컨텍스트 동작 예"></a>3. 실행 컨텍스트 동작 예</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 전역 변수 선언</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 정의</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 지역 변수 선언</span></span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 메소드 호출</span></span><br><span class="line">  <span class="built_in">console</span>.log(a + x + y); <span class="comment">// 130</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 호출</span></span><br><span class="line">foo(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 메소드 호출</span></span><br><span class="line"><span class="built_in">console</span>.log(x + y); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>전역 코드 평가</p>
 <p>변수 선언문, 함수 선언문 실행 후 실행 컨텍스트에 등록</p>
 </li>
+<li><p>전역 코드 실행</p>
+<p>전역 코드 실행. 이때 전역 변수에 값 할당, 함수 호출됨</p>
+</li>
+<li><p>함수 코드 평가</p>
+<p>함수 실행 전 함수 코드 평가, 지역 스코프 생성 및 지역 변수 등록</p>
+</li>
+<li><p>함수 코드 실행</p>
+<p>함수 코드 실행. 매개 변수와 지역 변수에 값 할당 및 console.log 호출</p>
+</li>
 </ol>
-<p>2) 전역 코드 실행</p>
-<p>   전역 코드 실행. 이때 전역 변수에 값 할당, 함수 호출됨</p>
-<p>3) 함수 코드 평가</p>
-<p>   함수 실행 전 함수 코드 평가, 지역 스코프 생성 및 지역 변수 등록</p>
-<p>4) 함수 코드 실행</p>
-<p>   함수 코드 실행. 매개 변수와 지역 변수에 값 할당 및 console.log 호출</p>
 <br>
 
-<h1 id="실행-컨텍스트-스택과-렉시컬-환경"><a href="#실행-컨텍스트-스택과-렉시컬-환경" class="headerlink" title="실행 컨텍스트 스택과 렉시컬 환경"></a>실행 컨텍스트 스택과 렉시컬 환경</h1><ul>
+<h2 id="4-실행-컨텍스트-스택과-렉시컬-환경"><a href="#4-실행-컨텍스트-스택과-렉시컬-환경" class="headerlink" title="4. 실행 컨텍스트 스택과 렉시컬 환경"></a>4. 실행 컨텍스트 스택과 렉시컬 환경</h2><ul>
 <li><p>실행 컨텍스트 스택</p>
 <p>코드의 실행 순서를 관리, 현재 실행 중인 컨텍스트는 최상위에 존재</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76093449-532fd200-6004-11ea-9c8e-d596b43e528b.png" alt="실행컨텍스트스택"></p>
 </li>
 </ul>
 <br>
@@ -415,18 +419,16 @@
 <li><p>렉시컬 환경</p>
 <p>실행 컨텍스트의 컴포넌트로 식별자, 값, 상위 스코프 참조를 기록하는 환경</p>
 <p>스코프와 식별자를 관리함</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76093604-98540400-6004-11ea-9b54-e0840bc5c2c3.png" alt="렉시컬 환경과 스코프체인"></p>
 </li>
 </ul>
 <br>
 
-<h1 id="실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="실행 컨텍스트의 생성과 식별자 검색 과정"></a>실행 컨텍스트의 생성과 식별자 검색 과정</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b + x + y + z);</span><br><span class="line">  &#125;</span><br><span class="line">  bar(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">20</span>); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-실행-컨텍스트의-생성과-식별자-검색-과정"><a href="#5-실행-컨텍스트의-생성과-식별자-검색-과정" class="headerlink" title="5. 실행 컨텍스트의 생성과 식별자 검색 과정"></a>5. 실행 컨텍스트의 생성과 식별자 검색 과정</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">const</span> y = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b + x + y + z);</span><br><span class="line">  &#125;</span><br><span class="line">  bar(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">20</span>); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>전역 객체 생성</p>
 </li>
 <li><p>전역 코드 평가</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76093909-1adcc380-6005-11ea-8ac7-d279f4d6f006.png" alt="전역 실행 컨텍스트와 렉시컬 환경"></p>
 <ol>
 <li>전역 실행 컨텍스트 생성</li>
 </ol>
@@ -440,10 +442,6 @@
 <p>전역 객체와 연결</p>
 <p>전역 변수와 전역 함수는 전역 객체의 프로퍼티와 메소드가 된다</p>
 </li>
-</ul>
-<br>
-
-<ul>
 <li><p>2.1.2. 선언적 환경 레코드 생성</p>
 <p><code>let</code>, <code>const</code>로 선언한 전역변수를 등록</p>
 <p>선언만 되고 초기화는 되지 않기에 일시적 사각지대가 생김</p>
@@ -475,7 +473,6 @@
 
 <ol start="4">
 <li><p>foo 함수 코드 평가</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76095554-d0107b00-6007-11ea-95b4-32e6cc096876.png" alt="foo함수 코드 평가"></p>
 <ol>
 <li><p>함수 실행 컨텍스트 생성</p>
 </li>
@@ -499,9 +496,7 @@
 <br>
 
 <ol start="6">
-<li><p>bar 함수 평가</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76095968-8ffdc800-6008-11ea-94a1-8d2744a5f47e.png" alt="bar 함수 실행 컨텍스트와 렉시컬 환경"></p>
-</li>
+<li>bar 함수 평가</li>
 </ol>
 <br>
 
@@ -554,14 +549,17 @@
 </ol>
 <br>
 
-<h1 id="실행-컨텍스트와-블록-레벨-스코프"><a href="#실행-컨텍스트와-블록-레벨-스코프" class="headerlink" title="실행 컨텍스트와 블록 레벨 스코프"></a>실행 컨텍스트와 블록 레벨 스코프</h1><ul>
+<h2 id="6-실행-컨텍스트와-블록-레벨-스코프"><a href="#6-실행-컨텍스트와-블록-레벨-스코프" class="headerlink" title="6. 실행 컨텍스트와 블록 레벨 스코프"></a>6. 실행 컨텍스트와 블록 레벨 스코프</h2><ul>
 <li><p>블록 스코프가 생기면 선언적 환경 레코드를 갖는 새로운 렉시컬 환경을 만들고 교체한다</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76096868-1070f880-600a-11ea-8556-d60994ff0b36.png" alt="블록문을 위한 렉시컬 스코프 교체"></p>
 </li>
 <li><p>블록문이 종료되면 블록문이 실행되기 이전의 렉시컬 환경으로 되돌린다</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/76097017-5037e000-600a-11ea-9d61-7f55018d0ee1.png" alt="이전 렉시컬 환경으로 복구"></p>
+<br>
+
 </li>
 </ul>
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

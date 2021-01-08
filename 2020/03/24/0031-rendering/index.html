@@ -303,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">171</span> In Total
+              Words <span class="post-count">174</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -352,8 +352,7 @@
         <h1 id="1-랜더링이란"><a href="#1-랜더링이란" class="headerlink" title="1. 랜더링이란"></a>1. 랜더링이란</h1><p>HTML, CSS, 자바스크립트로 작성된 문서를 파싱하여 브라우저에 시각적으로 출력하는 것을 말한다.</p>
 <br>
 
-<h1 id="2-랜더링-과정"><a href="#2-랜더링-과정" class="headerlink" title="2. 랜더링 과정"></a>2. 랜더링 과정</h1><p><img src="https://user-images.githubusercontent.com/15887982/77399052-f4cc6700-6deb-11ea-88b6-c79616168c16.png" alt="랜더링 과정"></p>
-<a id="more"></a>
+<h1 id="2-랜더링-과정"><a href="#2-랜더링-과정" class="headerlink" title="2. 랜더링 과정"></a>2. 랜더링 과정</h1><a id="more"></a>
 
 <h2 id="2-1-요청과-응답"><a href="#2-1-요청과-응답" class="headerlink" title="2.1 요청과 응답"></a>2.1 요청과 응답</h2><ol>
 <li><p>주소창에 URL 입력</p>
@@ -361,16 +360,12 @@
 <li><p>서버에서 주소/index.html 응답</p>
 </li>
 <li><p>HTML 파싱 시작, HTML DOM 생성</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77399472-e03c9e80-6dec-11ea-85fb-c0c1c1cb6004.png" alt="HTML파싱과 DOM생성"></p>
 </li>
 <li><p>link, style 태그 만날경우 HTML DOM생성 중단 후 CSSOM 생성 or Javascript 실행</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77399426-c8fdb100-6dec-11ea-9ff2-5638d1da02b3.png" alt="CSSOM 생성"></p>
 </li>
 <li><p>랜더 트리 생성</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77399645-2f82cf00-6ded-11ea-8022-42931842a0ef.png" alt="랜더 트리 생성"></p>
 </li>
 <li><p>페인팅</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77399720-56410580-6ded-11ea-9256-4a75c7c58b3d.png" alt="33-9"></p>
 </li>
 </ol>
 <br>
@@ -394,12 +389,15 @@
 <p><br><br></p>
 <h1 id="4-script-태그의-async-defer-어트리뷰트"><a href="#4-script-태그의-async-defer-어트리뷰트" class="headerlink" title="4. script 태그의 async/defer 어트리뷰트"></a>4. script 태그의 async/defer 어트리뷰트</h1><h2 id="4-1-aysnc-어트리뷰트"><a href="#4-1-aysnc-어트리뷰트" class="headerlink" title="4.1 aysnc 어트리뷰트"></a>4.1 aysnc 어트리뷰트</h2><p>HTML파싱과 자바스크립트 로드가 동시에 진행됨.</p>
 <p>자바스크립트 파싱과 실행은 <strong>자바스크립트 로드가 완료된 직후 시작.</strong></p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77400291-47a71e00-6dee-11ea-8460-812a1f3f5bb2.png" alt="async"></p>
 <br>
 
 <h2 id="4-2-defer-어트리뷰트"><a href="#4-2-defer-어트리뷰트" class="headerlink" title="4.2 defer 어트리뷰트"></a>4.2 defer 어트리뷰트</h2><p>HTML파싱과 자바스크립트 로드가 동시에 진행됨.</p>
 <p>자바스크립트 파싱과 실행은 <strong>HTML 파싱이 완료된 직후 시작. (DOM 완성 후)</strong></p>
-<p><img src="https://user-images.githubusercontent.com/15887982/77400294-483fb480-6dee-11ea-811c-8a5479cc5018.png" alt="defer"></p>
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

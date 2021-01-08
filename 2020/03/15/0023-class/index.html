@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">804</span> In Total
+              Words <span class="post-count">807</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -394,9 +394,6 @@
 <td align="center">O</td>
 </tr>
 </tbody></table>
-<br>
-
-<p><img src="https://user-images.githubusercontent.com/15887982/76699411-95d26800-66f0-11ea-860e-50448e49fb13.png" alt="생성자함수와 클래스의 차이"></p>
 <p><br><br></p>
 <h1 id="클래스의-정의-방법과-특징"><a href="#클래스의-정의-방법과-특징" class="headerlink" title="클래스의 정의 방법과 특징"></a>클래스의 정의 방법과 특징</h1><p>정의 방법과 인스턴스 생성 방법은 다음과 같다.</p>
 <figure class="highlight javascript"><figcaption><span>class.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;&#125; <span class="comment">// 클래스 선언문</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Person = <span class="class"><span class="keyword">class</span> </span>&#123;&#125;; <span class="comment">// 익명 클래스 표현식</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Person = <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;&#125;; <span class="comment">// 기명 클래스 표현식</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> me = <span class="keyword">new</span> Person(); <span class="comment">// 인스턴스 생성</span></span><br></pre></td></tr></table></figure>
@@ -483,6 +480,12 @@
 <li>서브클래스의 정적 메소드 내에서 super 참조는 super 클래스의 정적 메소드를 가리킨다.</li>
 </ul>
 <figure class="highlight javascript"><figcaption><span>staticSuper.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> sayProfile() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`super의 정적 메소드`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> sayProf() &#123;</span><br><span class="line">    <span class="keyword">super</span>.sayProfile();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Man.sayProf(); <span class="comment">// super의 정적 메소드</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

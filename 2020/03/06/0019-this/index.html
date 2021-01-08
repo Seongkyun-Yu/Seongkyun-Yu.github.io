@@ -305,7 +305,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">511</span> In Total
+              Words <span class="post-count">517</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -351,7 +351,9 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><ul>
+        <br>
+
+<h2 id="1-this"><a href="#1-this" class="headerlink" title="1. this"></a>1. this</h2><ul>
 <li><p>자신이 속한 객체를 참조하기 위한 키워드</p>
 </li>
 <li><p>함수가 호출되는 방식에 따라 this에 바인딩될 값, 즉 this 바인딩이 동적으로 결정된다.</p>
@@ -363,7 +365,7 @@
 </ul>
 <a id="more"></a>
 
-<h1 id="함수-호출-방식과-this-바인딩"><a href="#함수-호출-방식과-this-바인딩" class="headerlink" title="함수 호출 방식과 this 바인딩"></a>함수 호출 방식과 this 바인딩</h1><br>
+<h2 id="2-함수-호출-방식과-this-바인딩"><a href="#2-함수-호출-방식과-this-바인딩" class="headerlink" title="2. 함수 호출 방식과 this 바인딩"></a>2. 함수 호출 방식과 this 바인딩</h2><br>
 
 <table>
 <thead>
@@ -395,7 +397,6 @@
 <li><p>일반 함수 호출 : 기본적으로 전역 객체가 바인딩 된다.</p>
 </li>
 <li><p>메소드 호출 : 메소드를 호출한 객체가 바인딩 된다. (<strong>소유와 관계 없다</strong>)</p>
-<p><img src="https://user-images.githubusercontent.com/15887982/75993626-1c42b900-5f3d-11ea-99fb-84fdb924f7cd.png" alt="22-2"></p>
 </li>
 </ul>
 <br>
@@ -420,7 +421,7 @@
 <p>bind 메소드는 메소드의 this와 메소드 내부의 중첩 함수 또는 콜백 함수의 this가 불일치하는 문제를 해결하기 위해 사용된다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.doSomething = <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  callback.bind(<span class="keyword">this</span>)();</span><br><span class="line">  <span class="comment">// callback.apply(this);</span></span><br><span class="line">  <span class="comment">// callback.call(this);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">// ②</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">"Lee"</span>);</span><br><span class="line"></span><br><span class="line">person.doSomething(foo); <span class="comment">// Lee</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="프로퍼티-위치-결정"><a href="#프로퍼티-위치-결정" class="headerlink" title="프로퍼티 위치 결정"></a>프로퍼티 위치 결정</h1><ul>
+<h2 id="3-프로퍼티-위치-결정"><a href="#3-프로퍼티-위치-결정" class="headerlink" title="3. 프로퍼티 위치 결정"></a>3. 프로퍼티 위치 결정</h2><ul>
 <li><p>개별적인 속성이 필요한 경우 this.속성 으로 프로퍼티 추가</p>
 </li>
 <li><p>개별적 속성을 활용한 메서드일 경우 .prototype에 추가</p>
@@ -428,6 +429,11 @@
 <li><p>개별적 속성이 필요 없는 메소드는 정적 메소드를 사용한다.</p>
 </li>
 </ul>
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />

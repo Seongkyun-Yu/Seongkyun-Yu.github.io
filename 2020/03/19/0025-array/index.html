@@ -525,6 +525,12 @@
 <h2 id="9-10-Array-flatMap"><a href="#9-10-Array-flatMap" class="headerlink" title="9.10 Array#flatMap"></a>9.10 Array#flatMap</h2><p>map을 통해 생성된 새로운 배열을 평탄화한다.</p>
 <figure class="highlight javascript"><figcaption><span>Array-flatMap.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">"hello"</span>, <span class="string">"world"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// flatMap은 1단계만 평탄화한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.flatMap(<span class="function">(<span class="params">str, index</span>) =&gt;</span> [index, [str, str.length]]));</span><br><span class="line"><span class="comment">// [[0, ['hello', 5]], [1, ['wolrd', 5]]] =&gt; [0, ['hello', 5], 1, ['world', 5]]</span></span><br></pre></td></tr></table></figure>
 
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
+
 
         <hr />
         <!-- Pager -->

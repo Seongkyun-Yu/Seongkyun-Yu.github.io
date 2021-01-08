@@ -303,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">956</span> In Total
+              Words <span class="post-count">959</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -370,8 +370,7 @@
 </ul>
 <br>
 
-<h2 id="2-2-노드-객체의-상속-구조"><a href="#2-2-노드-객체의-상속-구조" class="headerlink" title="2.2 노드 객체의 상속 구조"></a>2.2 노드 객체의 상속 구조</h2><p><img src="https://user-images.githubusercontent.com/15887982/77850552-5aff2280-720e-11ea-9903-0c6dd554ba82.png" alt="input 요소 노드 객체의 프로토타입 체인"></p>
-<a id="more"></a>
+<h2 id="2-2-노드-객체의-상속-구조"><a href="#2-2-노드-객체의-상속-구조" class="headerlink" title="2.2 노드 객체의 상속 구조"></a>2.2 노드 객체의 상속 구조</h2><a id="more"></a>
 
 <table>
 <thead>
@@ -451,8 +450,7 @@
 </li>
 </ul>
 <p><br><br></p>
-<h1 id="4-노드-탐색"><a href="#4-노드-탐색" class="headerlink" title="4. 노드 탐색"></a>4. 노드 탐색</h1><h2 id="4-1-노드-탐색-프로퍼티"><a href="#4-1-노드-탐색-프로퍼티" class="headerlink" title="4.1 노드 탐색 프로퍼티"></a>4.1 노드 탐색 프로퍼티</h2><p><img src="https://user-images.githubusercontent.com/15887982/77850928-c9dd7b00-7210-11ea-8fe4-7c0a062c0ba3.png" alt="트리 노드 탐색 프로퍼티"></p>
-<ul>
+<h1 id="4-노드-탐색"><a href="#4-노드-탐색" class="headerlink" title="4. 노드 탐색"></a>4. 노드 탐색</h1><h2 id="4-1-노드-탐색-프로퍼티"><a href="#4-1-노드-탐색-프로퍼티" class="headerlink" title="4.1 노드 탐색 프로퍼티"></a>4.1 노드 탐색 프로퍼티</h2><ul>
 <li><p>Node.prototype : parentNode, previousSlibling, firstChild, childNodes</p>
 </li>
 <li><p>Element.prototype : previousElementSlibling, nextElementSlibling과 children</p>
@@ -552,7 +550,6 @@
 <h2 id="5-2-nodeValue"><a href="#5-2-nodeValue" class="headerlink" title="5.2 nodeValue"></a>5.2 nodeValue</h2><p>프로퍼티 참조와 할당 모두 가능하지만 텍스트 노드의 값만 의미 있다.</p>
 <figure class="highlight html"><figcaption><span>change_text_nodeValue.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"foo"</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>world!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// div#foo 요소는 텍스트 노드가 아니다.</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).nodeValue); <span class="comment">// null</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// div#foo 요소의 텍스트 노드의 값을 취득</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).firstChild.nodeValue); <span class="comment">// Hello</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// span 요소의 텍스트 노드의 값을 텍스트를 취득</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).lastChild.firstChild.nodeValue); <span class="comment">// world!</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://user-images.githubusercontent.com/15887982/77851853-42930600-7216-11ea-8e44-d59dc163a6b8.png" alt="nodeValue에 의한 텍스트 취득"></p>
 <br>
 
 <h2 id="5-3-textContent"><a href="#5-3-textContent" class="headerlink" title="5.3 textContent"></a>5.3 textContent</h2><p>요소 노드 안의 모든 텍스트를 반환.<br></p>
@@ -560,11 +557,9 @@
 <p>할당시 모든 자식 노드는 제거된다.<br></p>
 <figure class="highlight html"><figcaption><span>change_text_textContent.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"foo"</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>world!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// div#foo 요소의 텍스트를 모두 취득</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// HTML 마크업은 무시된다.</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).textContent); <span class="comment">// Hello world!</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://user-images.githubusercontent.com/15887982/77851734-a1a44b00-7215-11ea-81a8-46f41344a270.png" alt="textContent에 의한 텍스트 취득"></p>
 <p><br><br></p>
 <h1 id="6-DOM-조작"><a href="#6-DOM-조작" class="headerlink" title="6. DOM 조작"></a>6. DOM 조작</h1><p>새로운 노드 생성 및 추가, 삭제, 교체하는 것</p>
-<h2 id="6-1-innerHTML"><a href="#6-1-innerHTML" class="headerlink" title="6.1 innerHTML"></a>6.1 innerHTML</h2><p><img src="https://user-images.githubusercontent.com/15887982/77851972-0b712480-7217-11ea-8fbe-8b51668a320b.png" alt="innerHTML에 의한 HTML 마크업 취득"></p>
-<ul>
+<h2 id="6-1-innerHTML"><a href="#6-1-innerHTML" class="headerlink" title="6.1 innerHTML"></a>6.1 innerHTML</h2><ul>
 <li><p>setter, getter 존재</p>
 </li>
 <li><p>참조시 : 모든 요소 노드의 HTML 마크업을 문자열로 반환함</p>
@@ -580,7 +575,6 @@
 
 <h2 id="6-2-insertAdjacentHTML"><a href="#6-2-insertAdjacentHTML" class="headerlink" title="6.2 insertAdjacentHTML"></a>6.2 insertAdjacentHTML</h2><figure class="highlight javascript"><figcaption><span>insertAdjacentHTML.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Element.prototype.insertAdjacentHTML(position, DOMString);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://user-images.githubusercontent.com/15887982/77852077-9d792d00-7217-11ea-8911-2f50b28abc71.png" alt="insertAdjacentHTML 메소드"></p>
 <ul>
 <li><p>첫 번째 인자에 위치를 지정할 수 있다</p>
 </li>
@@ -637,6 +631,11 @@
 <h2 id="8-3-요소에-적용된-CSS-스타일-참조"><a href="#8-3-요소에-적용된-CSS-스타일-참조" class="headerlink" title="8.3 요소에 적용된 CSS 스타일 참조"></a>8.3 요소에 적용된 CSS 스타일 참조</h2><ul>
 <li>getComputedStyle : 요소 노드에 적용되어 있는 평가된 스타일을 CSSStyleDeclaration 객체에 담아 반환 (최종적으로 적용된 스타일)</li>
 </ul>
+<br>
+
+<blockquote>
+<p><a href="https://poiemaweb.com/" target="_blank" rel="noopener">참고자료: poiemaweb.com</a></p>
+</blockquote>
 
 
         <hr />
