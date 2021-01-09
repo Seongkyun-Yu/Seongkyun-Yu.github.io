@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/2020/01/05/0062-fetch/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/09/0063-mvc/">
   <title>
     
-    fetch, setTimeout은 표준 API일까? - 개발개발 블로그
+    MVC 패턴 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -284,14 +284,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#웹표준" title="웹표준">웹표준</a>
+              <a class="tag" href="/tags/#MVC" title="MVC">MVC</a>
               
             </div>
-            <h1>fetch, setTimeout은 표준 API일까?</h1>
-            <h2 class="subheading">웹표준에 대해서</h2>
+            <h1>MVC 패턴</h1>
+            <h2 class="subheading">디자인패턴에 대해서</h2>
             <span class="meta">
               Posted by Seongkyun Yu on
-              2020-01-05
+              2020-01-09
             </span>
 
 
@@ -299,11 +299,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">460</span> In Total
+              Words <span class="post-count">179</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -349,85 +349,28 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <p><img src="https://images.velog.io/images/seongkyun/post/e218df42-d488-417a-95fe-ce9b9f12846f/tenor.gif" alt=""></p>
-<p>얼마전 VanillaJS로 IE10까지 지원하는 작은 프로젝트를 진행했었다.</p>
-<p>처음에는 웹팩과 바벨이 IE 지원에 대한 모든것을 해결해 줄것이라고 생각했다.</p>
-<p>그래서 마음 편하게 코드를 짜고 있었는데…</p>
-<p>작업 중간에 IE 테스트를 해보니 fetch가 동작하지 않았다.</p>
-<p>분명 babel로 처리 했는데 왜안되지 싶은 마음에 <a href="https://babeljs.io/" target="_blank" rel="noopener">https://babeljs.io/</a> 에서 fetch polyfill을 찾았지만 없었다.</p>
-<p>babel은 Ecmascript 스펙만 지원하기 때문에 fetch를 지원하지 않는다는 것이다.</p>
-<p>그래서 WHATWG에서 제공하는 fetch polyfill을 사용해야 했다.</p>
-<p><img src="https://images.velog.io/images/seongkyun/post/c415bd29-a38b-4414-a234-e894fb94ed30/giphy%20(1).gif" alt=""></p>
-<p>이때 상당히 당황스러웠다.</p>
-<p>fetch가 Ecmascript가 아니라고? 그런데 W3C 스펙에도 없네?</p>
-<p>그럼 표준 API가 아닌건가? WHATWG는 또 뭐지?</p>
-<p>그래서 웹 표준, W3C, WHATWG, Ecmascript에 대해 공부해 봤다.</p>
-<h2 id="1-W3C"><a href="#1-W3C" class="headerlink" title="1. W3C"></a>1. W3C</h2><p>몇년도에 단체가 생겨나서.. 하는 이야기는 적지 않겠다.</p>
-<p>W3C는 웹표준과 가이드라인을 만드는 일을 한다.</p>
-<p>일관된 규칙이 있어야 웹을 보여주는 브라우저나 기타 기기들이 동일한 화면을 보여줄 수 있기 때문에 웹 표준이 필요하다.</p>
-<p>이곳에서 HTML, CSS, DOM등의 표준을 관리했다.</p>
-<p>문제는 일처리가 너무 너무 느리다는 것이다.</p>
-<p>상당히 보수적으로 일을 진행하다보니 다양한 기술 적용을 원하는 사람들의 요구를 충족시킬 수 없었다.</p>
-<p>그래서 WHATWG가 탄생한다.</p>
-<br>
-
-<h2 id="2-WHATWG"><a href="#2-WHATWG" class="headerlink" title="2. WHATWG"></a>2. WHATWG</h2><p>HTML5를 개발하면서 브라우저 회사들이 W3C에 다양한 기능을 요청했으나 받아들여지지 않았고,</p>
-<p>그에 반기를 들고 새로운 표준 단체를 만든 것이 WHATWG이다.</p>
-<p>W3C보다 훨씬 빠르게 다양한 표준을 만들었다.</p>
-<p>이 단체가 생기면서 웹 표준에 대한 전쟁이 벌어졌다.</p>
-<br>
-
-<h2 id="3-W3C-vs-WHATWG"><a href="#3-W3C-vs-WHATWG" class="headerlink" title="3. W3C vs WHATWG"></a>3. W3C vs WHATWG</h2><p>표준이 둘로 갈라졌으니 싸움이 났고, 싸움의 결과는 WHATWG의 승리로 마무리 됐다.</p>
+        <p>오랜만에 React가 아닌 Vanilla JS 프로젝트를 하면서</p>
+<p>기능 구현에만 집중하는 것보다 디자인 패턴에 대해 공부하고 만들어 보는 것을 목표로 삼았다.</p>
+<p>MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 잘 와닿지 않았다.</p>
+<p>그래서 Js를 배울때 누구나 한 번쯤 만들어 보는 todo-list를 디자인 패턴을 적용하여 만든 예제를 찾았다.</p>
+<p>MVP, MVVM의 예제는 찾을 수 없었지만, MVC 패턴은 다행히 있었다!</p>
 <blockquote>
-<p><a href="https://zdnet.co.kr/view/?no=20190531184644" target="_blank" rel="noopener">둘로 나뉜 웹 표준, 하나로 합쳐진다.<br>(W3C와의 기술 표준화 주도권 싸움에서 WHATWG 승리)</a></p>
+<p><a href="https://github.com/tastejs/todomvc" target="_blank" rel="noopener">TODO MVC</a> &gt; <a href="https://github.com/tarhi-saad/TodoMVC-Vanilla-ES6" target="_blank" rel="noopener">TodoMVC (Vanilla ES6)</a></p>
 </blockquote>
-<p>HTML5처럼 뒤에 붙는 버전이 없이 HTML로 통일되고</p>
-<p>WHATWG에서 표준을 담당하기로 정해졌다.</p>
-<br>
-
-<h2 id="4-Web-API와-JS의-차이"><a href="#4-Web-API와-JS의-차이" class="headerlink" title="4. Web API와 JS의 차이"></a>4. Web API와 JS의 차이</h2><p>그동안 나는 Web API와 JS의 차이를 정확히 알지 못했다.</p>
-<p>JS를 쓸 때 누가 두 차이를 구별하면서 사용하겠는가?</p>
-<p>하지만 나는 표준이 무엇인지, 바벨에서 왜 fetch를 지원하지 않는지를 알아야 했다.</p>
-<p>Web API와 JS의 차이점을 정리하면 다음과 같다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">구분</th>
-<th align="center">Web API</th>
-<th align="center">Javascript</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">표준 관리</td>
-<td align="center">WHATWG</td>
-<td align="center">Ecmascript</td>
-</tr>
-<tr>
-<td align="center">예시</td>
-<td align="center">console, setTimeout, fetch</td>
-<td align="center">map, reduce, forEach, class</td>
-</tr>
-</tbody></table>
-<p>Web API는 WHATWG에서 표준을 관리하며 브라우저에서 동작하게끔 만들어진 API이다.</p>
-<p>Javascript는 Ecmascript는 범용 스크립트 언어(규칙)를 따르는 스크립트언어이다.</p>
-<p>Ecmascript와 JS에 대한 자세한 설명은 아래의 링크를 참조하자.</p>
-<blockquote>
-<p><a href="https://wormwlrm.github.io/2018/10/03/What-is-the-difference-between-javascript-and-ecmascript.html" target="_blank" rel="noopener">JavaScript와 ECMAScript는 무슨 차이점이 있을까?</a></p>
-</blockquote>
-<p>NodeJS까지 공부한 개발자라면 이런 생각을 할것이다.</p>
-<p><img src="https://images.velog.io/images/seongkyun/post/cf853581-76c2-4da3-9d58-c0d87aded720/i13797528627.gif" alt=""></p>
-<p>아닌데? NodeJS에도 console.log랑 setTimeout 다 쓸 수 있는데??</p>
-<p>그건 EcmaScript의 표준이라서가 아니라 NodeJS에서 구현해 둔 것 뿐이다.</p>
-<p>JS를 공부할 때 비동기 처리에 대해 공부했을 것이다.</p>
-<p>싱글스레드인 JS가 비동기 처리가 가능한 이유는 Web API를 통해 브라우저나 NodeJS가 처리하기 때문이다.</p>
-<p><img src="https://images.velog.io/images/seongkyun/post/d40d09e3-6850-4c27-a53b-a0953ede3c9b/42-4.png" alt=""></p>
-<p>위와 같은 그림을 한 번쯤 공부한 적 있을것이다.</p>
-<p>따라서 JS의 문법과 Web API는 별개로 구분해야 한다.</p>
-<br>
-
-<h2 id="결론-W3C-WHATWG-Ecmascript-모두-표준이다"><a href="#결론-W3C-WHATWG-Ecmascript-모두-표준이다" class="headerlink" title="결론: W3C, WHATWG, Ecmascript 모두 표준이다"></a>결론: W3C, WHATWG, Ecmascript 모두 표준이다</h2><p>표준을 담당하는 범위가 다를 뿐, 모두 표준이란 것을 알게 됐다.</p>
-<p>따라서 WHATWG에서 Living Standard로 인정하는 fetch, setTimeout도 모두 표준이다!</p>
-<p>이러한 공부를 하고 나서야 간신히 fetch polyfill을 적용할 수 있었다.</p>
+<p>코드를 보고 MVC 패턴에 대한 이해가 됐다.</p>
+<p><strong>Model: Data 관리<br>View: 화면 랜더링 관리<br>Controller: 사용자의 신호를 받고 명령을 내리는 역할</strong></p>
+<p>이렇게 관심사를 나누고 코드를 작성하는 패턴이었다.</p>
+<p>그런데 내가 이해한 코드와 인터넷의 설명과 좀 다른 부분이 있었다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/ee46e793-6f48-4d19-826a-24a34cae1acb/MVC.jpg" alt=""></p>
+<p>코드로 이해한 MVC 패턴은 위 이미지와 같은 형태였는데,</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/c97a4b37-ddc5-4f56-9a9b-0e0bb47cc940/MVC.jpg" alt=""></p>
+<p>어떤 설명에선 Model과 View가 연결돼 있다고 설명했다.</p>
+<p>데이터가 업데이트 됐다는 것을 View에 알려준다고 하는데,</p>
+<p>controller가 해결하면 될 일을 왜 Model이 뷰에게 알려준다고 설명할까?</p>
+<p><strong>답은 둘 다 MVC패턴이다.</strong></p>
+<p><strong>데이터가 변경됐다는 신호를 Controller에게도 View에게도 줄 수 있다.</strong></p>
+<p>다만 view에 신호를 줄 경우에는 모델과 뷰의 의존성이 높아지기 때문에</p>
+<p>나는 Model의 데이터 변경 신호를 Controller에서 받기로 했다.</p>
 
 
         <hr />
@@ -436,14 +379,24 @@
           
           <li class="previous">
             <a
-              href="/2020/01/09/0063-mvc/"
+              href="/2020/02/20/0001-data-type/"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="MVC 패턴"
+              title="데이터 타입 (Data-Type)"
               >&larr; Previous Post</a
             >
           </li>
            
+          <li class="next">
+            <a
+              href="/2020/01/05/0062-fetch/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="fetch, setTimeout은 표준 API일까?"
+              >Next Post &rarr;</a
+            >
+          </li>
+          
         </ul>
 
         
@@ -482,7 +435,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=fetch, setTimeout은 표준 API일까?&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/01/05/0062-fetch/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=MVC 패턴&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/01/09/0063-mvc/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -521,7 +474,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-W3C"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. W3C</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-WHATWG"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. WHATWG</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-W3C-vs-WHATWG"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. W3C vs WHATWG</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-Web-API와-JS의-차이"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. Web API와 JS의 차이</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#결론-W3C-WHATWG-Ecmascript-모두-표준이다"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">결론: W3C, WHATWG, Ecmascript 모두 표준이다</span></a></li></ol>
+          <ol class="nav">none</ol>
         
         </div>
       </aside>
@@ -543,9 +496,9 @@
             
             <a
               class="tag"
-              href="/tags/#웹표준"
-              title="웹표준"
-              >웹표준</a
+              href="/tags/#MVC"
+              title="MVC"
+              >MVC</a
             >
             
           </div>
