@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/2020/01/13/0064-How-I-Make-Chart/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/16/0065-AttributeVSproperty/">
   <title>
     
-    나는 어떻게 차트를 만들었나 - 개발개발 블로그
+    어트리뷰트와 프로퍼티의 차이 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -284,14 +284,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#D3" title="D3">D3</a>
+              <a class="tag" href="/tags/#attribute, property" title="attribute, property">attribute, property</a>
               
             </div>
-            <h1>나는 어떻게 차트를 만들었나</h1>
-            <h2 class="subheading">D3, 라이브러리 차트</h2>
+            <h1>어트리뷰트와 프로퍼티의 차이</h1>
+            <h2 class="subheading"></h2>
             <span class="meta">
               Posted by Seongkyun Yu on
-              2020-01-13
+              2020-01-16
             </span>
 
 
@@ -303,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">266</span> In Total
+              Words <span class="post-count">99</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -349,71 +349,25 @@
       <div
         class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
       >
-        <h2 id="1-직접-구현-vs-라이브러리-사용"><a href="#1-직접-구현-vs-라이브러리-사용" class="headerlink" title="1. 직접 구현 vs 라이브러리 사용"></a>1. 직접 구현 vs 라이브러리 사용</h2><p>처음 내 욕심은 D3를 이용하여 직접 구현하는 것이었다.</p>
-<p>정확히는 html, css, js만으로 구현하려다 실패하고 D3를 활용하여 만드려고 했다.</p>
-<p>다행히 캔들 차트를 만드는데 성공했으나 차트를 좌우로 움직이거나 확대/축소 기능을 만들지 못했다.</p>
-<p>그래서 타협을 좀 해서 D3fc라는 라이브러리까지 써보기로 했다.</p>
-<p>이 라이브러리로 스트리밍 기능과 좌우로 움직이는 기능을 구현할 수 있었다.</p>
-<p>그런데.. 확대 기능을 붙이기가 쉽지 않았다.</p>
-<p>D3에서 지원하는 zoom이 제대로 동작하지 않았다.</p>
-<p>Y축 확대 축소 기능도 기본적으로 지원하지 않았다….</p>
-<p>결국 슬프게도 차트를 통째로 지원하는 라이브러리를 찾기 시작했다.</p>
+        <h2 id="어트리뷰트"><a href="#어트리뷰트" class="headerlink" title="어트리뷰트"></a>어트리뷰트</h2><p>HTML 파일 안에서 선언된 값이다.</p>
+<p>ex)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>여기서 id 값이 container로 되어있는데, 이 것이 어트리뷰트이다.</p>
+<h2 id="프로퍼티"><a href="#프로퍼티" class="headerlink" title="프로퍼티"></a>프로퍼티</h2><p>DOM안에서 가지고 있는 값이다.</p>
+<h2 id="어트리뷰트와-프로퍼티의-차이"><a href="#어트리뷰트와-프로퍼티의-차이" class="headerlink" title="어트리뷰트와 프로퍼티의 차이"></a>어트리뷰트와 프로퍼티의 차이</h2><p>어트리뷰트의 경우 HTML에 적혀있는 값이라 변경할 수 없지만,</p>
+<p>프로퍼티는 DOM안의 값이기 때문에 변경할 수 있다.</p>
+<p>예를들어</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">"안녕하세요"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>라는 코드가 있을 때</p>
+<p>사용자가 input의 값을 변경하더라도 어트리뷰트는 변하지 않는다.</p>
+<p>대신 DOM 안의 프로퍼티 값이 변경된다.</p>
 <br>
 
-<h2 id="2-highchart-vs-react-financial-charts"><a href="#2-highchart-vs-react-financial-charts" class="headerlink" title="2. highchart vs react-financial-charts"></a>2. highchart vs react-financial-charts</h2><p>마지막까지 고민했던 라이브러리는 highchart 와 react-financial-charts였다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">구분</th>
-<th align="center">higchart</th>
-<th align="center">react-financial-charts</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">문서화</td>
-<td align="center">좋음</td>
-<td align="center">나쁨</td>
-</tr>
-<tr>
-<td align="center">사용 유저</td>
-<td align="center">많음</td>
-<td align="center">적음</td>
-</tr>
-<tr>
-<td align="center">참고자료</td>
-<td align="center">많음</td>
-<td align="center">적음</td>
-</tr>
-<tr>
-<td align="center">보조지표</td>
-<td align="center">적음</td>
-<td align="center">많음</td>
-</tr>
-<tr>
-<td align="center">미관</td>
-<td align="center">좋은편</td>
-<td align="center">좋음</td>
-</tr>
-</tbody></table>
-<p>거의 모든 면에서 highchart가 우세하다.</p>
-<p>하지만 난 생각지도 못한 경험을 하고 react-financial-charts를 사용하기로 마음 먹었다.</p>
-<br>
-
-<h2 id="3-다른-사람의-코드를-보다"><a href="#3-다른-사람의-코드를-보다" class="headerlink" title="3. 다른 사람의 코드를 보다"></a>3. 다른 사람의 코드를 보다</h2><p>react-financial-charts는 사용방법이 거의 나와있지 않았다.</p>
-<p>지금은 나아진 편인데, 처음 사용할때만해도 소스코드를 직접 보고 사용해야할 수준이었다.</p>
-<p>그럼에도 예제로 나와있는 결과물이 굉장히 마음에 들었기 때문에 사용법을 알고자 열심히 코드를 읽었다.</p>
-<p>이 때 처음으로 HOC 패턴에 대해 배웠다.</p>
-<p>다른 사람의 코드를 보고 배운 첫 경험이었다.</p>
-<p>항상 잘 정리된 문서로만 공부했던 나에게 이것은 굉장히 신선한 경험으로 다가왔다.</p>
-<p>처음에는 문서화가 안돼있음에 분노했지만, 결과적으로 배운것이 있었다.</p>
-<p>그래서 react-financial-charts 사용하기로 마음먹었다.</p>
-<br>
-
-<h2 id="4-완성하고-나서-느낀점"><a href="#4-완성하고-나서-느낀점" class="headerlink" title="4. 완성하고 나서 느낀점"></a>4. 완성하고 나서 느낀점</h2><p>아직 개발 진행이 알파 단계인 라이브러리를 쓰면서 아쉬운 점이 있었고,</p>
-<p>사용방법을 몰라 너무나 많은 테스트를 하며 만들어야 했지만 어느정도 만족스러운 결과가 나왔다.</p>
-<p>강제로 남의 코드를 읽게 환경을 만든 것도 좋은 경험이 되었다.</p>
-<p>회사에서는 안정적인 라이브러리를 쓰는게 중요하겠지만</p>
-<p>혼자서 공부할 때는 개고생을 해보는 것도 나쁘지 않은것 같다.</p>
+<blockquote>
+<p>출처: <a href="https://jeongwooahn.medium.com/html-attribute%EC%99%80-property-%EC%9D%98-%EC%B0%A8%EC%9D%B4-d3c172cebc41" target="_blank" rel="noopener">https://jeongwooahn.medium.com/html-attribute%EC%99%80-property-%EC%9D%98-%EC%B0%A8%EC%9D%B4-d3c172cebc41</a></p>
+</blockquote>
 
 
         <hr />
@@ -422,20 +376,20 @@
           
           <li class="previous">
             <a
-              href="/2020/01/16/0065-AttributeVSproperty/"
+              href="/2020/02/20/0001-data-type/"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="어트리뷰트와 프로퍼티의 차이"
+              title="데이터 타입 (Data-Type)"
               >&larr; Previous Post</a
             >
           </li>
            
           <li class="next">
             <a
-              href="/2020/01/09/0063-mvc/"
+              href="/2020/01/13/0064-How-I-Make-Chart/"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="MVC 패턴"
+              title="나는 어떻게 차트를 만들었나"
               >Next Post &rarr;</a
             >
           </li>
@@ -478,7 +432,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=나는 어떻게 차트를 만들었나&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/01/13/0064-How-I-Make-Chart/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=어트리뷰트와 프로퍼티의 차이&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/01/16/0065-AttributeVSproperty/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -517,7 +471,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-직접-구현-vs-라이브러리-사용"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. 직접 구현 vs 라이브러리 사용</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-highchart-vs-react-financial-charts"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. highchart vs react-financial-charts</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-다른-사람의-코드를-보다"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. 다른 사람의 코드를 보다</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-완성하고-나서-느낀점"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. 완성하고 나서 느낀점</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#어트리뷰트"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">어트리뷰트</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#프로퍼티"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">프로퍼티</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#어트리뷰트와-프로퍼티의-차이"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">어트리뷰트와 프로퍼티의 차이</span></a></li></ol>
         
         </div>
       </aside>
@@ -539,9 +493,9 @@
             
             <a
               class="tag"
-              href="/tags/#D3"
-              title="D3"
-              >D3</a
+              href="/tags/#attribute, property"
+              title="attribute, property"
+              >attribute, property</a
             >
             
           </div>
