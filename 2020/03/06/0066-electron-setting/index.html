@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../css/highlight.css">
-<link rel="stylesheet" href="../css/widget.css">
-<link rel="stylesheet" href="../css/rocket.css">
-<link rel="stylesheet" href="../css/signature.css">
-<link rel="stylesheet" href="../css/catalog.css">
-<link rel="stylesheet" href="../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -125,10 +125,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/06/0066-electron-setting/">
   <title>
     
-    About - 개발개발 블로그
+    어트리뷰트와 프로퍼티의 차이 - 개발개발 블로그
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -262,8 +262,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/scenery/about_bg.jpg');
+       /*post*/
+        background-image: url('/img/header_img/lml_bg.jpg');
       
     }
 
@@ -281,10 +281,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>About</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">This is Dev Blog</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#attribute, property" title="attribute, property">attribute, property</a>
+              
+            </div>
+            <h1>어트리뷰트와 프로퍼티의 차이</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Seongkyun Yu on
+              2020-03-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">560</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
           </div>
           
         </div>
@@ -309,523 +339,238 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	
+<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
+        <p><img src="https://images.velog.io/images/seongkyun/post/d110b55d-b589-40c1-84eb-f0e4b78b1673/s3uitx6rdv7sod1g2acz.png" alt="Electron Logo"></p>
+<h2 id="Electron이란"><a href="#Electron이란" class="headerlink" title="Electron이란"></a>Electron이란</h2><p>NodeJS 등장이후 프론트를 만드는 데만 쓰이던 js가 서버, 모바일 앱, 데스크톱 앱에 쓰일 수 있게 되었다.</p>
+<p>서버 - NodeJS<br>앱 - React Native<br>데스크톱 앱 - Electron</p>
+<p>Electron은 HTML, CSS, JS로 Desktop 앱을 만들 수 있게 해주는 프레임워크이다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/afea2f3b-005a-4128-84ab-30f1d46e5964/maxresdefault.jpg" alt="Electron의 구성"></p>
+<p>Electron에서 HTML, CSS, JS를 이용하여 뷰를 표현하기 위해 Chromium 환경을 이용한다. 하지만 웹 브라우저 환경에서는 기본적으로 클라이언트 컴퓨터에 파일을 쓰는 것이 불가능하기 때문에 NodeJS 서버를 함께 두어 리소스 접근을 가능하게 만든다.</p>
+<p>이러한 이유로 한 프로그램에 두개의 Process가 동작하게 된다. 일반적으로 브라우저와 서버의 통신에는 Rest API가 사용되지만 Electron에서는 IPC 통신을 이용하여 자료를 전달한다.</p>
+<p>프로그램을 작성할 때도 Main Process와 Renderer Process를 구분해서 만들어야 한다. 서버와 브라우저를 함께 만든다고 생각하면 된다.</p>
+<h2 id="Electron-amp-필요-라이브러리-설치"><a href="#Electron-amp-필요-라이브러리-설치" class="headerlink" title="Electron &amp; 필요 라이브러리 설치"></a>Electron &amp; 필요 라이브러리 설치</h2><p>Electron의 초기 설정은 정말 별거 없다.</p>
+<p>만약 TypeScript를 사용하지 않는다면 <a href="https://www.electronjs.org/docs/tutorial/quick-start" target="_blank" rel="noopener">공식 문서</a>를 따라하면 된다.</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> init -y</span><br><span class="line"><span class="built_in">npm</span> i -D electron</span><br></pre></td></tr></table></figure>
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+<p>다만 이 글에선 타입스크립트를 사용할 것이기 때문에 아래와 같이 추가 설치를 진행한다.</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> i -D typescript</span><br><span class="line"><span class="built_in">npm</span> i -D webpack</span><br><span class="line"><span class="built_in">npm</span> i -D ts-loader</span><br><span class="line"><span class="built_in">npm</span> i -D prettier</span><br></pre></td></tr></table></figure>
 
-      <!--
-## Talk To Me
+<p>한 줄에 여러 라이브러리를 설치할 수도 있지만 간혹 에러가 나는 경우가 있어 하나하나 설치하는 것을 선호한다.</p>
+<p>배포, 테스트와 관련된 라이브러리는 관련 글에서 설치하고 진행하도록 하겠다.</p>
+<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><p>root 폴더에 webpack.config.js 파일을 생성하고 아래와 같이 작성한다.</p>
+<figure class="highlight javascript"><figcaption><span>webpack.config.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(__dirname);</span><br><span class="line"><span class="comment">// 공통 설정 부분</span></span><br><span class="line"><span class="keyword">const</span> common_config = &#123;</span><br><span class="line">  node: &#123;</span><br><span class="line">    __dirname: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  mode: process.env.ENV || <span class="string">"development"</span>,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.tsx?$/</span>, <span class="comment">// ts나 tsx 파일은 ts-loader가 처리한다.</span></span><br><span class="line">        use: <span class="string">"ts-loader"</span>,</span><br><span class="line">        exclude: [<span class="regexp">/node_modules/</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">".tsx"</span>, <span class="string">".ts"</span>, <span class="string">".js"</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  devtool: <span class="string">"source-map"</span>, <span class="comment">// 이 설정으로 devtool이 ts파일의 오류 위치를 알려줄 수 있다.</span></span><br><span class="line">  mode: <span class="string">"development"</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main Process와 Renderer Process 두가지가 필요하기 때문에 각각 설정한다.</span></span><br><span class="line"><span class="built_in">module</span>.exports = [</span><br><span class="line">  <span class="built_in">Object</span>.assign(&#123;&#125;, common_config, &#123;</span><br><span class="line">    target: <span class="string">"electron-main"</span>, <span class="comment">// electron main에 맞게 변환한다.</span></span><br><span class="line">    entry: &#123;</span><br><span class="line">      index: <span class="string">"./src/main/main.ts"</span>, <span class="comment">// Main Process 진입 파일</span></span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">"[name]-bundle.js"</span>,</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">"src/main/dist"</span>), <span class="comment">// 변환된 js 파일이 담길 위치</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="built_in">Object</span>.assign(&#123;&#125;, common_config, &#123;</span><br><span class="line">    target: <span class="string">"electron-renderer"</span>, <span class="comment">// electron renderer에 맞게 변환한다.</span></span><br><span class="line">    entry: &#123;</span><br><span class="line">      index: <span class="string">"./src/renderer/Modules/index.ts"</span>, <span class="comment">// Renderer Process 진입 파일</span></span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">"[name]-bundle.js"</span>,</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">"src/renderer/dist"</span>), <span class="comment">// 변환된 js 파일이 담길 위치</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 
-> I always say to myself :
->
-> if my life is peaceful and plain sailing all the time ,
->
-> it means to die in the electrocardiogram …
+<p>Main Process와 Renderer Process를 따로 작성해야 하기 때문에 웹팩으로 생성하는 파일도 두 개가 필요하다.</p>
+<h2 id="TypeScript-설정"><a href="#TypeScript-설정" class="headerlink" title="TypeScript 설정"></a>TypeScript 설정</h2><h3 id="tsconfig-json"><a href="#tsconfig-json" class="headerlink" title="tsconfig.json"></a>tsconfig.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compileOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">      <span class="attr">"target"</span>: <span class="string">"es6"</span>,</span><br><span class="line">      <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="attr">"pretty"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"newLine"</span>: <span class="string">"LF"</span>,</span><br><span class="line">      <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"strict"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"noUnusedLocals"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"noUnusedParameters"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"skipLibCheck"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"allowJs"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"jsx"</span>: <span class="string">"preserve"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"exclude"</span>: [</span><br><span class="line">    <span class="string">"node_modules"</span>,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"include"</span>: [<span class="string">"index.d.ts"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="index-d-ts"><a href="#index-d-ts" class="headerlink" title="index.d.ts"></a>index.d.ts</h3><p>png, mp3등의 리소스를 임포트 할 일이 있을 경우 필요하다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">module</span> <span class="string">'*.png'</span>;</span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">module</span> <span class="string">'*.jpg'</span>;</span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">module</span> <span class="string">'*.json'</span>;</span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">module</span> <span class="string">'*.mp3'</span>;</span><br></pre></td></tr></table></figure>
 
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"electron"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.1.0"</span>,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"Jhon Doe"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"electron"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"./src/main/dist/index-bundle.js"</span>,</span><br><span class="line">  <span class="attr">"build"</span>: &#123;</span><br><span class="line">    <span class="attr">"productName"</span>: <span class="string">"electron"</span>,</span><br><span class="line">    <span class="attr">"asar"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"nsis"</span>: &#123;</span><br><span class="line">      <span class="attr">"oneClick"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"allowToChangeInstallationDirectory"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"files"</span>: [</span><br><span class="line">      <span class="string">"src/**/*"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"electron ."</span>,</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"webpack --config webpack.config.js"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"electron"</span>: <span class="string">"^11.2.3"</span>,</span><br><span class="line">    <span class="attr">"file-loader"</span>: <span class="string">"^6.2.0"</span>,</span><br><span class="line">    <span class="attr">"prettier"</span>: <span class="string">"2.2.1"</span>,</span><br><span class="line">    <span class="attr">"spectron"</span>: <span class="string">"^13.0.0"</span>,</span><br><span class="line">    <span class="attr">"ts-loader"</span>: <span class="string">"^8.0.17"</span>,</span><br><span class="line">    <span class="attr">"typescript"</span>: <span class="string">"^4.1.5"</span>,</span><br><span class="line">    <span class="attr">"webpack"</span>: <span class="string">"^5.21.2"</span>,</span><br><span class="line">    <span class="attr">"webpack-cli"</span>: <span class="string">"^4.5.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-## Just Me
-
-<img src="../img/scenery/about_bg2.jpg" width="350" alt="about_bg2"></img>
-
-> 有一种状态 叫一个人 它总是挑战语言的贫乏 只能在某首歌中找寻灵感；
->
-> 有一种氨基酸 叫多巴胺 你不知道它何时会在你体内产生；
->
-> 有一种上瘾 叫抽烟 其实你抽的只是心情 又或是寂寞；
->
-> 有一种态度 叫纹身 其实我们只是想与众不同；
->
-> 有一种经历 叫旅行 年轻只有一次 不出去走走 或许以为眼前的就是世界；
->
-> 有一种人生 叫心电图 如果你总是一帆风顺 那么你就挂了；
->
-> 有一种悠闲 叫 " 老板给我杯Cappuccino " 香香甜甜 浓郁中带着苦涩 醇和而隽永 …
+<p>script를 통해 build(ts -&gt; js)와 start를 하도록 만들었다.</p>
 
 
-
-## The Longest Way ...
-
-<img src="../img/scenery/about_bg4.jpg" width="350" alt="about_bg4"></img>
-
->  活在当下 然后忘记 继续往前走 ...
->
->  即便是一个人 ...
->
->  On the way to meet myself …
-
-
-## Follow With Interest Blogs
-
-> Neo Peng：https://zhile.io
->
-> 李卫民：https://www.funtl.com/zh/guide
->
-> duanxz：https://www.cnblogs.com/duanxz/tag
->
-> Java1234_小锋：http://blog.java1234.com/index.html
->
-> Deserts：https://deserts.io
->
-> Super Snail：https://www.dusign.net
->
-> KIERAN'S BLOG：https://go.kieran.top
->
-> Mr.Seven：https://itimetraveler.github.io
-
-## Contact me
-
-> Email：601521821@qq.com
-
-## Treat me to coffee
->  If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee...
-
-<img src="../img/scenery/treat_me_to_coffee.png" width="350" alt="treat_me_to_coffee.png"></img> -->
-
-
-      <!-- 如果开启评论功能 -->
-      
-      <hr>
-
-      
-
-      
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img
-      id="avatar_pic"
-      src="/img/avatar/dev-profile.png"
-      alt="avatar_pic"
-    />
-     
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://github.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://twitter.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-       
-      <li>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/Seongkyun-Yu"
-        >
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
+        <hr />
+        <!-- Pager -->
+        <ul class="pager">
           
-    </ul>
-  </div>
-</section>
+          <li class="previous">
+            <a
+              href="/2020/03/06/0019-this/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="this"
+              >&larr; Previous Post</a
+            >
+          </li>
+           
+          <li class="next">
+            <a
+              href="/2020/03/05/0016-builtin-object/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="빌트인 객체 (Built-in Object)"
+              >Next Post &rarr;</a
+            >
+          </li>
+          
+        </ul>
 
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../2020/12/28/0060-why-small-commit/">
-      <li>왜 커밋 단위를 작게 나누기로 했나</li>
-    </a>
-    
-    <a href="../2020/12/27/0059-why-bootpay/">
-      <li>Bootpay로 결제기능을 만든 이유</li>
-    </a>
-    
-    <a href="../2020/12/27/0061-why-react/">
-      <li>왜 리액트를 선택했나</li>
-    </a>
-    
-    <a href="../2020/12/26/0058-why-aws/">
-      <li>AWS를 선택한 이유</li>
-    </a>
-    
-    <a href="../2020/12/25/0057-Algorithm-icebeverage/">
-      <li>알고리즘 - 음료수 얼려 먹기</li>
-    </a>
-    
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+         
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=어트리뷰트와 프로퍼티의 차이&body=Hi,I found this website and thought you might like it http://yoursite.com/2020/03/06/0066-electron-setting/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <hr>
-    
-        <!-- Categories -->
+        <!-- Sharing End -->
+        
+        <hr />
 
-<!-- <h5>categories</h5> -->
-<h5><a href="/categories/">CATEGORIES</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#ETC">
-      <li>ETC</li>
-    </a>
-    
-    <a href="/categories/#JavaScript">
-      <li>JavaScript</li>
-    </a>
-    
-    <a href="/categories/#Algorithm">
-      <li>Algorithm</li>
-    </a>
-    
-    <a href="/categories/#Productivity">
-      <li>Productivity</li>
-    </a>
-    
-    <a href="/categories/#HTML5">
-      <li>HTML5</li>
-    </a>
-    
-    <a href="/categories/#Database">
-      <li>Database</li>
-    </a>
-    
-    <a href="/categories/#React">
-      <li>React</li>
-    </a>
-    
-    <a href="/categories/#CS">
-      <li>CS</li>
-    </a>
-    
-    <a href="/categories/#SEO">
-      <li>SEO</li>
-    </a>
-    
-    <a href="/categories/#react">
-      <li>react</li>
-    </a>
-    
-    <a href="/categories/#DevOps">
-      <li>DevOps</li>
-    </a>
-    
-    <a href="/categories/#웹표준">
-      <li>웹표준</li>
-    </a>
-    
-    <a href="/categories/#디자인패턴">
-      <li>디자인패턴</li>
-    </a>
-    
-    <a href="/categories/#HTML">
-      <li>HTML</li>
-    </a>
-    
-  </ul>
-</div>
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
 
 
-        <hr>
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr />
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Electron이란"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Electron이란</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Electron-amp-필요-라이브러리-설치"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Electron &amp; 필요 라이브러리 설치</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#webpack-config-js"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">webpack.config.js</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#TypeScript-설정"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">TypeScript 설정</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#tsconfig-json"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">tsconfig.json</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#index-d-ts"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">index.d.ts</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#package-json"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">package.json</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#javascript" title="javascript" rel="39">javascript</a>
-    
-    
-    
-    <a href="/tags/#function" title="function" rel="2">function</a>
-    
-    
-    
-    <a href="/tags/#Object-literal" title="Object-literal" rel="1">Object-literal</a>
-    
-    
-    
-    <a href="/tags/#scope" title="scope" rel="1">scope</a>
-    
-    
-    
-    <a href="/tags/#별찍기" title="별찍기" rel="1">별찍기</a>
-    
-    
-    
-    <a href="/tags/#var" title="var" rel="1">var</a>
-    
-    
-    
-    <a href="/tags/#constructor" title="constructor" rel="1">constructor</a>
-    
-    
-    
-    <a href="/tags/#let" title="let" rel="1">let</a>
-    
-    
-    
-    <a href="/tags/#const" title="const" rel="1">const</a>
-    
-    
-    
-    <a href="/tags/#property" title="property" rel="1">property</a>
-    
-    
-    
-    <a href="/tags/#atrribute" title="atrribute" rel="1">atrribute</a>
-    
-    
-    
-    <a href="/tags/#Firstclass-Object" title="Firstclass-Object" rel="1">Firstclass-Object</a>
-    
-    
-    
-    <a href="/tags/#prototype" title="prototype" rel="1">prototype</a>
-    
-    
-    
-    <a href="/tags/#strict-mode" title="strict-mode" rel="1">strict-mode</a>
-    
-    
-    
-    <a href="/tags/#Built-in-Object" title="Built-in-Object" rel="1">Built-in-Object</a>
-    
-    
-    
-    <a href="/tags/#context" title="context" rel="1">context</a>
-    
-    
-    
-    <a href="/tags/#closure" title="closure" rel="3">closure</a>
-    
-    
-    
-    <a href="/tags/#error" title="error" rel="3">error</a>
-    
-    
-    
-    <a href="/tags/#this" title="this" rel="1">this</a>
-    
-    
-    
-    <a href="/tags/#ES6" title="ES6" rel="4">ES6</a>
-    
-    
-    
-    <a href="/tags/#class" title="class" rel="1">class</a>
-    
-    
-    
-    <a href="/tags/#Destructuring" title="Destructuring" rel="1">Destructuring</a>
-    
-    
-    
-    <a href="/tags/#Spread" title="Spread" rel="1">Spread</a>
-    
-    
-    
-    <a href="/tags/#Array" title="Array" rel="1">Array</a>
-    
-    
-    
-    <a href="/tags/#array" title="array" rel="1">array</a>
-    
-    
-    
-    <a href="/tags/#promise" title="promise" rel="1">promise</a>
-    
-    
-    
-    <a href="/tags/#html5" title="html5" rel="1">html5</a>
-    
-    
-    
-    <a href="/tags/#accessibility" title="accessibility" rel="1">accessibility</a>
-    
-    
-    
-    <a href="/tags/#productivity" title="productivity" rel="1">productivity</a>
-    
-    
-    
-    <a href="/tags/#MySQL" title="MySQL" rel="3">MySQL</a>
-    
-    
-    
-    <a href="/tags/#React" title="React" rel="4">React</a>
-    
-    
-    
-    <a href="/tags/#JSX" title="JSX" rel="1">JSX</a>
-    
-    
-    
-    <a href="/tags/#OS" title="OS" rel="1">OS</a>
-    
-    
-    
-    <a href="/tags/#AWS" title="AWS" rel="2">AWS</a>
-    
-    
-    
-    <a href="/tags/#S3" title="S3" rel="1">S3</a>
-    
-    
-    
-    <a href="/tags/#CloudFront" title="CloudFront" rel="1">CloudFront</a>
-    
-    
-    
-    <a href="/tags/#Route53" title="Route53" rel="1">Route53</a>
-    
-    
-    
-    <a href="/tags/#Planning" title="Planning" rel="1">Planning</a>
-    
-    
-    
-    <a href="/tags/#SEO" title="SEO" rel="2">SEO</a>
-    
-    
-    
-    <a href="/tags/#responsive" title="responsive" rel="1">responsive</a>
-    
-    
-    
-    <a href="/tags/#Batch Update" title="Batch Update" rel="1">Batch Update</a>
-    
-    
-    
-    <a href="/tags/#WebSocket" title="WebSocket" rel="2">WebSocket</a>
-    
-    
-    
-    <a href="/tags/#Redux-Saga" title="Redux-Saga" rel="2">Redux-Saga</a>
-    
-    
-    
-    <a href="/tags/#buffers" title="buffers" rel="2">buffers</a>
-    
-    
-    
-    <a href="/tags/#Semantic" title="Semantic" rel="1">Semantic</a>
-    
-    
-    
-    <a href="/tags/#react" title="react" rel="2">react</a>
-    
-    
-    
-    <a href="/tags/#redux" title="redux" rel="1">redux</a>
-    
-    
-    
-    <a href="/tags/#Algorithm" title="Algorithm" rel="1">Algorithm</a>
-    
-    
-    
-    <a href="/tags/#bootpay" title="bootpay" rel="1">bootpay</a>
-    
-    
-    
-    <a href="/tags/#commit" title="commit" rel="1">commit</a>
-    
-    
-    
-    <a href="/tags/#웹표준" title="웹표준" rel="1">웹표준</a>
-    
-    
-    
-    <a href="/tags/#MVC" title="MVC" rel="1">MVC</a>
-    
-    
-    
-    <a href="/tags/#D3" title="D3" rel="1">D3</a>
-    
-    
-    
-    <a href="/tags/#attribute, property" title="attribute, property" rel="2">attribute, property</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<!-- <h5>FRIENDS</h5> -->
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-</ul>
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/03/">March 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/01/">January 2020</a><span class="archive-list-count">4</span></li></ul>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a
+              class="tag"
+              href="/tags/#attribute, property"
+              title="attribute, property"
+              >attribute, property</a
+            >
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr />
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+          
+        </ul>
+        
+      </div>
     </div>
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
