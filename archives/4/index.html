@@ -838,28 +838,27 @@ X
   
 
 
-  <a href="/2020/03/12/0022-Exercise2/">
+  <a href="/2020/03/13/0068-electron-ipc/">
     <h2 class="post-title">
-      자료구조와 알고리즘1 (Data Structure & Algorithm)
+      Electron - IPC
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      연습문제1. 선형 검색선형 검색을 통해 주어진 배열(array)에 주어진 값(target)이 요소로 존재하는지 확인하여 존재하는 경우 해당 인덱스를 반환하고 존재하지 않는 경우 -1을 반환하는 함수를 구현하라. 단, 어떠한 빌트인 함수도 사용하지 않고 for 문을 사용하여 구현하여야 한다.
-linearSearch.js1234567891011121314......
+      Electron에서 파일을 입출력하려면 반드시 NodeJS를 통해야 한다.
+사용자의 입력은 Renderer Process가 담당하기 때문에 NodeJS를 기반으로 동작하는 Main Porcess와 통신이 필수적인데, 이 때 IPC 통신을 사용한다.
+ipcMain, ipcRenderer통신에 주로 사용되는 API는 ipcMain과 ipcRenderer이......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Seongkyun Yu on
-    2020-03-12
+    2020-03-13
   </p>
   <div class="tags">
     
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#error" title="error">error</a>
+    <a href="/tags/#electron" title="electron">electron</a>
     
   </div>
   
@@ -1283,7 +1282,7 @@ linearSearch.js1234567891011121314......
     
     
     
-    <a href="/tags/#electron" title="electron" rel="2">electron</a>
+    <a href="/tags/#electron" title="electron" rel="3">electron</a>
     
     
   </div>
@@ -1307,7 +1306,7 @@ linearSearch.js1234567891011121314......
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">4</span></li></ul>
     </div>
 
 
