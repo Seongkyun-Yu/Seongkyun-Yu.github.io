@@ -336,6 +336,241 @@
   
 
 
+  <a href="/2020/03/08/0020-closure/">
+    <h2 class="post-title">
+      클로저 (closure)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+
+1. 클로저
+외부 함수가 소멸했음에도 내부함수가 외부함수의 지역변수(자유변수)에 접근할 수 있는 메커니즘.
+
+캡슐화를 통해 외부함수의 지역변수(자유변수)의 오염을 막을 수 있다.
+
+
+
+
+2. 클로저와 렉시컬 환경실행 컨텍스트 스택에서 외부함수가 제거 되더라도 내부함수를 참조하고 있다면 렉시컬 환경은 소멸하지 않는다.
+12345678910111213......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#closure" title="closure">closure</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/03/06/0018-Execution-Context/">
+    <h2 class="post-title">
+      실행 컨텍스트 (Execution Context)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+
+1. 실행 컨텍스트
+소스 코드를 실행하기 위해 필요한 환경 및 실행 결과를 관리하는 영역
+
+소스 코드의 타입별 생성 과정 및 관리 내용
+
+전역 코드 : 전역 스코프 생성 및 전역 변수 관리 (함수, 클래스 등 내부 코드 미포함)
+
+함수 코드 : 지역 스코프 생성 및 지역 변수 관리 (중첩 함수, 클래스 등 내부 코드 미포함)
+
+eval 코드 : 엄......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-06
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#context" title="context">context</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/03/06/0019-this/">
+    <h2 class="post-title">
+      this
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+
+1. this
+자신이 속한 객체를 참조하기 위한 키워드
+
+함수가 호출되는 방식에 따라 this에 바인딩될 값, 즉 this 바인딩이 동적으로 결정된다.
+12345678910111213141516171819202122232425262728// this는 어디서든지 참조 가능하다.// 전역에서 this는 전역 객체 window를 가리킨다.console......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-06
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#this" title="this">this</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/03/05/0016-builtin-object/">
+    <h2 class="post-title">
+      빌트인 객체 (Built-in Object)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      객체의 분류
+전역 객체 : 최상위 객체
+
+표준 빌트인 객체 : ECMAScript 사양에 정의된 객체, 실행환경 무관
+
+호스트 객체 : 실행 환경에서 추가적으로 제공하는 객체
+
+사용자 정의 객체 : 사용자가 정의한 객체
+
+
+
+
+전역 객체
+모든 빌트인 객체의 최상위 객체
+
+객체의 계층적 구조 상 표준 빌트인 객체와 호스트 객체를 프로퍼티로 갖는다
+
+특징......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-05
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#Built-in-Object" title="Built-in-Object">Built-in-Object</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/03/05/0017-strict-mode/">
+    <h2 class="post-title">
+      엄격 모드 (strict mode)
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      엄격모드
+엄격모드 : 자바스크립트 문법을 보다 엄격하게 적용하기 위해 쓰는 문법.
+
+사용법 : 전역 선두 or 함수 선두에 &#39;use strict&#39;;를 추가한다.
+사용법 예시:
+123456"use strict";function person() &#123;  name = "Yu"; // ReferenceError: name is not de......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2020-03-05
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#javascript" title="javascript">javascript</a>
+    
+    <a href="/tags/#strict-mode" title="strict-mode">strict-mode</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/03/03/0015-prototype/">
     <h2 class="post-title">
       프로토타입 (Prototype)
@@ -556,232 +791,6 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/29/0010-Exercise1/">
-    <h2 class="post-title">
-      자바스크립트 별찍기
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      연습문제1. 변수 x가 10보다 크고 20보다 작을 때 변수 X를 출력하는 조건식을 완성하라123const x = 15;if (x &gt; 10 &amp;&amp; x &lt; 20) console.log(x);
-
-
-2. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.123for (let i = 0; i &lt; 1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-29
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#별찍기" title="별찍기">별찍기</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/27/0009-var/">
-    <h2 class="post-title">
-      전역 변수의 문제점
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      변수의 생명 주기
-지역 변수의 생명 주기
-지역 변수의 생명 주기는 함수의 생명 주기와 일치한다.
-1234567var a = "전역변수";function local_test() &#123;  console.log(a);  var a = "지역변수";  return a;&#125;
-
-위 코드에서 console.log(a)는 undefined를 출력하는데 ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-27
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#var" title="var">var</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/26/0008-scope/">
-    <h2 class="post-title">
-      스코프 (scope)
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      스코프
-스코프란?
-다른 코드가 변수를 참조할 수 있는 유효 범위이다.
-
-
-
-
-스코프의 종류
-전역 스코프
-전역 변수는 전역 스코프를 가지고 있으며, 어디서든지 참조할 수 있다.
-
-
-
-지역 스코프
-지역 변수는 자신이 선언된 지역 스코프와 하위 지역 스코프에서 유효하다.
-
-
-
-
-스코프 체인변수가 선언 됐는지 확인하기 위해서 변수를 찾을 때 상위 스코프를 따......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#scope" title="scope">scope</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/26/0007-function/">
-    <h2 class="post-title">
-      함수
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      함수란?코드블록을 활용하여 하나의 실행 단위를 만든 것.
-매개변수: 함수 내부로 전달되는 변수인수: 함수를 호출할 때 함수 내부로 전달하는 변수반환값: 함수 외부로 출력되는 변수
-
-
-함수의 사용 이유코드의 재사용을 위해서 사용한다.재사용시 장점: 유지보수 편함, 실수를 줄여 신뢰성 높임.
-
-
-함수 리터럴함수는 객체 타입의 값이다. 따라서 함수 리터럴로......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-26
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#function" title="function">function</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/02/24/0005-object/">
-    <h2 class="post-title">
-      객체 리터럴 (Object literal)
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      객체란?다양한 자료를 하나로 집합시킨 자료구조이다. 원시값과 달리 변경 가능한 값을 사용한다.
-
-프로퍼티 : 객체의 상태를 나타내는 값
-메소드 : 프로퍼티를 참조하거나 조작할 수 있는 함수
-
-
-
-객체 리터럴에 의한 객체 생성객체는 객체 리터럴, Object 생성자 함수, 생성자 함수, Object.create 메소드, 클래스를 활용하여 만들 수 있다.......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2020-02-24
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#javascript" title="javascript">javascript</a>
-    
-    <a href="/tags/#Object-literal" title="Object-literal">Object-literal</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -875,24 +884,24 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
 <div class="widget">
   <ul>
     
-    <a href="../../2020/12/28/0060-why-small-commit/">
-      <li>왜 커밋 단위를 작게 나누기로 했나</li>
+    <a href="../../2021/03/20/0069-electron-release/">
+      <li>Electron - 배포</li>
     </a>
     
-    <a href="../../2020/12/27/0059-why-bootpay/">
-      <li>Bootpay로 결제기능을 만든 이유</li>
+    <a href="../../2021/03/13/0068-electron-ipc/">
+      <li>Electron - IPC</li>
     </a>
     
-    <a href="../../2020/12/27/0061-why-react/">
-      <li>왜 리액트를 선택했나</li>
+    <a href="../../2021/03/13/0070-deeping-nestjs/">
+      <li>찍어먹는 NestJS - 기본개념</li>
     </a>
     
-    <a href="../../2020/12/26/0058-why-aws/">
-      <li>AWS를 선택한 이유</li>
+    <a href="../../2021/03/07/0067-electron-lifecycle/">
+      <li>Electron - Life Cycle</li>
     </a>
     
-    <a href="../../2020/12/25/0057-Algorithm-icebeverage/">
-      <li>알고리즘 - 음료수 얼려 먹기</li>
+    <a href="../../2021/03/06/0066-electron-setting/">
+      <li>Electron - 개념과 초기설정</li>
     </a>
     
   </ul>
@@ -966,6 +975,10 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     
     <a href="/categories/#Electron">
       <li>Electron</li>
+    </a>
+    
+    <a href="/categories/#NestJS">
+      <li>NestJS</li>
     </a>
     
   </ul>
@@ -1201,6 +1214,14 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     <a href="/tags/#electron" title="electron" rel="4">electron</a>
     
     
+    
+    <a href="/tags/#NestJS" title="NestJS" rel="1">NestJS</a>
+    
+    
+    
+    <a href="/tags/#찍어먹는" title="찍어먹는" rel="1">찍어먹는</a>
+    
+    
   </div>
 </section>
 
@@ -1222,7 +1243,7 @@ C++, Java처럼 프로퍼티 구조가 동일한 객체를 간편하게 생성�
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/03/">March 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
 
 
