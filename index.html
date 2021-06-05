@@ -336,6 +336,55 @@
   
 
 
+  <a href="/2021/06/25/0072-dippin-nestjs3/">
+    <h2 class="post-title">
+      찍어먹는 NestJS - CRUD without DB
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+
+NestJS 7.6.13 버전 기준 설명입니다
+
+기본적인 CRUD를 작성해 보겠다.
+원래라면 DB연동을 해야하지만 DB연동은 다음 포스팅에서 진행하고
+이번 글에서는 내부 데이터를 사용해 만들어 보겠다.
+Service먼저 비즈니스 로직부터 작성해보겠다.
+1$ nest g service todo
+
+nest cli를 통해 service를 생성하고 해당 ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2021-06-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#NestJS" title="NestJS">NestJS</a>
+    
+    <a href="/tags/#찍어먹는" title="찍어먹는">찍어먹는</a>
+    
+    <a href="/tags/#tutorial" title="tutorial">tutorial</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2021/04/26/0071-dipping-nestjs2/">
     <h2 class="post-title">
       찍어먹는 NestJS - 초기설정
@@ -440,13 +489,14 @@ However, while plenty of s......
     <div class="post-content-preview">
       
 
+
 12.0.6 버전을 기준으로 한 설명입니다
 
 electron-builderElectron은 여러가지 Builder가 있지만 여기선 electron-builder를 사용하겠다.
 먼저 패키지를 설치한다.
 npm install -D electron-builder
 package.jsonpackage.json에 다음과 같은 설정을 추가한다.
-12345678......
+1234567......
     </div>
   </a>
   
@@ -482,11 +532,12 @@ package.jsonpackage.json에 다음과 같은 설정을 추가한다.
     </h3>
     <div class="post-content-preview">
       
+
 12.0.6 버전을 기준으로 한 설명입니다
 
 Electron에서 파일을 입출력하려면 반드시 NodeJS를 통해야 한다.
 사용자의 입력은 Renderer Process가 담당하기 때문에 NodeJS를 기반으로 동작하는 Main Porcess와 통신이 필수적인데, 이 때 IPC 통신을 사용한다.
-ipcMain, ipcRenderer통신에 주로 사용되는 ......
+ipcMain, ipcRenderer통신에 주로 사용되는......
     </div>
   </a>
   
@@ -521,10 +572,14 @@ ipcMain, ipcRenderer통신에 주로 사용되는 ......
       
     </h3>
     <div class="post-content-preview">
-      초기 설정 이후 본격적으로 Electron 코드를 작성하기 전에 Electron의 생명주기에 대해 알아보자.
+      
+
+12.0.6 버전을 기준으로 한 설명입니다
+
+초기 설정 이후 본격적으로 Electron 코드를 작성하기 전에 Electron의 생명주기에 대해 알아보자.
 Electron Life CycleElectron에서 제공하는 app 객체는 Electron의 생명주기를 관리한다.
 app 객체를 통해 앱의 라이프 사이클 관련 신호를 받을 수 있다.
-app.on(&#39;EVENT&#39;, ()=&gt;{}......
+app.on......
     </div>
   </a>
   
@@ -560,11 +615,12 @@ app.on(&#39;EVENT&#39;, ()=&gt;{}......
     </h3>
     <div class="post-content-preview">
       
+
+12.0.6 버전을 기준으로 한 설명입니다
+
 Electron이란NodeJS 등장이후 프론트를 만드는 데만 쓰이던 js가 서버, 모바일 앱, 데스크톱 앱에 쓰일 수 있게 되었다.
 서버 - NodeJS앱 - React Native데스크톱 앱 - Electron
-Electron은 HTML, CSS, JS로 Desktop 앱을 만들 수 있게 해주는 프레임워크이다.
-
-Electron에서 HTML, CS......
+Electron은 HTML, CSS, JS로 Desktop 앱을 만들 수 있게 해주는 프레임......
     </div>
   </a>
   
@@ -701,46 +757,6 @@ MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2021/01/05/0062-fetch/">
-    <h2 class="post-title">
-      fetch, setTimeout은 표준 API일까?
-    </h2>
-    <h3 class="post-subtitle">
-      웹표준에 대해서
-    </h3>
-    <div class="post-content-preview">
-      
-얼마전 VanillaJS로 IE10까지 지원하는 작은 프로젝트를 진행했었다.
-처음에는 웹팩과 바벨이 IE 지원에 대한 모든것을 해결해 줄것이라고 생각했다.
-그래서 마음 편하게 코드를 짜고 있었는데…
-작업 중간에 IE 테스트를 해보니 fetch가 동작하지 않았다.
-분명 babel로 처리 했는데 왜안되지 싶은 마음에 https://babeljs.io/ ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2021-01-05
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#웹표준" title="웹표준">웹표준</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -830,6 +846,10 @@ MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 
 <div class="widget">
   <ul>
     
+    <a href="2021/06/25/0072-dippin-nestjs3/">
+      <li>찍어먹는 NestJS - CRUD without DB</li>
+    </a>
+    
     <a href="2021/04/26/0071-dipping-nestjs2/">
       <li>찍어먹는 NestJS - 초기설정</li>
     </a>
@@ -844,10 +864,6 @@ MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 
     
     <a href="2021/03/13/0068-electron-ipc/">
       <li>Electron - IPC</li>
-    </a>
-    
-    <a href="2021/03/07/0067-electron-lifecycle/">
-      <li>Electron - Life Cycle</li>
     </a>
     
   </ul>
@@ -1161,15 +1177,15 @@ MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 
     
     
     
-    <a href="/tags/#NestJS" title="NestJS" rel="2">NestJS</a>
+    <a href="/tags/#NestJS" title="NestJS" rel="3">NestJS</a>
     
     
     
-    <a href="/tags/#찍어먹는" title="찍어먹는" rel="2">찍어먹는</a>
+    <a href="/tags/#찍어먹는" title="찍어먹는" rel="3">찍어먹는</a>
     
     
     
-    <a href="/tags/#tutorial" title="tutorial" rel="2">tutorial</a>
+    <a href="/tags/#tutorial" title="tutorial" rel="3">tutorial</a>
     
     
   </div>
@@ -1193,7 +1209,7 @@ MVC, MVP, MVVM 등 다양한 패턴이 있는데 글로 적힌 설명을 봐도 
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">March 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/06/">June 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">March 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
 
 

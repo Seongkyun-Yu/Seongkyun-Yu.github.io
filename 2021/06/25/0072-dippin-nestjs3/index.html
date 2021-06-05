@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="It&#39;s an IT blog..." />
+  <meta name="keyword" content="seongkyun, IT blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
+
+
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite.com/2021/06/25/0072-dippin-nestjs3/">
+  <title>
+    
+    찍어먹는 NestJS - CRUD without DB - 개발개발 블로그
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">개발개발 블로그</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('/img/header_img/lml_bg.jpg');
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#NestJS" title="NestJS">NestJS</a>
+              
+              <a class="tag" href="/tags/#찍어먹는" title="찍어먹는">찍어먹는</a>
+              
+              <a class="tag" href="/tags/#tutorial" title="tutorial">tutorial</a>
+              
+            </div>
+            <h1>찍어먹는 NestJS - CRUD without DB</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Seongkyun Yu on
+              2021-06-25
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">14</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	
+<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div
+        class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container"
+      >
+        <p><img src="https://images.velog.io/images/seongkyun/post/b3272a47-4023-4e8a-90a6-530843e9db38/nestjs-logo-social.png" alt=""></p>
+<blockquote>
+<p>NestJS 7.6.13 버전 기준 설명입니다</p>
+</blockquote>
+<p>기본적인 CRUD를 작성해 보겠다.</p>
+<p>원래라면 DB연동을 해야하지만 DB연동은 다음 포스팅에서 진행하고</p>
+<p>이번 글에서는 내부 데이터를 사용해 만들어 보겠다.</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>먼저 비즈니스 로직부터 작성해보겠다.</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nest g<span class="built_in"> service </span>todo</span><br></pre></td></tr></table></figure>
+
+<p>nest cli를 통해 service를 생성하고 해당 이름을 todo로 정했다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/1404db71-a055-4184-97cc-6efe99e1e01a/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C5.png" alt=""></p>
+<p>그럼 위미지와 같이 service 파일과 test 파일이 생성된다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/f2d48b70-c3ba-4a7d-a0f3-4fde0defda4c/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C6.png" alt=""></p>
+<p>또한 app.module.ts 파일을 확인하면 자동으로 방금 생성한 Service를 module에 등록 시켜준 것을 확인할 수 있다.</p>
+<h3 id="Read-findAll"><a href="#Read-findAll" class="headerlink" title="Read - findAll"></a>Read - findAll</h3><p>이제 모든 todo list 데이터를 가져오는 간단한 함수를 만들어보자.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"운영체제 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"네트워크 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"알고리즘 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DB를 연결하지 않았기 때문에 todo 배열을 생성하여 사용했다.</p>
+<p><code>findAll()</code>은 전체 todo 데이터를 가져오는 함수기 때문에 todo를 그대로 반환했다.</p>
+<p>여기서 return한 값은 HTTP Response의 body를 통해 전달된다.</p>
+<p>로직이 잘 작동하기 위해서는 Controller를 만들고 Module에 등록해야 한다.</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>nest cli를 통해 controller를 만들 수 있다.</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nest g controller todo</span></span><br></pre></td></tr></table></figure>
+
+<p>그 후 다음과 같이 Controller 코드를 작성하자.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Controller, Get &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@Controller</code>에 적은 todo 설정 덕분에 <code>localhost:3000/todo</code>로 전송되는 요청을 이 Controller에서 처리할 수 있다.</p>
+<p>(nest cli를 통해 프로젝트를 생성하면 main.ts에서 3000번 포트로 실행되도록 기본 설정돼 있다)</p>
+<p><code>@Get</code>을 통해 HTTP Method를 설정하고 이 데코레이터가 설정된 함수가 해당 요청을 처리한다.</p>
+<p>여기서는 미리 작성한 <code>TodoService</code>의 <code>findAll()</code>을 호출하도록 설정했다.</p>
+<p><code>TodoService</code>는 직접 import해서 사용하는 것이 아니라 모듈이 주입해 주도록 설정하기 때문에 Contructor에서 설정할 수 있다.</p>
+<p>Module이 inject할 수 있는 것은 <code>@injectable()</code>데코레이터가 작성된 Provider라는 사실을 기억하자.</p>
+<p>Service는 Provider의 일종이다.</p>
+<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p>이제 Controller와 Service를 합쳐줄 Module을 작성하자.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nest g <span class="built_in">module</span> todo</span><br></pre></td></tr></table></figure>
+
+<p>nest cli를 통해 Module을 작성하고 다음과 같이 작성하자.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.module.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Module &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoController &#125; <span class="keyword">from</span> <span class="string">"./todo.controller"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">"./todo.service"</span>;</span><br><span class="line"></span><br><span class="line">@Module(&#123;</span><br><span class="line">  controllers: [TodoController],</span><br><span class="line">  providers: [TodoService],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Providers에 적힌 TodoService를 controller에 Inject 해준다.</p>
+<p>이제 이 Module을 메인 Module인 app.module에 작성해야 한다.</p>
+<p>app.Module.ts에 가보면 nest cli가 이미 Controller, Service, Module을 모두 import 시켜놓은 것을 확인할 수 있다.</p>
+<p>우리는 <code>TodoModule</code>을 통해 이미 Provider와 Service를 하나의 단위로 묶어두었기 때문에 app.module.ts에서는 TodoModule만 import 처리 되어있으면 된다.</p>
+<p>따라서 다음과 같이 코드를 작성하면 된다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.module.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Module &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppController &#125; <span class="keyword">from</span> <span class="string">"./app.controller"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppService &#125; <span class="keyword">from</span> <span class="string">"./app.service"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoModule &#125; <span class="keyword">from</span> <span class="string">"./todo/todo.module"</span>;</span><br><span class="line"></span><br><span class="line">@Module(&#123;</span><br><span class="line">  imports: [TodoModule],</span><br><span class="line">  controllers: [AppController],</span><br><span class="line">  providers: [AppService],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이제 터미널에서 <code>npm run start</code>를 하면 서버가 실행된다.</p>
+<p>Postman을 통해 확인하면 다음과 같이 데이터가 잘 전송 되는 것을 확인할 수 있다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/a665e3d0-159f-4091-8c1b-c6b2b31b7d33/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C7.png" alt=""></p>
+<br>
+
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><p>본격적으로 CURD를 작성하겠다.</p>
+<h3 id="Read-findOne"><a href="#Read-findOne" class="headerlink" title="Read - findOne()"></a>Read - findOne()</h3><p>todo list 중 하나의 데이터를 가져오는 로직을 짜보겠다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"운영체제 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"네트워크 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"알고리즘 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> findOne(id: number) &#123;</span><br><span class="line">    <span class="keyword">const</span> todo = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id === id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!todo) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(); <span class="comment">// 예외처리</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>id를 전달 받아서 해당 아이디의 todo만을 필터링 하여 전송한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Controller, Get, Param &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">':id'</span>)</span><br><span class="line">  findOne(@Param(<span class="string">'id'</span>) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findOne(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@Get(&#39;:id&#39;)</code>처럼 작성하면 클라이언트가 URI를 통해 전송한 Param을 가져올 수 있다.</p>
+<p>주의할 점은 <strong>아무런 조건이 없는 <code>@Get()</code>보다 항상 위에 작성해야 한다.</strong></p>
+<p>상위에 작성한 함수부터 차례대로 처리하기 때문에 Param이 있는 <code>Get(&#39;:id&#39;)</code>를 아래에 작성하면 <code>@Get()</code> 조건으로 처리된다.</p>
+<p>express를 사용해본 경험이 있다면 이와 같은 작성 방법에 익숙할 것이다.</p>
+<p>이렇게 작성한 후 서버를 작동시켜 Postman으로 확인하면 <strong>데이터가 정상적으로 절달되지 않는다.</strong></p>
+<p><img src="https://images.velog.io/images/seongkyun/post/e9032709-8c08-4839-bc11-db3cce6ca6bb/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C8.png" alt=""></p>
+<p>이유는 id의 타입이 string으로 서버에 전달되기 때문이다.</p>
+<p>string과 number 타입이 달라서 검색되지 않는 문제다.</p>
+<p>이러한 문제를 해결하려면 string을 number로 변경해야 하는데</p>
+<p>다음과 같은 방법이 있다.</p>
+<ol>
+<li>직접 controller나 service에서 하나하나 변경하기</li>
+<li>Pipe와 DTO를 이용하여 자동으로 변경 및 데이터 검증하기</li>
+</ol>
+<p>1과 같은 방법은 id와 같이 단 하나의 조건이 전달되는 경우에는 힘들지 않겠지만 다양한 데이터의 타입을 맞추려면 손이 많이간다.</p>
+<p>따라서 NestJS는 보다 세련된 방식인 <code>Pipe</code>와 <code>DTO</code>를 이용하여 타입변환과 데이터 검증을 처리한다.</p>
+<h3 id="Pipe"><a href="#Pipe" class="headerlink" title="Pipe"></a>Pipe</h3><p>Pipe의 역할은 두 가지이다.</p>
+<ol>
+<li>데이터 타입 변형 (문자열 -&gt; 숫자)</li>
+<li>데이터 검증</li>
+</ol>
+<p>지금은 Pipe를 이용하여 데이터 타입을 변경하는 방법만 알아보겠다.</p>
+<p>DTO는 Create 함수를 만들 때 작성하겠다.</p>
+<p>NestJS에서 기본적으로 제공하는 파이프는 다음과 같다.</p>
+<p><code>ValidationPipe</code><br><code>ParseIntPipe</code><br><code>ParseBoolPipe</code><br><code>ParseArrayPipe</code><br><code>ParseUUIDPipe</code><br><code>DefaultValuePipe</code></p>
+<p>이름만 봐도 내용을 짐작할 수 있기 때문에 자세한 설명은 적지 않겠다.</p>
+<p>만약 제공하는 Pipe 이외에 더 필요한 것이 있다면 Custom Pipe도 만들 수 있다.</p>
+<p><code>todo.controller.ts</code> 파일을 열고 다음과 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Controller, Get, Param, ParseIntPipe &#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">':id'</span>)</span><br><span class="line">  findOne(@Param(<span class="string">'id'</span>, ParseIntPipe) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findOne(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>ParseIntPipe</code>를 작성하여 <code>string</code>타입으로 전달받은 id를 <code>number</code>로 변경했다.</p>
+<p>작성후 NestJS를 다시 실행시키면 정상적으로 데이터를 받는 것을 확인할 수 있다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/af8fbd14-ed5c-4525-be1a-801a36a849db/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C9.png" alt=""></p>
+<br>
+
+<h3 id="Create-create"><a href="#Create-create" class="headerlink" title="Create - create()"></a>Create - create()</h3><p>create를 할 때는 클라이언트에서 데이터를 받아 DB에 저장한다.</p>
+<p>이 때 서버에서 데이터를 가공하여 DB에 저장하기 전에 처리해야할 일은</p>
+<ol>
+<li>전달 받을 데이터의 타입</li>
+<li>전달 받은 데이터의 유효성 체크</li>
+</ol>
+<p>이다.</p>
+<p>NestJS는 이를 <code>DTO</code>로 처리한다.</p>
+<h4 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a>DTO</h4><p>먼저 <code>class-validator</code>, <code>class-transformer</code>를 설치한다.</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install <span class="class"><span class="keyword">class</span>-<span class="title">validator</span></span></span><br><span class="line">$ <span class="built_in">npm</span> install <span class="class"><span class="keyword">class</span>-<span class="title">transformer</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images.velog.io/images/seongkyun/post/e80f470c-7378-4378-a35a-c53f4f050663/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C10.png" alt=""></p>
+<p>todo 아래에 dto 폴더를 생성하고 <code>create-todo.dto.ts</code> 파일을 생성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create-todo.dto.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; IsBoolean, IsString &#125; <span class="keyword">from</span> <span class="string">"class-validator"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateTodoDto</span> </span>&#123;</span><br><span class="line">  @IsString()</span><br><span class="line">  user_id: string;</span><br><span class="line"></span><br><span class="line">  @IsString()</span><br><span class="line">  content: string;</span><br><span class="line"></span><br><span class="line">  @IsBoolean()</span><br><span class="line">  done: boolean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>나중에 DB를 연결하고 로그인 기능을 넣는다면 user 테이블을 따로 생성할 테고, 그때는 user_id 대신 userId(foreign key)를 받는다.</p>
+<p>지금은 DB를 연결하지 않았기 때문에 user_id를 직접 받는 것으로 진행하겠다.</p>
+<p>Class-validator를 이용해 타입을 체크하는 <code>DTO</code>를 만들었다.</p>
+<h4 id="Global-Pipe"><a href="#Global-Pipe" class="headerlink" title="Global Pipe"></a>Global Pipe</h4><p>이제 <code>DTO</code>의 내용을 검사할 전역 Pipe 설정을 하겠다.</p>
+<p><code>main.ts</code> 파일을 아래와 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; ValidationPipe &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NestFactory &#125; <span class="keyword">from</span> <span class="string">"@nestjs/core"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppModule &#125; <span class="keyword">from</span> <span class="string">"./app.module"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">bootstrap</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> app = <span class="keyword">await</span> NestFactory.create(AppModule);</span><br><span class="line">  app.useGlobalPipes(</span><br><span class="line">    <span class="keyword">new</span> ValidationPipe(&#123;</span><br><span class="line">      whitelist: <span class="literal">true</span>,</span><br><span class="line">      forbidNonWhitelisted: <span class="literal">true</span>,</span><br><span class="line">      transform: <span class="literal">true</span>,</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">await</span> app.listen(<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">bootstrap();</span><br></pre></td></tr></table></figure>
+
+<p><code>useGlobalPipes</code>를 이용하여 전역 pipe를 적용할 수 있다.</p>
+<p>검증 설정은 세 가지가 있는데 그 의미는 다음과 같다.</p>
+<ol>
+<li><code>whitelist</code>: <code>DTO</code>에 작성한 검증값 이외에는 서버가 받지 않도록 설정</li>
+<li><code>forbidNonWhitelisted</code>: <code>DTO</code>에 작성한 검증값 이외의 값이 들어오면 에러 발생(400 error)</li>
+<li><code>transform</code>: 요청으로 넘어온 데이터 타입 변환</li>
+</ol>
+<p><strong>Global Pipe의 tranform을 true로 설정하면 id에 사용한 ParseIntPipe를 사용하지 않아도 타입 변환을 시켜준다.</strong></p>
+<p>이제 create Service와 Controller 설정을 마무리 하겠다.</p>
+<p><code>todo.service.ts</code> 파일을 다음과 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./dto/create-todo.dto"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"운영체제 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"네트워크 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"알고리즘 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> findOne(id: number) &#123;</span><br><span class="line">    <span class="keyword">const</span> todo = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id === id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!todo) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(); <span class="comment">// 예외처리</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> create(createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    todos = [</span><br><span class="line">      ...todos,</span><br><span class="line">      &#123;</span><br><span class="line">        id: todos[todos.length - <span class="number">1</span>].id + <span class="number">1</span>,</span><br><span class="line">        user_id: createTodoDto.user_id,</span><br><span class="line">        content: createTodoDto.content,</span><br><span class="line">        done: createTodoDto.done,</span><br><span class="line">      &#125;,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>id가 primary하지 않을 수 있다는 문제가 있지만 지금은 이렇게 진행하겠다.</p>
+<p>마지막으로 Controller 파일을 아래와 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Body,</span><br><span class="line">  Controller,</span><br><span class="line">  Get,</span><br><span class="line">  Param,</span><br><span class="line">  ParseIntPipe,</span><br><span class="line">  Post,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./dto/create-todo.dto'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">':id'</span>)</span><br><span class="line">  findOne(@Param(<span class="string">'id'</span>) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findOne(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Post()</span><br><span class="line">  create(@Body() createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.create(createTodoDto);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Post Method를 사용할 것이기 때문에 <code>@Post()</code> 데코레이터를 사용했다.</p>
+<p>NestJS를 다시 실행시키고 Postman으로 데이터를 전송하면 제대로 생성되는 것을 확인할 수 있다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/c1e568ab-2699-4292-907c-c093eb747404/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C1.png" alt=""></p>
+<p>만약 필요로하는 데이터 요소를 전송하지 않으면 아래와 같이 에러를 발생시킨다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/db0bbff1-adf4-4fb8-a58b-9a3aa02e5acb/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C2.png" alt=""></p>
+<br>
+
+<h3 id="Update-update"><a href="#Update-update" class="headerlink" title="Update - update()"></a>Update - update()</h3><p>update 로직도 <code>DTO</code>와 <code>Service</code>, <code>Controller</code>를 만들어야 한다.</p>
+<p><code>update-todo.dto.ts</code> 파일을 만들고 아래와 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// update-todo.dto.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; PartialType &#125; <span class="keyword">from</span> <span class="string">'@nestjs/mapped-types'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; IsBoolean, IsNumber, IsString &#125; <span class="keyword">from</span> <span class="string">'class-validator'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./create-todo.dto'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateTodoDto</span> <span class="keyword">extends</span> <span class="title">PartialType</span>(<span class="title">CreateTodoDto</span>) </span>&#123;</span><br><span class="line">  @IsNumber()</span><br><span class="line">  id: number;</span><br><span class="line"></span><br><span class="line">  @IsBoolean()</span><br><span class="line">  done?: boolean;</span><br><span class="line"></span><br><span class="line">  @IsNumber()</span><br><span class="line">  userId?: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>update에 필요한 데이터는 일부만 필요할 수 있기 때문에 타입스크립트를 작성할 때 처럼 <code>?</code>를 적어야 한다.</p>
+<p><code>?</code> 작업을 도와주는 <code>PartialType</code>을 사용하여 한번에 해결할 수 있다.</p>
+<p><code>update-todo.dto.ts</code>를 다음과 같이 수정한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// update-todo.dto.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; PartialType &#125; <span class="keyword">from</span> <span class="string">"@nestjs/mapped-types"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./create-todo.dto"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateTodoDto</span> <span class="keyword">extends</span> <span class="title">PartialType</span>(<span class="title">CreateTodoDto</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>PartialType</code>은 <code>CreateTodoDto</code>의 요소들에 <code>?</code>설정을 붙여준다.</p>
+<p>이 후 <code>Service</code>, <code>Controller</code>를 아래와 같이 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./dto/create-todo.dto"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./dto/update-todo.dto"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"운영체제 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"네트워크 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"알고리즘 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> findOne(id: number) &#123;</span><br><span class="line">    <span class="keyword">const</span> todo = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id === id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!todo) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(); <span class="comment">// 예외처리</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> create(createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    todos = [</span><br><span class="line">      ...todos,</span><br><span class="line">      &#123;</span><br><span class="line">        id: todos[todos.length - <span class="number">1</span>].id + <span class="number">1</span>,</span><br><span class="line">        user_id: createTodoDto.user_id,</span><br><span class="line">        content: createTodoDto.content,</span><br><span class="line">        done: createTodoDto.done,</span><br><span class="line">      &#125;,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> update(id: number, <span class="attr">updateTodoDto</span>: UpdateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">this</span>.findOne(id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> oldTodos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== id);</span><br><span class="line">    <span class="keyword">const</span> oldTodo = todos.find(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id == id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> newTodo = &#123;</span><br><span class="line">      ...oldTodo,</span><br><span class="line">      ...updateTodoDto,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    todos = [...oldTodos, newTodo].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.id - b.id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Body,</span><br><span class="line">  Controller,</span><br><span class="line">  Get,</span><br><span class="line">  Param,</span><br><span class="line">  ParseIntPipe,</span><br><span class="line">  Patch,</span><br><span class="line">  Post,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./dto/create-todo.dto'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./dto/update-todo.dto'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">':id'</span>)</span><br><span class="line">  findOne(@Param(<span class="string">'id'</span>) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findOne(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Post()</span><br><span class="line">  create(@Body() createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.create(createTodoDto);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Patch(<span class="string">':id'</span>)</span><br><span class="line">  update(@Param(<span class="string">'id'</span>) id: number, @Body() updateTodoDto: UpdateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.update(id, updateTodoDto);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이 후 NestJS를 재시작한 후 Postman을 통해 수정을 요청하면 정상적으로 수정되는 것을 확인할 수 있다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/51d56a0a-5eee-4c55-942b-b109479b1d4d/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C3.png" alt=""></p>
+<br>
+
+<h3 id="Delete-deleteOne"><a href="#Delete-deleteOne" class="headerlink" title="Delete - deleteOne()"></a>Delete - deleteOne()</h3><p>Delete의 경우도 이전과 다를게 없다.</p>
+<p>아래와 같이 <code>Service</code>와 <code>Controller</code>를 작성한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Injectable, NotFoundException &#125; <span class="keyword">from</span> <span class="string">"@nestjs/common"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./dto/create-todo.dto"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTodoDto &#125; <span class="keyword">from</span> <span class="string">"./dto/update-todo.dto"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"운영체제 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"네트워크 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    user_id: <span class="string">"seongkyun"</span>,</span><br><span class="line">    content: <span class="string">"알고리즘 공부"</span>,</span><br><span class="line">    done: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoService</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> findOne(id: number) &#123;</span><br><span class="line">    <span class="keyword">const</span> todo = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id === id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!todo) <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundException(); <span class="comment">// 예외처리</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todo;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> create(createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    todos = [</span><br><span class="line">      ...todos,</span><br><span class="line">      &#123;</span><br><span class="line">        id: todos[todos.length - <span class="number">1</span>].id + <span class="number">1</span>,</span><br><span class="line">        user_id: createTodoDto.user_id,</span><br><span class="line">        content: createTodoDto.content,</span><br><span class="line">        done: createTodoDto.done,</span><br><span class="line">      &#125;,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> update(id: number, <span class="attr">updateTodoDto</span>: UpdateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">this</span>.findOne(id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> oldTodos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== id);</span><br><span class="line">    <span class="keyword">const</span> oldTodo = todos.find(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id == id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> newTodo = &#123;</span><br><span class="line">      ...oldTodo,</span><br><span class="line">      ...updateTodoDto,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    todos = [...oldTodos, newTodo].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.id - b.id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> deleteOne(id: number) &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">this</span>.findOne(id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> newTodos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== id);</span><br><span class="line"></span><br><span class="line">    todos = newTodos;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> todos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Body,</span><br><span class="line">  Controller,</span><br><span class="line">  Delete,</span><br><span class="line">  Get,</span><br><span class="line">  Param,</span><br><span class="line">  ParseIntPipe,</span><br><span class="line">  Patch,</span><br><span class="line">  Post,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'@nestjs/common'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CreateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./dto/create-todo.dto'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UpdateTodoDto &#125; <span class="keyword">from</span> <span class="string">'./dto/update-todo.dto'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TodoService &#125; <span class="keyword">from</span> <span class="string">'./todo.service'</span>;</span><br><span class="line"></span><br><span class="line">@Controller(<span class="string">'todo'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(private readonly todoService: TodoService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  @Get(<span class="string">':id'</span>)</span><br><span class="line">  findOne(@Param(<span class="string">'id'</span>) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findOne(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Get()</span><br><span class="line">  findAll() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.findAll();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Post()</span><br><span class="line">  create(@Body() createTodoDto: CreateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.create(createTodoDto);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Patch(<span class="string">':id'</span>)</span><br><span class="line">  update(@Param(<span class="string">'id'</span>) id: number, @Body() updateTodoDto: UpdateTodoDto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.update(id, updateTodoDto);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Delete(<span class="string">':id'</span>)</span><br><span class="line">  <span class="keyword">delete</span>(@Param(<span class="string">'id'</span>) id: number) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.todoService.deleteOne(id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Postman을 통해 Delete를 시도하면 정상적으로 삭제가 되는 것을 확인할 수 있다.</p>
+<p><img src="https://images.velog.io/images/seongkyun/post/dc4654bc-31b8-44e2-a690-45581173278a/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C4.png" alt=""></p>
+
+
+        <hr />
+        <!-- Pager -->
+        <ul class="pager">
+           
+          <li class="next">
+            <a
+              href="/2021/04/26/0071-dipping-nestjs2/"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="찍어먹는 NestJS - 초기설정"
+              >Next Post &rarr;</a
+            >
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+         
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=찍어먹는 NestJS - CRUD without DB&body=Hi,I found this website and thought you might like it http://yoursite.com/2021/06/25/0072-dippin-nestjs3/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr />
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr />
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Service"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Service</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Read-findAll"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Read - findAll</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Controller"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Controller</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Module"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Module</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CRUD"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">CRUD</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Read-findOne"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Read - findOne()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Pipe"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Pipe</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Create-create"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Create - create()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#DTO"><span class="toc-nav-number">4.3.1.</span> <span class="toc-nav-text">DTO</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Global-Pipe"><span class="toc-nav-number">4.3.2.</span> <span class="toc-nav-text">Global Pipe</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Update-update"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">Update - update()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Delete-deleteOne"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">Delete - deleteOne()</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div
+        class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container"
+      >
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a
+              class="tag"
+              href="/tags/#NestJS"
+              title="NestJS"
+              >NestJS</a
+            >
+            
+            <a
+              class="tag"
+              href="/tags/#찍어먹는"
+              title="찍어먹는"
+              >찍어먹는</a
+            >
+            
+            <a
+              class="tag"
+              href="/tags/#tutorial"
+              title="tutorial"
+              >tutorial</a
+            >
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr />
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Seongkyun-Yu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/Seongkyun-Yu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/Seongkyun-Yu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Seongkyun Yu
+          2021
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("http://yoursite.com/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
