@@ -125,7 +125,7 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite.com/2021/05/25/0072-dippin-nestjs3/">
+  <link rel="canonical" href="http://yoursite.com/2021/05/25/0072-dipping-nestjs3/">
   <title>
     
     찍어먹는 NestJS - CRUD without DB - 개발개발 블로그
@@ -355,9 +355,8 @@
       >
         <p><img src="https://images.velog.io/images/seongkyun/post/b3272a47-4023-4e8a-90a6-530843e9db38/nestjs-logo-social.png" alt=""></p>
 <blockquote>
-<p>NestJS 7.6.13 버전 기준 설명입니다</p>
+<p>NestJS 7.6.13 버전 기준 설명입니다<br><br><br>기본적인 CRUD를 작성해 보겠다.</p>
 </blockquote>
-<p>기본적인 CRUD를 작성해 보겠다.</p>
 <p>원래라면 DB연동을 해야하지만 DB연동은 다음 포스팅에서 진행하고</p>
 <p>이번 글에서는 내부 데이터를 사용해 만들어 보겠다.</p>
 <h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>먼저 비즈니스 로직부터 작성해보겠다.</p>
@@ -456,7 +455,8 @@
 </ol>
 <p>이다.</p>
 <p>NestJS는 이를 <code>DTO</code>로 처리한다.</p>
-<h4 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a>DTO</h4><p>먼저 <code>class-validator</code>, <code>class-transformer</code>를 설치한다.</p>
+<h4 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a>DTO</h4><p>DTO란 Data Access Object의 약자로 실질적으로 DB에 접근하는 객체를 말한다.</p>
+<p>먼저 <code>class-validator</code>, <code>class-transformer</code>를 설치한다.</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install <span class="class"><span class="keyword">class</span>-<span class="title">validator</span></span></span><br><span class="line">$ <span class="built_in">npm</span> install <span class="class"><span class="keyword">class</span>-<span class="title">transformer</span></span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://images.velog.io/images/seongkyun/post/e80f470c-7378-4378-a35a-c53f4f050663/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EC%9D%8C10.png" alt=""></p>
@@ -574,7 +574,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=찍어먹는 NestJS - CRUD without DB&body=Hi,I found this website and thought you might like it http://yoursite.com/2021/05/25/0072-dippin-nestjs3/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=찍어먹는 NestJS - CRUD without DB&body=Hi,I found this website and thought you might like it http://yoursite.com/2021/05/25/0072-dipping-nestjs3/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
