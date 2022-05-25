@@ -336,6 +336,48 @@
   
 
 
+  <a href="/2022/05/25/0077-axios-interceptor/">
+    <h2 class="post-title">
+      axios interceptor로 token 관리 및 network connection 체크 하기
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+redux-saga 벗어나기내가 입사하기 이전에 회사에서 사용하던 코드는 api 관련 처리를 전부 redux-saga로 처리하고 있었다.
+이렇게 작성할 경우 몇가지 단점이 있다.
+
+전역으로 사용하지 않는 데이터까지 store에 저장
+1번을 위해 작성해야할 코드가 지나치게 많음
+
+그래서 전역적으로 필요한 데이터가 아닌 경우 redux-saga를 사용하......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Seongkyun Yu on
+    2022-05-25
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#axios interceptor" title="axios interceptor">axios interceptor</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2022/02/17/0076-well-code-review/">
     <h2 class="post-title">
       코드 리뷰 잘 하는 법(Jr ver.)
@@ -720,48 +762,6 @@ ipcMain, ipcRenderer통신에 주로 사용되는......
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2021/03/07/0067-electron-lifecycle/">
-    <h2 class="post-title">
-      Electron - Life Cycle
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      
-
-12.0.6 버전을 기준으로 한 설명입니다
-
-초기 설정 이후 본격적으로 Electron 코드를 작성하기 전에 Electron의 생명주기에 대해 알아보자.
-Electron Life CycleElectron에서 제공하는 app 객체는 Electron의 생명주기를 관리한다.
-app 객체를 통해 앱의 라이프 사이클 관련 신호를 받을 수 있다.
-app.on......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Seongkyun Yu on
-    2021-03-07
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#electron" title="electron">electron</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -851,6 +851,10 @@ app.on......
 <div class="widget">
   <ul>
     
+    <a href="2022/05/25/0077-axios-interceptor/">
+      <li>axios interceptor로 token 관리 및 network connection 체크 하기</li>
+    </a>
+    
     <a href="2022/02/17/0076-well-code-review/">
       <li>코드 리뷰 잘 하는 법(Jr ver.)</li>
     </a>
@@ -865,10 +869,6 @@ app.on......
     
     <a href="2021/08/22/0073-database/">
       <li>Database 기본 개념</li>
-    </a>
-    
-    <a href="2021/05/25/0072-dipping-nestjs3/">
-      <li>찍어먹는 NestJS - CRUD without DB</li>
     </a>
     
   </ul>
@@ -950,6 +950,10 @@ app.on......
     
     <a href="/categories/#Communication">
       <li>Communication</li>
+    </a>
+    
+    <a href="/categories/#dev">
+      <li>dev</li>
     </a>
     
   </ul>
@@ -1205,6 +1209,10 @@ app.on......
     <a href="/tags/#code review" title="code review" rel="2">code review</a>
     
     
+    
+    <a href="/tags/#axios interceptor" title="axios interceptor" rel="1">axios interceptor</a>
+    
+    
   </div>
 </section>
 
@@ -1226,7 +1234,7 @@ app.on......
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/02/">February 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">March 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/05/">May 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/02/">February 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/03/">March 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">December 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">June 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">May 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/02/">February 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
 
 
