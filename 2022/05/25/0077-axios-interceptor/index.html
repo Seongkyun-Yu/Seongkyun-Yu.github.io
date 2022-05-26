@@ -303,7 +303,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">154</span> In Total
+              Words <span class="post-count">318</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -370,11 +370,20 @@
 <p><img src="https://velog.velcdn.com/images/seongkyun/post/0842eff3-51d7-4f62-8b31-7c8b8da65538/image.png" alt=""></p>
 <p>이렇게 사용할 수 있다.</p>
 <p>앞쪽의 axios 대신 axios instance를 대신 사용할 수 있다.</p>
-<p>나는</p>
+<p>나는 interceptor를 이용하여</p>
 <ol>
 <li>request할 때 access token 붙여서 보내기</li>
-<li>request</li>
+<li>response 받을 때 401 error일 경우 refresh 시키기</li>
 </ol>
+<p>를 진행하려고 한다.</p>
+<br>
+
+<h2 id="access-token-붙이기"><a href="#access-token-붙이기" class="headerlink" title="access token 붙이기"></a>access token 붙이기</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> makeAccessTokenSetter =</span><br><span class="line">  (localStorage: Storage) =&gt; <span class="function">(<span class="params">originRequest: AxiosRequestConfig</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> accessToken = localStorage.getItem(<span class="string">"access"</span>);</span><br><span class="line"></span><br><span class="line">    originRequest.headers.Authorization = <span class="string">`Bearer <span class="subst">$&#123;accessToken&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> originRequest;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> setAccessToken = makeAccessTokenSetter(localStorage);</span><br><span class="line"></span><br><span class="line">axiosInstance.interceptors.request.use(setAccessToken);</span><br></pre></td></tr></table></figure>
+
+<p>axios request시 넘어오는 <code>originRequest</code>를 이용하여 header에 access token을 넣는다.</p>
+<br>
+
+<h2 id="refresh-처리하기"><a href="#refresh-처리하기" class="headerlink" title="refresh 처리하기"></a>refresh 처리하기</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> makeRefreshAccessTokenLogic =</span><br><span class="line">  (localStorage: Storage) =&gt; <span class="keyword">async</span> (err: AxiosError) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; <span class="attr">config</span>: originRequest, response &#125; = err;</span><br><span class="line">    <span class="keyword">const</span> needRefreshErrors = [<span class="string">"JWT_EXPIRED"</span>, <span class="string">"JWT_ERROR"</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (response === <span class="literal">undefined</span>) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">    <span class="keyword">if</span> (response.status !== <span class="number">401</span>) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">    <span class="keyword">if</span> (needRefreshErrors.includes(response.data) === <span class="literal">false</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">    <span class="keyword">if</span> (localStorage.getItem(<span class="string">"access"</span>) === <span class="literal">null</span>) &#123;</span><br><span class="line">      location.replace(<span class="string">"/login"</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; <span class="attr">access</span>: newAccessToken &#125; = <span class="keyword">await</span> getRefreshTk();</span><br><span class="line">      localStorage.setItem(<span class="string">"access"</span>, newAccessToken);</span><br><span class="line"></span><br><span class="line">      originRequest.headers.Authorization = <span class="string">`Bearer <span class="subst">$&#123;newAccessToken&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> axios(originRequest);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      localStorage.removeItem(<span class="string">"access"</span>);</span><br><span class="line">      location.replace(<span class="string">"/login"</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
 
 
         <hr />
@@ -468,7 +477,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#redux-saga-벗어나기"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">redux-saga 벗어나기</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#axios-interceptor"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">axios interceptor</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#redux-saga-벗어나기"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">redux-saga 벗어나기</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#axios-interceptor"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">axios interceptor</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#access-token-붙이기"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">access token 붙이기</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#refresh-처리하기"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">refresh 처리하기</span></a></li></ol>
         
         </div>
       </aside>
